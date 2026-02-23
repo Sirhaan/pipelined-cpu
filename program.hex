@@ -1,0 +1,36 @@
+00008067  // jr x1 (dummy to set PC)
+00000093  // Test 1: addi x1, x0, 0
+00108063  // beq x1, x1, 8 (ALWAYS TAKEN)
+00500193  // addi x3, x0, 5 (SKIPPED)
+00a00213  // addi x4, x0, 10 (TARGET)
+00500093  // Test 2: addi x1, x0, 5  
+00500113  // addi x2, x0, 5
+00208063  // beq x1, x2, 8 (TAKEN - equal)
+00100193  // addi x3, x0, 1 (SKIPPED)
+00200213  // addi x4, x0, 2 (TARGET)
+00600093  // Test 3: addi x1, x0, 6
+00500113  // addi x2, x0, 5  
+00208063  // beq x1, x2, 8 (NOT TAKEN - unequal)
+00700193  // addi x3, x0, 7 (EXECUTED)
+00800213  // addi x4, x0, 8
+00a00093  // Test 4: addi x1, x0, 10
+00508113  // addi x2, x1, 5 (x2 = 15)
+00208063  // beq x1, x2, 8 (NOT TAKEN - 10 != 15)
+40c081b3  // sub x3, x1, x2 (EXECUTED: 10-15 = -5)
+00100213  // addi x4, x0, 1
+00000093  // Test 5: Back-to-back branches
+00100113  // addi x2, x0, 1  
+00208063  // beq x1, x2, 8 (NOT TAKEN - 0 != 1)
+00108063  // beq x1, x1, 8 (TAKEN)
+00500193  // addi x3, x0, 5 (SKIPPED)
+00600213  // addi x4, x0, 6 (TARGET)
+fff00093  // Test 6: addi x1, x0, -1
+fff00113  // addi x2, x0, -1
+00208063  // beq x1, x2, 8 (TAKEN - negative equal)
+00100193  // addi x3, x0, 1 (SKIPPED)
+00200213  // addi x4, x0, 2 (TARGET)
+00700093  // Test 7: Large branch offset
+07d00113  // addi x2, x0, 125
+fe208c63  // beq x1, x2, 248 (NOT TAKEN - 7 != 125)
+00800193  // addi x3, x0, 8 (EXECUTED)
+00000013  // nop (padding)
