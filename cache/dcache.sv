@@ -10,7 +10,14 @@ module dcache #(
     input  logic [DATA_WIDTH-1:0] cpu_wdata,
     input  logic cpu_read, cpu_write,
     output logic [DATA_WIDTH-1:0] cpu_rdata,
-    output logic cpu_ready
+    output logic cpu_ready,
+    // Memory side (connected to UnifiedMemory)
+    output [31:0] mem_addr,
+output [31:0] mem_wdata,
+output        mem_read,
+output        mem_write,
+input  [31:0] mem_rdata,
+input         mem_ready
 );
 
     logic [ADDR_WIDTH-1:0] m_addr;
@@ -32,11 +39,5 @@ module dcache #(
         .mem_rdata(m_rdata), .mem_ready(m_ready)
     );
 
-    SlowMemoryD #(ADDR_WIDTH, DATA_WIDTH, LATENCY) mem (
-        .clk(clk), .rst(rst),
-        .mem_addr(m_addr), .mem_wdata(m_wdata),
-        .mem_read(m_read), .mem_write(m_write),
-        .mem_rdata(m_rdata), .mem_ready(m_ready)
-    );
-
+ 
 endmodule

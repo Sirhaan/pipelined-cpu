@@ -11,7 +11,12 @@ module icache #(
     input  logic [ADDR_WIDTH-1:0] cpu_addr,
     input  logic                  cpu_read,
     output logic [DATA_WIDTH-1:0] cpu_rdata,
-    output logic                  cpu_ready
+    output logic                  cpu_ready,
+    // Memory side (connected to UnifiedMemory)
+    output [31:0] mem_addr,
+output        mem_read,
+input  [31:0] mem_rdata,
+input         mem_ready
 );
 
     // Memory interface
@@ -42,21 +47,6 @@ module icache #(
     );
 
 
-    SlowMemoryI #(
-        .ADDR_WIDTH(ADDR_WIDTH),
-        .DATA_WIDTH(DATA_WIDTH),
-        .LATENCY(LATENCY)
-    ) mem (
-        .clk(clk),
-        .rst(rst),
-
-        .mem_addr(m_addr),
-        .mem_read(m_read),
-        .mem_write(1'b0),          // NEVER WRITE from I-cache
-        .mem_wdata('0),            // unused
-
-        .mem_rdata(m_rdata),
-        .mem_ready(m_ready)
-    );
+ 
 
 endmodule

@@ -22,7 +22,7 @@ module BPLRU #(
         for (int i = 0; i < NUM_WAYS; i++) begin
             if (!valid_ways[i]) begin
                 victim_way = i[WAY_BITS-1:0];
-                break;
+            
             end
         end
         
@@ -31,7 +31,7 @@ module BPLRU #(
             for (int i = 0; i < NUM_WAYS; i++) begin
                 if (!lru_bits[set_idx][i]) begin
                     victim_way = i[WAY_BITS-1:0];
-                    break;
+                 
                 end
             end
         end

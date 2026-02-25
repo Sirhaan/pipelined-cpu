@@ -53,15 +53,18 @@ logic pcSrcEX, IFflushEX;
     logic [4:0]  writeRegWB;
     logic [31:0] finalResultWB;
 
-    // =========================================================================
-    // Stall Signals
-    // =========================================================================
 
-    logic ic_stall, dc_stall;  // Change from wire to logic
+    logic ic_stall, dc_stall;  
 
-    // HDU controls pcWrite and IFIDwrite; we just pass them through
+
     assign pcWrite_final   = pcWrite;
     assign IFIDwrite_final = IFIDwrite;
+
+// memory interface signals
+     logic [31:0] ic_mem_addr, ic_mem_rdata;
+    logic        ic_mem_read,  ic_mem_ready;
+    logic [31:0] dc_mem_addr, dc_mem_rdata, dc_mem_wdata;
+    logic        dc_mem_read, dc_mem_write, dc_mem_ready;
 
 
    
@@ -98,7 +101,11 @@ end
         .cpu_addr (pcCurrent),
         .cpu_read (1'b1),
         .cpu_rdata(ic_inst),
-        .cpu_ready(ic_ready)
+        .cpu_ready(ic_ready),
+        .mem_addr (ic_mem_addr),
+        .mem_read (ic_mem_read),
+        .mem_rdata(ic_mem_rdata),
+        .mem_ready(ic_mem_ready)
     );
 
     // =========================================================================
@@ -306,7 +313,31 @@ end
         .cpu_read (MEMMEM[1] && !dc_done),  // Only read when it's a mem_read and not stalled
         .cpu_write(MEMMEM[0] && !dc_done),  // Only write when it's a mem_write and not stalled
         .cpu_rdata(dc_rdata),
-        .cpu_ready(dc_ready)
+        .cpu_ready(dc_ready),
+        .mem_addr (dc_mem_addr),
+        .mem_wdata(dc_mem_wdata),
+        .mem_read (dc_mem_read),
+        .mem_write(dc_mem_write),
+        .mem_rdata(dc_mem_rdata),
+        .mem_ready(dc_mem_ready)
+    );
+   
+   
+    UnifiedMemory UnifiedMem (
+        .clk      (clk),
+        .rst      (rst),
+        // I-cache interface
+        .ic_addr  (ic_mem_addr),
+        .ic_read  (ic_mem_read),
+        .ic_rdata (ic_mem_rdata),
+        .ic_ready (ic_mem_ready),
+        // D-cache interface
+        .dc_addr  (dc_mem_addr),
+        .dc_read  (dc_mem_read),
+        .dc_write (dc_mem_write),
+        .dc_wdata (dc_mem_wdata),
+        .dc_rdata (dc_mem_rdata),
+        .dc_ready (dc_mem_ready)
     );
 
  // hdu that dcache is satisfied with stall

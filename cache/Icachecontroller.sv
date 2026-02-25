@@ -57,7 +57,7 @@ module icacheController #(
         for (int i = 0; i < NUM_WAYS; i++) begin
             if (way_hit[i]) begin
                 hit_way_index = i[$clog2(NUM_WAYS)-1:0];
-                break;
+       
             end
         end
     end
