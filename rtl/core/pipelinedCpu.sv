@@ -1,4 +1,4 @@
-module PipelinedCpu(
+module pipelinedCpu(
     input clk,
     input rst
 );
@@ -81,7 +81,7 @@ always_comb begin
 end
 
 
-    Program_Counter PC (
+    PC pc (
         .PCInput  (nextPc),
         .PCWrite  (pcWrite_final),
         .clk      (clk),
@@ -113,13 +113,14 @@ end
     // =========================================================================
 
     // IF/ID pipeline register
- Instruction_Register IF_ID (
-    .rst            (rst || IFflushEX),  
-    .clk            (clk),
-    .IRWrite        (IFIDwrite_final),
-    .Instruction_In (ic_inst),
-    .Instruction_Out(instID)
-);
+     always_ff @(posedge clk) begin
+        if (rst || IFflushEX)  
+            instID <= 32'b0;
+        else if (IFIDwrite_final)
+            instID <= ic_inst;
+    end
+
+
 
     // PC+4 pipeline register (matches IF/ID enable exactly)
   always_ff @(posedge clk) begin
@@ -138,7 +139,7 @@ end
     );
 
     // Register File
-    Reg_Files Reg_Files_instance (
+    RF Reg_Files (
         .clk      (clk),
         .rst      (rst),
         .RegWrite (WBWB[1]),
@@ -256,7 +257,7 @@ end
         AluInb = EXEX[0] ? signExtImmEX : AluMuxBFwd;
     end
 
-    ALU_Decoder ALUDec (
+    Decoder ALUDec (
         .Func      (FuncEX),
         .AluOp     (EXEX[3:1]),
         .AluControl(AluCtrlEX)
