@@ -1,10 +1,13 @@
+`include "config.svh"
+
+
 module dcache #(
-    parameter ADDR_WIDTH = 32,
-    parameter DATA_WIDTH = 32,
-    parameter CACHE_SIZE = 256,
-    parameter LATENCY    = 2,
-    parameter NUM_WAYS = 2
-)(
+    parameter ADDR_WIDTH = `ADDR_WIDTH,
+    parameter DATA_WIDTH = `DATA_WIDTH,
+    parameter CACHE_SIZE = `DCACHE_SIZE,
+    parameter LATENCY    = `DCACHE_LATENCY,
+    parameter NUM_WAYS =   `DCACHE_WAYS
+) (
     input  logic clk, rst,
     input  logic [ADDR_WIDTH-1:0] cpu_addr,
     input  logic [DATA_WIDTH-1:0] cpu_wdata,
@@ -39,5 +42,6 @@ input         mem_ready
         .mem_rdata(m_rdata), .mem_ready(m_ready)
     );
 
+   
  
 endmodule

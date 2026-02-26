@@ -1,6 +1,10 @@
+`include "config.svh"
+
+
+
 module BPLRU #(
-    parameter NUM_WAYS  = 4,
-    parameter NUM_SETS  = 16
+    parameter NUM_WAYS  = `DCACHE_WAYS,
+    parameter NUM_SETS  = `DCACHE_SIZE / `DCACHE_WAYS
 )(
     input  logic                             clk,
     input  logic                             rst,
@@ -41,16 +45,16 @@ module BPLRU #(
     always_ff @(posedge clk) begin
         if (rst) begin
             for (int i = 0; i < NUM_SETS; i++) begin
-                lru_bits[i] <= '0;
+                lru_bits[i] = 0;
             end
         end else if (update) begin
             // If all bits are set, clear all bits first
             if (&lru_bits[set_idx]) begin
-                lru_bits[set_idx] <= '0;
+                lru_bits[set_idx] <= 0;
             end
             
             // Set bit for accessed way
-            lru_bits[set_idx][access_way] <= 1'b1;
+            lru_bits[set_idx][access_way] <= 1;
         end
     end
 

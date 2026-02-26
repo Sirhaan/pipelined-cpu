@@ -1,72 +1,110 @@
-module UnifiedMemory#(
-    parameter ADDR_WIDTH = 10,       // 2^10 = 1024 entries
-    parameter DATA_WIDTH = 32
+`include "config.svh"
+
+module UnifiedMemory #(
+    parameter ADDR_WIDTH = `ADDR_WIDTH,
+    parameter DATA_WIDTH = `DATA_WIDTH,
+    parameter MEM_DEPTH   = `MEM_DEPTH,
+    parameter LATENCY    = `MEM_LATENCY
 ) (
-    input clk , rst ,
-    // icache 
-    input [31:0] ic_addr ,
-    input ic_read , 
-    output reg [31:0] ic_rdata ,
-    output reg ic_ready ,
-    // dcache
-    input [31:0] dc_addr ,
-    input dc_read ,
-    input dc_write ,
-    input [31:0] dc_wdata ,
-    output reg [31:0] dc_rdata ,
-    output reg dc_ready
+    input  logic        clk,
+    input  logic        rst,
+    // icache port
+    input  logic [31:0] ic_addr,
+    input  logic        ic_read,
+    output logic [31:0] ic_rdata,
+    output logic        ic_ready,
+    // dcache port
+    input  logic [31:0] dc_addr,
+    input  logic        dc_read,
+    input  logic        dc_write,
+    input  logic [31:0] dc_wdata,
+    output logic [31:0] dc_rdata,
+    output logic        dc_ready
 );
-logic dc_active = dc_read || dc_write; 
-logic ic_active = ic_read && !dc_active;  // prioritize D-cache if both active
 
-// memory muxes
-logic [31:0] mem_addr = ic_active ? ic_addr : dc_addr;  
-logic mem_read = dc_read ? dc_read : ic_read;
-logic mem_write = dc_write;  // only D-cache writes
-logic [31:0] mem_wdata = dc_wdata;  // only D-cache
-logic [31:0] mem_rdata;
-logic mem_ready;
+    // -------------------------------------------------------------------------
+    // Combinational arbitration — dcache has priority
+    // -------------------------------------------------------------------------
+    logic dc_active, ic_active;
 
-logic [31:0] timer;
-    logic        busy;
-    logic [DATA_WIDTH-1:0] ram [0:(1<<ADDR_WIDTH)-1]; 
-
- //TEST data
-    initial begin
-       $readmemh("data.hex", ram);
+    always_comb begin
+        dc_active = dc_read || dc_write;
+        ic_active = ic_read && !dc_active;
     end
 
-   always_ff @(posedge clk) begin
-    if (rst) begin
-        timer     <= 0;
-        busy      <= 0;
-        mem_ready <= 0;
-        mem_rdata <= 0;
-    end else begin
-        mem_ready <= 0;  // default: clear every cycle
-        
-        if ((mem_read || mem_write) && !busy) begin
-            busy  <= 1;
-            timer <= LATENCY;
-        end else if (busy) begin
-            if (timer > 1) begin
-                timer <= timer - 1;
-                if (timer == 2 && !mem_write)
-                    mem_rdata <= ram[mem_addr[11:2]];  // pre-load one cycle early
-            end else begin
-                busy      <= 0;
-                mem_ready <= 1;  // data already loaded last cycle
-                if (mem_write) ram[mem_addr[11:2]] <= mem_wdata;
+    // -------------------------------------------------------------------------
+    // Memory array
+    // -------------------------------------------------------------------------
+    logic [DATA_WIDTH-1:0] ram [0:(1<<MEM_DEPTH)-1];
+
+    initial begin
+        `ifdef PERF_TB
+            $readmemh(`PROG_FILE_PERF, ram);
+        `else
+            $readmemh(`PROG_FILE_FUNC, ram);
+        `endif
+    end
+
+    // -------------------------------------------------------------------------
+    // FSM state
+    // -------------------------------------------------------------------------
+    logic [31:0] timer;
+    logic        busy;
+    logic [31:0] mem_rdata;
+    logic        mem_ready;
+
+    // Latched transaction info — captured when bus is granted
+    logic        dc_won;         // 1 = dcache owns this transaction
+    logic [31:0] latched_addr;   // address held stable for full transaction
+    logic [31:0] latched_wdata;  // write data held stable
+    logic        latched_write;  // whether this transaction is a write
+
+    always_ff @(posedge clk) begin
+        if (rst) begin
+            timer         <= 0;
+            busy          <= 0;
+            mem_ready     <= 0;
+            mem_rdata     <= 0;
+            dc_won        <= 0;
+            latched_addr  <= 0;
+            latched_wdata <= 0;
+            latched_write <= 0;
+        end else begin
+            mem_ready <= 0;  // default: deassert every cycle
+
+            if (!busy && (dc_active || ic_active)) begin
+                // Grant bus — dcache wins if both active
+                busy          <= 1;
+                timer         <= LATENCY;
+                dc_won        <= dc_active;
+                latched_addr  <= dc_active ? dc_addr  : ic_addr;
+                latched_wdata <= dc_wdata;
+                latched_write <= dc_write && dc_active;
+            end else if (busy) begin
+                if (timer > 1) begin
+                    timer <= timer - 1;
+                    // Pre-load read data one cycle before ready
+                    if (timer == 2 && !latched_write)
+                        mem_rdata <= ram[latched_addr[MEM_DEPTH+1:2]];
+                end else begin
+                    // Transaction complete
+                    busy      <= 0;
+                    mem_ready <= 1;
+                    if (latched_write)
+                        ram[latched_addr[MEM_DEPTH+1:2]] <= latched_wdata;
+                end
             end
         end
     end
-end
 
+    // -------------------------------------------------------------------------
+    // Route outputs back to correct cache port using latched dc_won
+    // -------------------------------------------------------------------------
+    always_comb begin
+        ic_rdata = (!dc_won) ? mem_rdata : 32'b0;
+        dc_rdata = ( dc_won) ? mem_rdata : 32'b0;
+        ic_ready = mem_ready && !dc_won;
+        dc_ready = mem_ready &&  dc_won;
+    end
 
-always_comb begin
-    ic_rdata = ic_active ? mem_rdata : 32'b0;
-    dc_rdata = dc_active ? mem_rdata : 32'b0;
-    ic_ready = mem_ready && ic_active;
-    dc_ready = mem_ready && dc_active;
-end
 endmodule

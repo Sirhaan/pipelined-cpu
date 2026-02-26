@@ -1,9 +1,14 @@
+`include "config.svh"
+
+
+
+
 module icache #(
-    parameter ADDR_WIDTH = 32,
-    parameter DATA_WIDTH = 32,
-    parameter CACHE_SIZE = 256,
-    parameter LATENCY    = 2,
-    parameter NUM_WAYS   = 2
+    parameter ADDR_WIDTH = `ADDR_WIDTH,
+    parameter DATA_WIDTH = `DATA_WIDTH,
+    parameter CACHE_SIZE = `ICACHE_SIZE,
+    parameter LATENCY    = `ICACHE_LATENCY,
+    parameter NUM_WAYS   = `ICACHE_WAYS
 )(
     input  logic clk, rst,
 
@@ -47,6 +52,24 @@ input         mem_ready
     );
 
 
- 
+ UnifiedMemory  #(
+        .ADDR_WIDTH(ADDR_WIDTH),
+        .DATA_WIDTH(DATA_WIDTH)
+    ) mem(
+        .clk(clk),
+        .rst(rst),
+        // icache
+        .ic_addr(m_addr),
+        .ic_read(m_read),
+        .ic_rdata(m_rdata),
+        .ic_ready(m_ready),
+        // dcache (not used here)
+        .dc_addr(0),
+        .dc_read(0),
+        .dc_write(0),
+        .dc_wdata(0),
+        .dc_rdata(),
+        .dc_ready()
+    );
 
 endmodule

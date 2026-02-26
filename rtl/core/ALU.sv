@@ -12,7 +12,7 @@ wire [31:0]  B_sum_operand; // for subs in 2's complement
 wire carry_out;
 
 
-assign B_sum_operand = AluControl[0] ? ~B + AluControl[0] : B; // AluControl[0] decide between sub(1) and add(0)
+assign B_sum_operand = AluControl[0] ? (~B + 32'b1) : B; // AluControl[0] decide between sub(1) and add(0)
 assign {carry_out, sum} = A+B_sum_operand; //carry out +sum is net result which is equal to a +b
 // CORRECT:
 assign Overflow = (AluControl[3:2] == 2'b00) ? ((A[31] == B_sum_operand[31]) && (A[31] != sum[31])) : 1'b0;

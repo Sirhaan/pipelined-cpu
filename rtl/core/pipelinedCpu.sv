@@ -1,3 +1,8 @@
+`include "config.svh"
+
+
+
+
 module pipelinedCpu(
     input clk,
     input rst
@@ -90,11 +95,11 @@ end
     );
 
     icache #(
-        .ADDR_WIDTH(32),
-        .DATA_WIDTH(32),
-        .CACHE_SIZE(256),
-        .LATENCY   (2),
-        .NUM_WAYS  (2)
+        .ADDR_WIDTH(`ADDR_WIDTH),
+        .DATA_WIDTH(`DATA_WIDTH),
+        .CACHE_SIZE(`ICACHE_SIZE),
+        .LATENCY   (`ICACHE_LATENCY),
+        .NUM_WAYS  (`ICACHE_WAYS)
     ) ICACHE (
         .clk      (clk),
         .rst      (rst),
@@ -301,11 +306,11 @@ always_ff @(posedge clk) begin
     else if (!ic_stall && !dc_stall) dc_done <= 0;
 end
     dcache #(
-        .ADDR_WIDTH(32),
-        .DATA_WIDTH(32),
-        .CACHE_SIZE(256),
-        .LATENCY   (2),
-        .NUM_WAYS  (2)
+        .ADDR_WIDTH(`ADDR_WIDTH),
+        .DATA_WIDTH(`DATA_WIDTH),
+        .CACHE_SIZE(`DCACHE_SIZE),
+        .LATENCY   (`DCACHE_LATENCY),
+        .NUM_WAYS  (`DCACHE_WAYS)
     ) D_CACHE (
         .clk      (clk),
         .rst      (rst),

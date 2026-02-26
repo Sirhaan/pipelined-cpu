@@ -1,8 +1,10 @@
+`include "config.svh"
+
 module dcacheController #(
-    parameter ADDR_WIDTH = 32,
-    parameter DATA_WIDTH = 32,
-    parameter CACHE_SIZE = 256,
-    parameter NUM_WAYS   = 2
+    parameter ADDR_WIDTH = `ADDR_WIDTH,
+    parameter DATA_WIDTH = `DATA_WIDTH,
+    parameter CACHE_SIZE = `DCACHE_SIZE,
+    parameter NUM_WAYS   = `DCACHE_WAYS
 )(
     input  logic                   clk, rst,
     input  logic [ADDR_WIDTH-1:0]  cpu_addr,
@@ -20,10 +22,10 @@ module dcacheController #(
     // =========================================================================
     // Address Breakdown
     // =========================================================================
-    localparam NUM_SETS = CACHE_SIZE / NUM_WAYS;
+    localparam NUM_SETS = `DCACHE_SIZE / `DCACHE_WAYS;
     localparam SET_BITS = $clog2(NUM_SETS);
-    localparam TAG_BITS = ADDR_WIDTH - SET_BITS - 2;
-    localparam WAY_BITS = $clog2(NUM_WAYS);
+    localparam TAG_BITS = `ADDR_WIDTH - SET_BITS - 2;
+    localparam WAY_BITS = $clog2(`DCACHE_WAYS);
 
     // =========================================================================
     // Storage Arrays

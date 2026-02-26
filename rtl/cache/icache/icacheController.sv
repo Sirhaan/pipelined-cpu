@@ -1,8 +1,12 @@
+`include "config.svh"
+
+
+
 module icacheController #(
-    parameter ADDR_WIDTH = 32,
-    parameter DATA_WIDTH = 32,
-    parameter CACHE_SIZE = 256,
-    parameter NUM_WAYS   = 2
+    parameter ADDR_WIDTH = `ADDR_WIDTH,
+    parameter DATA_WIDTH = `DATA_WIDTH,
+    parameter CACHE_SIZE = `ICACHE_SIZE,
+    parameter NUM_WAYS   = `ICACHE_WAYS
 )(
     input  logic                   clk, rst,
     input  logic [ADDR_WIDTH-1:0]  cpu_addr,
@@ -16,10 +20,10 @@ module icacheController #(
     input  logic                   mem_ready
 );
 
-    localparam NUM_SETS = CACHE_SIZE / NUM_WAYS;
+    localparam NUM_SETS = `ICACHE_SIZE / `ICACHE_WAYS;
     localparam SET_BITS = $clog2(NUM_SETS);
-    localparam TAG_BITS = ADDR_WIDTH - SET_BITS - 2;  // 2 for word offset
-    localparam WAY_BITS = $clog2(NUM_WAYS);
+    localparam TAG_BITS = `ADDR_WIDTH - SET_BITS - 2;  // 2 for word offset
+    localparam WAY_BITS = $clog2(`ICACHE_WAYS);
 
     logic [ADDR_WIDTH-1:0] addr_reg;
     logic [TAG_BITS-1:0]   current_tag;
