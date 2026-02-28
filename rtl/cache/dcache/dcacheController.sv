@@ -22,10 +22,10 @@ module dcacheController #(
     // =========================================================================
     // Address Breakdown
     // =========================================================================
-    localparam NUM_SETS = `DCACHE_SIZE / `DCACHE_WAYS;
+    localparam NUM_SETS = CACHE_SIZE / NUM_WAYS;
     localparam SET_BITS = $clog2(NUM_SETS);
-    localparam TAG_BITS = `ADDR_WIDTH - SET_BITS - 2;
-    localparam WAY_BITS = $clog2(`DCACHE_WAYS);
+    localparam TAG_BITS = ADDR_WIDTH - SET_BITS - 2;
+    localparam WAY_BITS = $clog2(NUM_WAYS);
 
     // =========================================================================
     // Storage Arrays
@@ -240,11 +240,8 @@ module dcacheController #(
     // --- Cache array updates ---
     always_ff @(posedge clk) begin
         if (rst) begin
-            for (int w = 0; w < NUM_WAYS; w++)
-                for (int s = 0; s < NUM_SETS; s++) begin
-                    valid[w][s]     = 1'b0;
-                    dirtyBits[w][s] = 1'b0;
-                end
+          valid <= '{default: '{default: 1'b0}};
+          dirtyBits <= '{default: '{default: 1'b0}};
         end else begin
 
             // Write hit: update data and dirty bit

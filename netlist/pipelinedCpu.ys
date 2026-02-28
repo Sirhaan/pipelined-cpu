@@ -1,0 +1,16 @@
+read_verilog -sv -formal -overwrite {workspace}/rtl/core/PC.sv
+read_verilog -sv -formal -overwrite {workspace}/rtl/cache/icache/icache.sv
+read_verilog -sv -formal -overwrite {workspace}/rtl/cache/icache/icacheController.sv
+read_verilog -sv -formal -overwrite {workspace}/rtl/cache/replacement/TPLRU.sv
+read_verilog -sv -formal -overwrite {workspace}/rtl/memory/UnifiedMemory.sv
+read_verilog -sv -formal -overwrite {workspace}/rtl/core/ControlUnit.sv
+read_verilog -sv -formal -overwrite {workspace}/rtl/core/RF.sv
+read_verilog -sv -formal -overwrite {workspace}/rtl/core/HDU.sv
+read_verilog -sv -formal -overwrite {workspace}/rtl/core/FU.sv
+read_verilog -sv -formal -overwrite {workspace}/rtl/core/Decoder.sv
+read_verilog -sv -formal -overwrite {workspace}/rtl/core/ALU.sv
+read_verilog -sv -formal -overwrite {workspace}/rtl/cache/dcache/dcache.sv
+read_verilog -sv -formal -overwrite {workspace}/rtl/cache/dcache/dcacheController.sv
+read_verilog -sv -formal -overwrite {workspace}/rtl/core/pipelinedCpu.sv
+design -reset-vlog; proc;
+write_json {workspace}/netlist/pipelinedCpu.json

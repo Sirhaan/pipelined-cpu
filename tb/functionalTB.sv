@@ -5,11 +5,10 @@ module functionalTB();
 logic clk, rst;
 initial begin
     clk = 0;
-    rst = 1;
-    #(`RESET_TIME) rst = 0;
+
 end
 always begin
-    #(`CLK_HALF) clk = ~clk;
+    #(`CLK_HALF) clk <= ~clk;
 end
 
 //DUT
@@ -17,11 +16,12 @@ pipelinedCpu dut (
     .clk(clk),
     .rst(rst)
 );
-
+logic perf_print;
 // performance counter
 performanceCounter perfCounter (
     .clk(clk),
     .rst(rst),
+    .perf_print(perf_print),
     .ic_stall(dut.ic_stall),
     .dc_stall(dut.dc_stall),
     .ic_ready(dut.ic_ready),
@@ -30,8 +30,8 @@ performanceCounter perfCounter (
     .mem_write_mem(dut.MEMMEM[0]),
     .branch_taken(dut.pcSrcID),
     .reg_write_wb(dut.WBWB[0]),
-    .write_reg_wb(dut.write_reg_wb),
-    .is_branchID(dut.MEMID[`BRANCH_STAGE])
+    .write_reg_wb(dut.writeRegWB),
+    .is_branchID(dut.MEMID[2])
 );
 
 initial begin
@@ -76,9 +76,10 @@ end
         "ADD  $t2, $t0, $t1   ",
         "ADDI $t3, $t0, 100   ",
         "LW   $t4, 64($zero)  ",
-        "AND  $t5, $t0, $t1   ",
+        
         "OR   $t6, $t0, $t1   ",
-        "SLT  $t7, $t1, $t0   "
+        "SLT  $t7, $t1, $t0   ",
+        "AND  $t5, $t0, $t1   "
     };
 
     check_t checks[8] = '{
@@ -110,7 +111,9 @@ end
         #(`SIM_TIMEOUT_FUNC);
         $display("\n[TIMEOUT] %0t ns elapsed — CPU did not halt!", $time);
         $display("[TIMEOUT] Last PC=%08h instID=%08h", dut.pcCurrent, dut.instID);
-        perf.report();
+        perf_print = 1;
+        @(posedge clk);
+        perf_print = 0;
         run_checks();
         $finish;
     end
@@ -130,7 +133,9 @@ end
                 if (stable_count >= 5) begin
                     repeat(10) @(posedge clk);  // drain pipeline
                     $display("T=%0t | [HALT] PC stable at %08h", $time, dut.pcCurrent);
-                    perf.report();
+                    perf_print = 1;
+                    @(posedge clk);
+                    perf_print = 0;
                     run_checks();
                     $finish;
                 end
@@ -158,7 +163,7 @@ end
             $display("  %s", {60{"-"}});
 
             for (int i = 0; i < 8; i++) begin
-                actual = dut.Reg_Files.registers[checks[i].reg_num];
+                actual = dut.Reg_Files.Register[checks[i].reg_num];
                 if (actual === checks[i].expected) begin
                     $display("  %-24s  $%-2d   0x%08h  0x%08h  PASS",
                              check_names[i], checks[i].reg_num,

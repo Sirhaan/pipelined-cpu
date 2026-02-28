@@ -1,4 +1,4 @@
-`include "config.svh"
+`include "rtl/include/config.svh"
 
 module TPLRU 
 #(
@@ -15,10 +15,10 @@ module TPLRU
 );
 
   
-localparam TREE_DEPTH = $clog2(NUM_WAYS);
+localparam int TREE_DEPTH = $clog2(NUM_WAYS);
 
-    logic [NUM_WAYS-1:0] tree [0:NUM_SETS-1];
-    integer iterator;
+    logic [NUM_WAYS-1:0] tree [NUM_SETS];
+
   always_comb begin
     integer temp_node;
     temp_node = 0;
@@ -37,25 +37,25 @@ localparam TREE_DEPTH = $clog2(NUM_WAYS);
         temp_node = (temp_node << 1) + 1 + (tree[set_idx][temp_node] ? 1 : 0);
     end
 end
- always_ff @(posedge clk) begin
-    if (rst) begin
-        for (int s = 0; s < NUM_SETS; s = s + 1) begin
-            tree[s] = '0;
-        end
-    end 
-    else if (update) begin
-        integer temp_node;
-        temp_node = 0;
-
-        for ( iterator = 0; iterator < TREE_DEPTH; iterator = iterator + 1) begin
-            tree[set_idx][temp_node] <= 1'b1;
-
-            temp_node = (temp_node << 1) 
-                        + 1 
-                        + (access_way[iterator] ? 1 : 0);
+logic [NUM_WAYS-1:0] tree_next [NUM_SETS];
+ always_comb begin
+    integer temp_node;
+    temp_node = 0;
+    tree_next = tree;
+    if (update) begin     
+        for (int iterator = 0; iterator < TREE_DEPTH; iterator++) begin
+            tree_next[set_idx][temp_node] = 1'b1;
+            temp_node = (temp_node << 1) + 1 + (access_way[iterator] ? 1 : 0);
         end
     end
 end
-    
-        // If all ways valid, find first with lru_bit=0
-    endmodule
+
+// Simple register update
+always_ff @(posedge clk) begin
+    if (rst) begin
+        tree <= '{default: '0};
+    end else begin
+        tree <= tree_next;
+    end
+end     // If all ways valid, find first with lru_bit=0
+endmodule
