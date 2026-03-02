@@ -206,7 +206,7 @@ module pipelinedCpu#(
     );
 
     logic regWrite_en;
-    assign regWrite_en = WBWB[1] & ~(ic_stall & ~dc_stall);
+    assign regWrite_en = WBWB[1];
 
     RF Reg_Files (
         .clk      (clk),
@@ -223,8 +223,9 @@ module pipelinedCpu#(
     
     always_ff @(posedge clk) begin
         if (rst) dc_done <= 0;
+         else if (!ic_stall && !dc_stall) dc_done <= 0;
         else if (dc_ready && (MEMMEM[1] || MEMMEM[0])) dc_done <= 1;
-        else if (!ic_stall && !dc_stall) dc_done <= 0;
+       
     end
 
     wire dc_ready_eff = dc_ready || dc_done;
@@ -364,9 +365,16 @@ module pipelinedCpu#(
     // =========================================================================
     // WB Stage: Write Back
     // =========================================================================
+   logic [DATA_WIDTH-1:0] dc_rdata_latch;
 
+always_ff @(posedge clk) begin
+    if (rst)
+        dc_rdata_latch <= 32'b0;
+    else if (dc_ready)                    // capture exactly when valid
+        dc_rdata_latch <= dc_rdata;
+end
     logic stall_WB;
-    assign stall_WB = dc_stall;
+    assign stall_WB = dc_stall || ic_stall;
 
     always_ff @(posedge clk) begin
         if (rst) begin
@@ -377,11 +385,11 @@ module pipelinedCpu#(
         end else if (!stall_WB) begin
             WBWB       <= WBMEM;
             AluResWB   <= AluResMEM;
-            MEMDataWB  <= dc_rdata;
+            MEMDataWB  <= dc_rdata_latch; // use latched value for stability
             writeRegWB <= writeRegMEM;
         end
     end
 
-    assign finalResultWB = WBWB[0] ? dc_rdata : AluResWB;
+    assign finalResultWB = WBWB[0] ? MEMDataWB : AluResWB;
 
 endmodule

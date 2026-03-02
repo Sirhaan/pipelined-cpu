@@ -153,7 +153,7 @@ module dcacheController #(
                     cpu_ready      = 1'b1;
                     lru_update_en  = 1'b1;
                     lru_access_way = hit_way_index;
-                    cpu_rdata      = data_array[hit_way_index][fill_set];
+                    cpu_rdata      = data_array[hit_way_index][current_set];
                     // Write hit: data written in sequential block
                     next_state = IDLE;
                 end else begin
@@ -246,8 +246,8 @@ module dcacheController #(
 
             // Write hit: update data and dirty bit
             if (state == COMPARE && cacheHit && is_write_op) begin
-                data_array[hit_way_index][fill_set] <= wdata_reg;
-                dirtyBits[hit_way_index][fill_set]  <= 1'b1;
+                data_array[hit_way_index][current_set] <= wdata_reg;
+                dirtyBits[hit_way_index][current_set]  <= 1'b1;
             end
 
             // Allocate fill: write fetched data (or CPU write data) into array

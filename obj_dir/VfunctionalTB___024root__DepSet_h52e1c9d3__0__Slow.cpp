@@ -26,18 +26,18 @@ VL_ATTR_COLD void VfunctionalTB___024root___eval_static__TOP(VfunctionalTB___024
     vlSelf->functionalTB__DOT__check_names[1U] = std::string{"ORI  $t1, $zero, 10  "};
     vlSelf->functionalTB__DOT__check_names[2U] = std::string{"ADD  $t2, $t0, $t1   "};
     vlSelf->functionalTB__DOT__check_names[3U] = std::string{"ADDI $t3, $t0, 100   "};
-    vlSelf->functionalTB__DOT__check_names[4U] = std::string{"LW   $t4, 64($zero)  "};
+    vlSelf->functionalTB__DOT__check_names[4U] = std::string{"AND  $t5, $t0, $t1   "};
     vlSelf->functionalTB__DOT__check_names[5U] = std::string{"OR   $t6, $t0, $t1   "};
     vlSelf->functionalTB__DOT__check_names[6U] = std::string{"SLT  $t7, $t1, $t0   "};
-    vlSelf->functionalTB__DOT__check_names[7U] = std::string{"AND  $t5, $t0, $t1   "};
+    vlSelf->functionalTB__DOT__check_names[7U] = std::string{"LW   $t4, 64($zero)  "};
     vlSelf->functionalTB__DOT__checks[0U] = 0x800000005ULL;
     vlSelf->functionalTB__DOT__checks[1U] = 0x90000000aULL;
     vlSelf->functionalTB__DOT__checks[2U] = 0xa0000000fULL;
     vlSelf->functionalTB__DOT__checks[3U] = 0xb00000069ULL;
-    vlSelf->functionalTB__DOT__checks[4U] = 0xc0000000fULL;
-    vlSelf->functionalTB__DOT__checks[5U] = 0xd00000000ULL;
-    vlSelf->functionalTB__DOT__checks[6U] = 0xe0000000fULL;
-    vlSelf->functionalTB__DOT__checks[7U] = 0xf00000000ULL;
+    vlSelf->functionalTB__DOT__checks[4U] = 0xd00000000ULL;
+    vlSelf->functionalTB__DOT__checks[5U] = 0xe0000000fULL;
+    vlSelf->functionalTB__DOT__checks[6U] = 0xf00000000ULL;
+    vlSelf->functionalTB__DOT__checks[7U] = 0xc0000000fULL;
 }
 
 VL_ATTR_COLD void VfunctionalTB___024root___eval_final(VfunctionalTB___024root* vlSelf) {
@@ -190,15 +190,10 @@ VL_ATTR_COLD void VfunctionalTB___024root___stl_sequent__TOP__0(VfunctionalTB___
             }
         }
     }
-    vlSelf->functionalTB__DOT__dut__DOT__hdu_instance__DOT__load_use_hazard 
-        = (((IData)(vlSelf->functionalTB__DOT__dut__DOT__MEMMEM) 
-            >> 1U) & (((IData)(vlSelf->functionalTB__DOT__dut__DOT__RtEX) 
-                       == (0x1fU & (vlSelf->functionalTB__DOT__dut__DOT__instID 
-                                    >> 0x15U))) | ((IData)(vlSelf->functionalTB__DOT__dut__DOT__RtEX) 
-                                                   == 
-                                                   (0x1fU 
-                                                    & (vlSelf->functionalTB__DOT__dut__DOT__instID 
-                                                       >> 0x10U)))));
+    vlSelf->functionalTB__DOT__dut__DOT__finalResultWB 
+        = ((1U & (IData)(vlSelf->functionalTB__DOT__dut__DOT__WBWB))
+            ? vlSelf->functionalTB__DOT__dut__DOT__MEMDataWB
+            : vlSelf->functionalTB__DOT__dut__DOT__AluResWB);
     vlSelf->functionalTB__DOT__dut__DOT__forwardA = 0U;
     if ((((((IData)(vlSelf->functionalTB__DOT__dut__DOT__WBMEM) 
             >> 1U) & (0U != (IData)(vlSelf->functionalTB__DOT__dut__DOT__writeRegMEM))) 
@@ -262,31 +257,28 @@ VL_ATTR_COLD void VfunctionalTB___024root___stl_sequent__TOP__0(VfunctionalTB___
     vlSelf->functionalTB__DOT__dut__DOT__umem_wdata = 0U;
     vlSelf->functionalTB__DOT__dut__DOT__MemoryArbitrator_instance__DOT__next_state 
         = vlSelf->functionalTB__DOT__dut__DOT__MemoryArbitrator_instance__DOT__state;
+    vlSelf->functionalTB__DOT__dut__DOT__AluMuxAout 
+        = ((2U == (IData)(vlSelf->functionalTB__DOT__dut__DOT__forwardA))
+            ? vlSelf->functionalTB__DOT__dut__DOT__AluResMEM
+            : ((1U == (IData)(vlSelf->functionalTB__DOT__dut__DOT__forwardA))
+                ? vlSelf->functionalTB__DOT__dut__DOT__finalResultWB
+                : vlSelf->functionalTB__DOT__dut__DOT__regData1EX));
+    vlSelf->functionalTB__DOT__dut__DOT__AluMuxBFwd 
+        = ((2U == (IData)(vlSelf->functionalTB__DOT__dut__DOT__forwardB))
+            ? vlSelf->functionalTB__DOT__dut__DOT__AluResMEM
+            : ((1U == (IData)(vlSelf->functionalTB__DOT__dut__DOT__forwardB))
+                ? vlSelf->functionalTB__DOT__dut__DOT__finalResultWB
+                : vlSelf->functionalTB__DOT__dut__DOT__regData2EX));
+    vlSelf->functionalTB__DOT__dut__DOT__AluInb = (
+                                                   (1U 
+                                                    & (IData)(vlSelf->functionalTB__DOT__dut__DOT__EXEX))
+                                                    ? vlSelf->functionalTB__DOT__dut__DOT__signExtImmEX
+                                                    : vlSelf->functionalTB__DOT__dut__DOT__AluMuxBFwd);
     vlSelf->functionalTB__DOT__dut__DOT__MEMID = (((IData)(vlSelf->functionalTB__DOT__dut__DOT__CU__DOT__Branch) 
                                                    << 2U) 
                                                   | (((IData)(vlSelf->functionalTB__DOT__dut__DOT__CU__DOT__MemRead) 
                                                       << 1U) 
                                                      | (IData)(vlSelf->functionalTB__DOT__dut__DOT__CU__DOT__MemWrite)));
-    vlSelf->functionalTB__DOT__dut__DOT__hdu_instance__DOT__branch_hazard_EX 
-        = ((IData)(vlSelf->functionalTB__DOT__dut__DOT__CU__DOT__Branch) 
-           & (((IData)(vlSelf->functionalTB__DOT__dut__DOT__WBEX) 
-               >> 1U) & ((0U != (IData)(vlSelf->functionalTB__DOT__dut__DOT__RdEX)) 
-                         & (((IData)(vlSelf->functionalTB__DOT__dut__DOT__RdEX) 
-                             == (0x1fU & (vlSelf->functionalTB__DOT__dut__DOT__instID 
-                                          >> 0x15U))) 
-                            | ((IData)(vlSelf->functionalTB__DOT__dut__DOT__RdEX) 
-                               == (0x1fU & (vlSelf->functionalTB__DOT__dut__DOT__instID 
-                                            >> 0x10U)))))));
-    vlSelf->functionalTB__DOT__dut__DOT__hdu_instance__DOT__branch_hazard_MEM 
-        = ((IData)(vlSelf->functionalTB__DOT__dut__DOT__CU__DOT__Branch) 
-           & (((IData)(vlSelf->functionalTB__DOT__dut__DOT__WBMEM) 
-               >> 1U) & ((0U != (IData)(vlSelf->functionalTB__DOT__dut__DOT__writeRegMEM)) 
-                         & (((IData)(vlSelf->functionalTB__DOT__dut__DOT__writeRegMEM) 
-                             == (0x1fU & (vlSelf->functionalTB__DOT__dut__DOT__instID 
-                                          >> 0x15U))) 
-                            | ((IData)(vlSelf->functionalTB__DOT__dut__DOT__writeRegMEM) 
-                               == (0x1fU & (vlSelf->functionalTB__DOT__dut__DOT__instID 
-                                            >> 0x10U)))))));
     vlSelf->functionalTB__DOT__dut__DOT__umem_addr = 0U;
     if ((2U == (IData)(vlSelf->functionalTB__DOT__dut__DOT__MemoryArbitrator_instance__DOT__state))) {
         if (((IData)(vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__dcache_req_valid) 
@@ -400,6 +392,16 @@ VL_ATTR_COLD void VfunctionalTB___024root___stl_sequent__TOP__0(VfunctionalTB___
                                           == (vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__addr_active 
                                               >> 9U))) 
               << 1U));
+    vlSelf->functionalTB__DOT__dut__DOT__ALUUnit__DOT__B_sum_operand 
+        = ((1U & (IData)(vlSelf->functionalTB__DOT__dut__DOT__AluCtrlEX))
+            ? ((IData)(1U) + (~ vlSelf->functionalTB__DOT__dut__DOT__AluInb))
+            : vlSelf->functionalTB__DOT__dut__DOT__AluInb);
+    vlSelf->functionalTB__DOT__dut__DOT__pcSrcEX = 
+        (((IData)(vlSelf->functionalTB__DOT__dut__DOT__MEMEX) 
+          >> 2U) & (vlSelf->functionalTB__DOT__dut__DOT__AluMuxAout 
+                    == vlSelf->functionalTB__DOT__dut__DOT__AluMuxBFwd));
+    vlSelf->functionalTB__DOT__dut__DOT__IFflushEX 
+        = vlSelf->functionalTB__DOT__dut__DOT__pcSrcEX;
     vlSelf->functionalTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__victim_way = 0U;
     if ((1U & (~ (IData)(vlSelf->functionalTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__valid_vec)))) {
         vlSelf->functionalTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__victim_way = 0U;
@@ -451,7 +453,6 @@ VL_ATTR_COLD void VfunctionalTB___024root___stl_sequent__TOP__0(VfunctionalTB___
     vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__next_state 
         = vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__state;
     vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__lru_update_en = 0U;
-    vlSelf->functionalTB__DOT__dut__DOT__dc_ready = 0U;
     vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__hit_way_index = 0U;
     if ((1U & (IData)(vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__way_hit))) {
         vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__hit_way_index = 0U;
@@ -459,6 +460,15 @@ VL_ATTR_COLD void VfunctionalTB___024root___stl_sequent__TOP__0(VfunctionalTB___
     if ((2U & (IData)(vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__way_hit))) {
         vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__hit_way_index = 1U;
     }
+    vlSelf->functionalTB__DOT__dut__DOT__dc_ready = 0U;
+    vlSelf->functionalTB__DOT__dut__DOT__ALUUnit__DOT__sum 
+        = (vlSelf->functionalTB__DOT__dut__DOT__AluMuxAout 
+           + vlSelf->functionalTB__DOT__dut__DOT__ALUUnit__DOT__B_sum_operand);
+    vlSelf->functionalTB__DOT__dut__DOT__pcPlus4IF 
+        = ((IData)(4U) + vlSelf->functionalTB__DOT__dut__DOT__pc__DOT__PCRegister);
+    vlSelf->functionalTB__DOT__dut__DOT__nextPc = ((IData)(vlSelf->functionalTB__DOT__dut__DOT__pcSrcEX)
+                                                    ? vlSelf->functionalTB__DOT__dut__DOT__branchTargetEX
+                                                    : vlSelf->functionalTB__DOT__dut__DOT__pcPlus4IF);
     vlSelf->functionalTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__lru__DOT__unnamedblk4__DOT__temp_node = 0U;
     __Vilp = 0U;
     while ((__Vilp <= 0x7fU)) {
@@ -482,17 +492,24 @@ VL_ATTR_COLD void VfunctionalTB___024root___stl_sequent__TOP__0(VfunctionalTB___
                               + ((IData)(vlSelf->functionalTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__hit_way_index)
                                   ? 1U : 0U)));
     }
-    vlSelf->functionalTB__DOT__dut__DOT__ic_stall = 0U;
-    if ((1U & (~ (IData)(vlSelf->functionalTB__DOT__dut__DOT__ic_ready)))) {
-        vlSelf->functionalTB__DOT__dut__DOT__ic_stall = 1U;
-    }
     if ((4U & (IData)(vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__state))) {
         vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__next_state = 0U;
+        vlSelf->functionalTB__DOT__dut__DOT__dc_rdata = 0U;
+        vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__lru_access_way 
+            = vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__hit_way_index;
         if ((1U & (~ ((IData)(vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__state) 
                       >> 1U)))) {
             if ((1U & (~ (IData)(vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__state)))) {
                 vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__lru_update_en = 1U;
                 vlSelf->functionalTB__DOT__dut__DOT__dc_ready = 1U;
+                vlSelf->functionalTB__DOT__dut__DOT__dc_rdata 
+                    = ((IData)(vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__is_read_op)
+                        ? vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__data_array
+                       [vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__active_way]
+                       [vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__fill_set]
+                        : 0U);
+                vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__lru_access_way 
+                    = vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__active_way;
             }
         }
     } else {
@@ -518,12 +535,22 @@ VL_ATTR_COLD void VfunctionalTB___024root___stl_sequent__TOP__0(VfunctionalTB___
                     | (IData)(vlSelf->functionalTB__DOT__dut__DOT____Vcellinp__D_CACHE__cpu_write))) {
             vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__next_state = 1U;
         }
+        vlSelf->functionalTB__DOT__dut__DOT__dc_rdata = 0U;
+        vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__lru_access_way 
+            = vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__hit_way_index;
         if ((1U & (~ ((IData)(vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__state) 
                       >> 1U)))) {
             if ((1U & (IData)(vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__state))) {
                 if ((0U != (IData)(vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__way_hit))) {
                     vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__lru_update_en = 1U;
                     vlSelf->functionalTB__DOT__dut__DOT__dc_ready = 1U;
+                    vlSelf->functionalTB__DOT__dut__DOT__dc_rdata 
+                        = vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__data_array
+                        [vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__hit_way_index]
+                        [(0x7fU & (vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__addr_active 
+                                   >> 2U))];
+                    vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__lru_access_way 
+                        = vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__hit_way_index;
                 }
             }
         }
@@ -531,67 +558,6 @@ VL_ATTR_COLD void VfunctionalTB___024root___stl_sequent__TOP__0(VfunctionalTB___
     vlSelf->functionalTB__DOT__dut__DOT__dc_ready_eff 
         = ((IData)(vlSelf->functionalTB__DOT__dut__DOT__dc_done) 
            | (IData)(vlSelf->functionalTB__DOT__dut__DOT__dc_ready));
-    vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__lru_access_way 
-        = vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__hit_way_index;
-    vlSelf->functionalTB__DOT__dut__DOT__dc_rdata = 0U;
-    if ((4U & (IData)(vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__state))) {
-        if ((1U & (~ ((IData)(vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__state) 
-                      >> 1U)))) {
-            if ((1U & (~ (IData)(vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__state)))) {
-                vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__lru_access_way 
-                    = vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__active_way;
-                vlSelf->functionalTB__DOT__dut__DOT__dc_rdata 
-                    = ((IData)(vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__is_read_op)
-                        ? vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__data_array
-                       [vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__active_way]
-                       [vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__fill_set]
-                        : 0U);
-            }
-        }
-    } else if ((1U & (~ ((IData)(vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__state) 
-                         >> 1U)))) {
-        if ((1U & (IData)(vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__state))) {
-            if ((0U != (IData)(vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__way_hit))) {
-                vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__lru_access_way 
-                    = vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__hit_way_index;
-                vlSelf->functionalTB__DOT__dut__DOT__dc_rdata 
-                    = vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__data_array
-                    [vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__hit_way_index]
-                    [vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__fill_set];
-            }
-        }
-    }
-    vlSelf->functionalTB__DOT__dut__DOT__IFIDwrite = 1U;
-    vlSelf->functionalTB__DOT__dut__DOT__dc_stall = 0U;
-    vlSelf->functionalTB__DOT__dut__DOT__pcWrite = 1U;
-    vlSelf->functionalTB__DOT__dut__DOT__hazardSel = 1U;
-    if (vlSelf->functionalTB__DOT__dut__DOT__ic_ready) {
-        if ((1U & ((((IData)(vlSelf->functionalTB__DOT__dut__DOT__MEMMEM) 
-                     >> 1U) | (IData)(vlSelf->functionalTB__DOT__dut__DOT__MEMMEM)) 
-                   & (~ (IData)(vlSelf->functionalTB__DOT__dut__DOT__dc_ready_eff))))) {
-            vlSelf->functionalTB__DOT__dut__DOT__IFIDwrite = 0U;
-            vlSelf->functionalTB__DOT__dut__DOT__dc_stall = 1U;
-            vlSelf->functionalTB__DOT__dut__DOT__pcWrite = 0U;
-            vlSelf->functionalTB__DOT__dut__DOT__hazardSel = 0U;
-        } else if (((IData)(vlSelf->functionalTB__DOT__dut__DOT__hdu_instance__DOT__load_use_hazard) 
-                    & ((0U == (IData)(vlSelf->functionalTB__DOT__dut__DOT__forwardA)) 
-                       | (0U == (IData)(vlSelf->functionalTB__DOT__dut__DOT__forwardB))))) {
-            vlSelf->functionalTB__DOT__dut__DOT__IFIDwrite = 0U;
-            vlSelf->functionalTB__DOT__dut__DOT__pcWrite = 0U;
-            vlSelf->functionalTB__DOT__dut__DOT__hazardSel = 0U;
-        } else if ((((IData)(vlSelf->functionalTB__DOT__dut__DOT__hdu_instance__DOT__branch_hazard_EX) 
-                     | (IData)(vlSelf->functionalTB__DOT__dut__DOT__hdu_instance__DOT__branch_hazard_MEM)) 
-                    & ((0U == (IData)(vlSelf->functionalTB__DOT__dut__DOT__forwardA)) 
-                       | (0U == (IData)(vlSelf->functionalTB__DOT__dut__DOT__forwardB))))) {
-            vlSelf->functionalTB__DOT__dut__DOT__IFIDwrite = 0U;
-            vlSelf->functionalTB__DOT__dut__DOT__pcWrite = 0U;
-            vlSelf->functionalTB__DOT__dut__DOT__hazardSel = 0U;
-        }
-    } else {
-        vlSelf->functionalTB__DOT__dut__DOT__IFIDwrite = 0U;
-        vlSelf->functionalTB__DOT__dut__DOT__pcWrite = 0U;
-        vlSelf->functionalTB__DOT__dut__DOT__hazardSel = 0U;
-    }
     vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__lru__DOT__unnamedblk4__DOT__temp_node = 0U;
     __Vilp = 0U;
     while ((__Vilp <= 0x7fU)) {
@@ -615,19 +581,68 @@ VL_ATTR_COLD void VfunctionalTB___024root___stl_sequent__TOP__0(VfunctionalTB___
                               + ((IData)(vlSelf->functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__lru_access_way)
                                   ? 1U : 0U)));
     }
-    vlSelf->functionalTB__DOT__dut__DOT__finalResultWB 
-        = ((1U & (IData)(vlSelf->functionalTB__DOT__dut__DOT__WBWB))
-            ? vlSelf->functionalTB__DOT__dut__DOT__dc_rdata
-            : vlSelf->functionalTB__DOT__dut__DOT__AluResWB);
-    VL_WRITEF("HDU: ic_stall=%b dc_stall=%b mem_read_EX=%b dc_ready=%b \342\206\222 pcWrite=%b\nHDU: hazards: load_use=%b branch_EX=%b branch_MEM=%b\n",
-              1,vlSelf->functionalTB__DOT__dut__DOT__ic_stall,
-              1,(IData)(vlSelf->functionalTB__DOT__dut__DOT__dc_stall),
-              1,(1U & ((IData)(vlSelf->functionalTB__DOT__dut__DOT__MEMMEM) 
-                       >> 1U)),1,(IData)(vlSelf->functionalTB__DOT__dut__DOT__dc_ready_eff),
-              1,vlSelf->functionalTB__DOT__dut__DOT__pcWrite,
-              1,(IData)(vlSelf->functionalTB__DOT__dut__DOT__hdu_instance__DOT__load_use_hazard),
-              1,vlSelf->functionalTB__DOT__dut__DOT__hdu_instance__DOT__branch_hazard_EX,
-              1,(IData)(vlSelf->functionalTB__DOT__dut__DOT__hdu_instance__DOT__branch_hazard_MEM));
+    vlSelf->functionalTB__DOT__dut__DOT__ic_stall = 0U;
+    vlSelf->functionalTB__DOT__dut__DOT__dc_stall = 0U;
+    vlSelf->functionalTB__DOT__dut__DOT__pcWrite = 1U;
+    vlSelf->functionalTB__DOT__dut__DOT__IFIDwrite = 1U;
+    vlSelf->functionalTB__DOT__dut__DOT__hazardSel = 1U;
+    if ((1U & (~ (IData)(vlSelf->functionalTB__DOT__dut__DOT__ic_ready)))) {
+        vlSelf->functionalTB__DOT__dut__DOT__ic_stall = 1U;
+        vlSelf->functionalTB__DOT__dut__DOT__pcWrite = 0U;
+        vlSelf->functionalTB__DOT__dut__DOT__IFIDwrite = 0U;
+        vlSelf->functionalTB__DOT__dut__DOT__hazardSel = 0U;
+    }
+    if ((1U & ((((IData)(vlSelf->functionalTB__DOT__dut__DOT__MEMMEM) 
+                 >> 1U) | (IData)(vlSelf->functionalTB__DOT__dut__DOT__MEMMEM)) 
+               & (~ (IData)(vlSelf->functionalTB__DOT__dut__DOT__dc_ready_eff))))) {
+        vlSelf->functionalTB__DOT__dut__DOT__dc_stall = 1U;
+        vlSelf->functionalTB__DOT__dut__DOT__pcWrite = 0U;
+        vlSelf->functionalTB__DOT__dut__DOT__IFIDwrite = 0U;
+        vlSelf->functionalTB__DOT__dut__DOT__hazardSel = 0U;
+    }
+    if ((1U & ((~ (IData)(vlSelf->functionalTB__DOT__dut__DOT__ic_stall)) 
+               & (~ (IData)(vlSelf->functionalTB__DOT__dut__DOT__dc_stall))))) {
+        if (((((IData)(vlSelf->functionalTB__DOT__dut__DOT__MEMMEM) 
+               >> 1U) & ((~ (IData)(vlSelf->functionalTB__DOT__dut__DOT__dc_ready_eff)) 
+                         & (((IData)(vlSelf->functionalTB__DOT__dut__DOT__RtEX) 
+                             == (0x1fU & (vlSelf->functionalTB__DOT__dut__DOT__instID 
+                                          >> 0x15U))) 
+                            | ((IData)(vlSelf->functionalTB__DOT__dut__DOT__RtEX) 
+                               == (0x1fU & (vlSelf->functionalTB__DOT__dut__DOT__instID 
+                                            >> 0x10U)))))) 
+             & ((0U == (IData)(vlSelf->functionalTB__DOT__dut__DOT__forwardA)) 
+                | (0U == (IData)(vlSelf->functionalTB__DOT__dut__DOT__forwardB))))) {
+            vlSelf->functionalTB__DOT__dut__DOT__pcWrite = 0U;
+            vlSelf->functionalTB__DOT__dut__DOT__IFIDwrite = 0U;
+            vlSelf->functionalTB__DOT__dut__DOT__hazardSel = 0U;
+        } else if ((((IData)(vlSelf->functionalTB__DOT__dut__DOT__CU__DOT__Branch) 
+                     & ((((IData)(vlSelf->functionalTB__DOT__dut__DOT__WBEX) 
+                          >> 1U) & ((0U != (IData)(vlSelf->functionalTB__DOT__dut__DOT__RdEX)) 
+                                    & (((IData)(vlSelf->functionalTB__DOT__dut__DOT__RdEX) 
+                                        == (0x1fU & 
+                                            (vlSelf->functionalTB__DOT__dut__DOT__instID 
+                                             >> 0x15U))) 
+                                       | ((IData)(vlSelf->functionalTB__DOT__dut__DOT__RdEX) 
+                                          == (0x1fU 
+                                              & (vlSelf->functionalTB__DOT__dut__DOT__instID 
+                                                 >> 0x10U)))))) 
+                        | (((IData)(vlSelf->functionalTB__DOT__dut__DOT__WBMEM) 
+                            >> 1U) & ((0U != (IData)(vlSelf->functionalTB__DOT__dut__DOT__writeRegMEM)) 
+                                      & (((IData)(vlSelf->functionalTB__DOT__dut__DOT__writeRegMEM) 
+                                          == (0x1fU 
+                                              & (vlSelf->functionalTB__DOT__dut__DOT__instID 
+                                                 >> 0x15U))) 
+                                         | ((IData)(vlSelf->functionalTB__DOT__dut__DOT__writeRegMEM) 
+                                            == (0x1fU 
+                                                & (vlSelf->functionalTB__DOT__dut__DOT__instID 
+                                                   >> 0x10U)))))))) 
+                    & ((0U == (IData)(vlSelf->functionalTB__DOT__dut__DOT__forwardA)) 
+                       | (0U == (IData)(vlSelf->functionalTB__DOT__dut__DOT__forwardB))))) {
+            vlSelf->functionalTB__DOT__dut__DOT__pcWrite = 0U;
+            vlSelf->functionalTB__DOT__dut__DOT__IFIDwrite = 0U;
+            vlSelf->functionalTB__DOT__dut__DOT__hazardSel = 0U;
+        }
+    }
     vlSelf->functionalTB__DOT__dut__DOT__finalCRLTID 
         = ((IData)(vlSelf->functionalTB__DOT__dut__DOT__hazardSel)
             ? ((((IData)(vlSelf->functionalTB__DOT__dut__DOT__CU__DOT__RegWrite) 
@@ -639,41 +654,41 @@ VL_ATTR_COLD void VfunctionalTB___024root___stl_sequent__TOP__0(VfunctionalTB___
                                                      << 1U) 
                                                     | (IData)(vlSelf->functionalTB__DOT__dut__DOT__CU__DOT__ALUSrc)))))
             : 0U);
-    vlSelf->functionalTB__DOT__dut__DOT__AluMuxAout 
-        = ((2U == (IData)(vlSelf->functionalTB__DOT__dut__DOT__forwardA))
-            ? vlSelf->functionalTB__DOT__dut__DOT__AluResMEM
-            : ((1U == (IData)(vlSelf->functionalTB__DOT__dut__DOT__forwardA))
-                ? vlSelf->functionalTB__DOT__dut__DOT__finalResultWB
-                : vlSelf->functionalTB__DOT__dut__DOT__regData1EX));
-    vlSelf->functionalTB__DOT__dut__DOT__AluMuxBFwd 
-        = ((2U == (IData)(vlSelf->functionalTB__DOT__dut__DOT__forwardB))
-            ? vlSelf->functionalTB__DOT__dut__DOT__AluResMEM
-            : ((1U == (IData)(vlSelf->functionalTB__DOT__dut__DOT__forwardB))
-                ? vlSelf->functionalTB__DOT__dut__DOT__finalResultWB
-                : vlSelf->functionalTB__DOT__dut__DOT__regData2EX));
-    vlSelf->functionalTB__DOT__dut__DOT__AluInb = (
-                                                   (1U 
-                                                    & (IData)(vlSelf->functionalTB__DOT__dut__DOT__EXEX))
-                                                    ? vlSelf->functionalTB__DOT__dut__DOT__signExtImmEX
-                                                    : vlSelf->functionalTB__DOT__dut__DOT__AluMuxBFwd);
-    vlSelf->functionalTB__DOT__dut__DOT__ALUUnit__DOT__B_sum_operand 
-        = ((1U & (IData)(vlSelf->functionalTB__DOT__dut__DOT__AluCtrlEX))
-            ? ((IData)(1U) + (~ vlSelf->functionalTB__DOT__dut__DOT__AluInb))
-            : vlSelf->functionalTB__DOT__dut__DOT__AluInb);
-    vlSelf->functionalTB__DOT__dut__DOT__pcSrcEX = 
-        (((IData)(vlSelf->functionalTB__DOT__dut__DOT__MEMEX) 
-          >> 2U) & (vlSelf->functionalTB__DOT__dut__DOT__AluMuxAout 
-                    == vlSelf->functionalTB__DOT__dut__DOT__AluMuxBFwd));
-    vlSelf->functionalTB__DOT__dut__DOT__IFflushEX 
-        = vlSelf->functionalTB__DOT__dut__DOT__pcSrcEX;
-    vlSelf->functionalTB__DOT__dut__DOT__ALUUnit__DOT__sum 
-        = (vlSelf->functionalTB__DOT__dut__DOT__AluMuxAout 
-           + vlSelf->functionalTB__DOT__dut__DOT__ALUUnit__DOT__B_sum_operand);
-    vlSelf->functionalTB__DOT__dut__DOT__pcPlus4IF 
-        = ((IData)(4U) + vlSelf->functionalTB__DOT__dut__DOT__pc__DOT__PCRegister);
-    vlSelf->functionalTB__DOT__dut__DOT__nextPc = ((IData)(vlSelf->functionalTB__DOT__dut__DOT__pcSrcEX)
-                                                    ? vlSelf->functionalTB__DOT__dut__DOT__branchTargetEX
-                                                    : vlSelf->functionalTB__DOT__dut__DOT__pcPlus4IF);
+    vlSelf->functionalTB__DOT__dut__DOT__stall_WB = 
+        ((IData)(vlSelf->functionalTB__DOT__dut__DOT__dc_stall) 
+         | (IData)(vlSelf->functionalTB__DOT__dut__DOT__ic_stall));
+    VL_WRITEF("HDU: ic_stall=%b dc_stall=%b mem_read_EX=%b dc_ready=%b \342\206\222 pcWrite=%b\nHDU: hazards: load_use=%b branch_EX=%b branch_MEM=%b\n",
+              1,vlSelf->functionalTB__DOT__dut__DOT__ic_stall,
+              1,(IData)(vlSelf->functionalTB__DOT__dut__DOT__dc_stall),
+              1,(1U & ((IData)(vlSelf->functionalTB__DOT__dut__DOT__MEMMEM) 
+                       >> 1U)),1,(IData)(vlSelf->functionalTB__DOT__dut__DOT__dc_ready_eff),
+              1,vlSelf->functionalTB__DOT__dut__DOT__pcWrite,
+              1,(((IData)(vlSelf->functionalTB__DOT__dut__DOT__MEMMEM) 
+                  >> 1U) & ((~ (IData)(vlSelf->functionalTB__DOT__dut__DOT__dc_ready_eff)) 
+                            & (((IData)(vlSelf->functionalTB__DOT__dut__DOT__RtEX) 
+                                == (0x1fU & (vlSelf->functionalTB__DOT__dut__DOT__instID 
+                                             >> 0x15U))) 
+                               | ((IData)(vlSelf->functionalTB__DOT__dut__DOT__RtEX) 
+                                  == (0x1fU & (vlSelf->functionalTB__DOT__dut__DOT__instID 
+                                               >> 0x10U)))))),
+              1,((IData)(vlSelf->functionalTB__DOT__dut__DOT__CU__DOT__Branch) 
+                 & (((IData)(vlSelf->functionalTB__DOT__dut__DOT__WBEX) 
+                     >> 1U) & ((0U != (IData)(vlSelf->functionalTB__DOT__dut__DOT__RdEX)) 
+                               & (((IData)(vlSelf->functionalTB__DOT__dut__DOT__RdEX) 
+                                   == (0x1fU & (vlSelf->functionalTB__DOT__dut__DOT__instID 
+                                                >> 0x15U))) 
+                                  | ((IData)(vlSelf->functionalTB__DOT__dut__DOT__RdEX) 
+                                     == (0x1fU & (vlSelf->functionalTB__DOT__dut__DOT__instID 
+                                                  >> 0x10U))))))),
+              1,((IData)(vlSelf->functionalTB__DOT__dut__DOT__CU__DOT__Branch) 
+                 & (((IData)(vlSelf->functionalTB__DOT__dut__DOT__WBMEM) 
+                     >> 1U) & ((0U != (IData)(vlSelf->functionalTB__DOT__dut__DOT__writeRegMEM)) 
+                               & (((IData)(vlSelf->functionalTB__DOT__dut__DOT__writeRegMEM) 
+                                   == (0x1fU & (vlSelf->functionalTB__DOT__dut__DOT__instID 
+                                                >> 0x15U))) 
+                                  | ((IData)(vlSelf->functionalTB__DOT__dut__DOT__writeRegMEM) 
+                                     == (0x1fU & (vlSelf->functionalTB__DOT__dut__DOT__instID 
+                                                  >> 0x10U))))))));
 }
 
 VL_ATTR_COLD void VfunctionalTB___024root___eval_stl(VfunctionalTB___024root* vlSelf) {
@@ -820,6 +835,8 @@ VL_ATTR_COLD void VfunctionalTB___024root___ctor_var_reset(VfunctionalTB___024ro
     vlSelf->functionalTB__DOT__dut__DOT____Vcellinp__D_CACHE__cpu_write = VL_RAND_RESET_I(1);
     vlSelf->functionalTB__DOT__dut__DOT____Vcellinp__D_CACHE__cpu_read = VL_RAND_RESET_I(1);
     vlSelf->functionalTB__DOT__dut__DOT__dc_ready_eff = VL_RAND_RESET_I(1);
+    vlSelf->functionalTB__DOT__dut__DOT__dc_rdata_latch = VL_RAND_RESET_I(32);
+    vlSelf->functionalTB__DOT__dut__DOT__stall_WB = VL_RAND_RESET_I(1);
     vlSelf->functionalTB__DOT__dut__DOT__pc__DOT__PCRegister = VL_RAND_RESET_I(32);
     vlSelf->functionalTB__DOT__dut__DOT__ICACHE__DOT__m_read = VL_RAND_RESET_I(1);
     vlSelf->functionalTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__addr_reg = VL_RAND_RESET_I(32);
@@ -926,9 +943,6 @@ VL_ATTR_COLD void VfunctionalTB___024root___ctor_var_reset(VfunctionalTB___024ro
         vlSelf->functionalTB__DOT__dut__DOT__Reg_Files__DOT__Register[__Vi0] = VL_RAND_RESET_I(32);
     }
     vlSelf->functionalTB__DOT__dut__DOT__Reg_Files__DOT__i = VL_RAND_RESET_I(32);
-    vlSelf->functionalTB__DOT__dut__DOT__hdu_instance__DOT__load_use_hazard = VL_RAND_RESET_I(1);
-    vlSelf->functionalTB__DOT__dut__DOT__hdu_instance__DOT__branch_hazard_EX = VL_RAND_RESET_I(1);
-    vlSelf->functionalTB__DOT__dut__DOT__hdu_instance__DOT__branch_hazard_MEM = VL_RAND_RESET_I(1);
     vlSelf->functionalTB__DOT__dut__DOT__ALUUnit__DOT__sum = VL_RAND_RESET_I(32);
     vlSelf->functionalTB__DOT__dut__DOT__ALUUnit__DOT__B_sum_operand = VL_RAND_RESET_I(32);
     vlSelf->functionalTB__DOT__perfCounter__DOT__total_cycles = VL_RAND_RESET_Q(64);

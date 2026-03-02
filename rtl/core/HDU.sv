@@ -30,7 +30,7 @@ module HDU(
     // -------------------------------------------------------------------------
 
     // Load-use: LW in EX, dependent instruction in ID
-    assign load_use_hazard = ID_EX_memRead &&
+    assign load_use_hazard = ID_EX_memRead && !dc_ready &&
                              ((ID_EX_rt == IF_ID_rs) || (ID_EX_rt == IF_ID_rt));
 
     // Branch with pending result in EX stage
@@ -74,7 +74,7 @@ module HDU(
         //   so SW would sit in MEM without dc_stall being raised, causing the
         //   pipeline to keep advancing while the write never committed.
         // ----------------------------------------------------------------
-        else if ((mem_read_EX || mem_write_EX) && !dc_ready) begin
+         if ((mem_read_EX || mem_write_EX) && !dc_ready) begin
             dc_stall    = 1'b1;
             pcWrite     = 1'b0;
             IF_ID_write = 1'b0;
@@ -86,23 +86,26 @@ module HDU(
         //   Insert a bubble when LW result needed immediately and
         //   forwarding cannot resolve it (result not yet available).
         // ----------------------------------------------------------------
-        else if (load_use_hazard && (forwardA == 2'b00 || forwardB == 2'b00)) begin
+        if(!ic_stall && !dc_stall) begin
+         if (load_use_hazard && (forwardA == 2'b00 || forwardB == 2'b00)) begin
             pcWrite     = 1'b0;
             IF_ID_write = 1'b0;
             hazardSel   = 1'b0;
         end
+           else if ((branch_hazard_EX || branch_hazard_MEM) &&
+                 (forwardA == 2'b00 || forwardB == 2'b00)) begin
+            pcWrite     = 1'b0;
+            IF_ID_write = 1'b0;
+            hazardSel   = 1'b0;
+        end
+    end
 
         // ----------------------------------------------------------------
         // Priority 4: Branch hazards
         //   Stall if branch depends on a result still in flight and
         //   forwarding cannot supply it in time.
         // ----------------------------------------------------------------
-        else if ((branch_hazard_EX || branch_hazard_MEM) &&
-                 (forwardA == 2'b00 || forwardB == 2'b00)) begin
-            pcWrite     = 1'b0;
-            IF_ID_write = 1'b0;
-            hazardSel   = 1'b0;
-        end
+     
     end
 
     // -------------------------------------------------------------------------

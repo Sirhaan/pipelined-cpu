@@ -7,18 +7,20 @@
 01095020
 # ADDI $t3, $t0, 100
 210b0064
+# OR   $t6, $t0, $t1
+01097025
+# AND  $t5, $t0, $t1
+01096824
+# SLT  $t7, $t1, $t0
+
+0128782a
+
 # SW   $t2, 64($zero)   — store 15 to addr 0x40 so LW can read it back
 ac0a0040
 
 # LW   $t4, 64($zero)
 8c0c0040
 
-# OR   $t6, $t0, $t1
-01097025
-# SLT  $t7, $t1, $t0
 
-0128782a
-# AND  $t5, $t0, $t1
-01096824
 # BEQ  $zero, $zero, -1  — infinite loop halt
 1000ffff

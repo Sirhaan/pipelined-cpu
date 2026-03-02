@@ -54,6 +54,7 @@ class alignas(VL_CACHE_LINE_BYTES) VfunctionalTB___024root final : public Verila
         CData/*0:0*/ functionalTB__DOT__dut__DOT____Vcellinp__D_CACHE__cpu_write;
         CData/*0:0*/ functionalTB__DOT__dut__DOT____Vcellinp__D_CACHE__cpu_read;
         CData/*0:0*/ functionalTB__DOT__dut__DOT__dc_ready_eff;
+        CData/*0:0*/ functionalTB__DOT__dut__DOT__stall_WB;
         CData/*0:0*/ functionalTB__DOT__dut__DOT__ICACHE__DOT__m_read;
         CData/*1:0*/ functionalTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__way_hit;
         CData/*0:0*/ functionalTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__hit_way_index;
@@ -80,9 +81,9 @@ class alignas(VL_CACHE_LINE_BYTES) VfunctionalTB___024root final : public Verila
         CData/*1:0*/ functionalTB__DOT__dut__DOT__MemoryArbitrator_instance__DOT__state;
         CData/*1:0*/ functionalTB__DOT__dut__DOT__MemoryArbitrator_instance__DOT__next_state;
         CData/*4:0*/ functionalTB__DOT__dut__DOT__UnifiedMem__DOT__timer;
-        CData/*0:0*/ functionalTB__DOT__dut__DOT__UnifiedMem__DOT__busy;
     };
     struct {
+        CData/*0:0*/ functionalTB__DOT__dut__DOT__UnifiedMem__DOT__busy;
         CData/*0:0*/ functionalTB__DOT__dut__DOT__CU__DOT__RegWrite;
         CData/*0:0*/ functionalTB__DOT__dut__DOT__CU__DOT__MemtoReg;
         CData/*0:0*/ functionalTB__DOT__dut__DOT__CU__DOT__Branch;
@@ -91,9 +92,6 @@ class alignas(VL_CACHE_LINE_BYTES) VfunctionalTB___024root final : public Verila
         CData/*0:0*/ functionalTB__DOT__dut__DOT__CU__DOT__RegDst;
         CData/*0:0*/ functionalTB__DOT__dut__DOT__CU__DOT__ALUSrc;
         CData/*2:0*/ functionalTB__DOT__dut__DOT__CU__DOT__ALUOp;
-        CData/*0:0*/ functionalTB__DOT__dut__DOT__hdu_instance__DOT__load_use_hazard;
-        CData/*0:0*/ functionalTB__DOT__dut__DOT__hdu_instance__DOT__branch_hazard_EX;
-        CData/*0:0*/ functionalTB__DOT__dut__DOT__hdu_instance__DOT__branch_hazard_MEM;
         CData/*0:0*/ functionalTB__DOT__perfCounter__DOT__ic_stall_prev;
         CData/*0:0*/ functionalTB__DOT__perfCounter__DOT__dc_stall_prev;
         CData/*0:0*/ functionalTB__DOT__perfCounter__DOT__branch_taken_prev;
@@ -132,6 +130,7 @@ class alignas(VL_CACHE_LINE_BYTES) VfunctionalTB___024root final : public Verila
         IData/*31:0*/ functionalTB__DOT__dut__DOT__umem_addr;
         IData/*31:0*/ functionalTB__DOT__dut__DOT__umem_wdata;
         IData/*31:0*/ functionalTB__DOT__dut__DOT__umem_rdata;
+        IData/*31:0*/ functionalTB__DOT__dut__DOT__dc_rdata_latch;
         IData/*31:0*/ functionalTB__DOT__dut__DOT__pc__DOT__PCRegister;
         IData/*31:0*/ functionalTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__addr_reg;
         IData/*31:0*/ functionalTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__addr_active;
@@ -147,9 +146,9 @@ class alignas(VL_CACHE_LINE_BYTES) VfunctionalTB___024root final : public Verila
         IData/*31:0*/ functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__wdata_reg;
         IData/*22:0*/ functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__fill_tag;
         IData/*31:0*/ functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__addr_active;
+        IData/*31:0*/ functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__lru__DOT__unnamedblk4__DOT__temp_node;
     };
     struct {
-        IData/*31:0*/ functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__lru__DOT__unnamedblk4__DOT__temp_node;
         IData/*31:0*/ functionalTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__lru__DOT__unnamedblk4__DOT__unnamedblk5__DOT__iterator;
         IData/*31:0*/ functionalTB__DOT__dut__DOT__Reg_Files__DOT__i;
         IData/*31:0*/ functionalTB__DOT__dut__DOT__ALUUnit__DOT__sum;
