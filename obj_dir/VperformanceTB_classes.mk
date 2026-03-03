@@ -2,7 +2,7 @@
 # DESCRIPTION: Verilator output: Make include file with class lists
 #
 # This file lists generated Verilated files, for including in higher level makefiles.
-# See VfunctionalTB.mk for the caller.
+# See VperformanceTB.mk for the caller.
 
 ### Switches...
 # C11 constructs required?  0/1 (always on now)
@@ -23,27 +23,27 @@ VM_TRACE_FST = 0
 ### Object file lists...
 # Generated module classes, fast-path, compile with highest optimization
 VM_CLASSES_FAST += \
-	VfunctionalTB \
-	VfunctionalTB___024root__DepSet_h8b5e2a7d__0 \
-	VfunctionalTB___024root__DepSet_h52e1c9d3__0 \
-	VfunctionalTB__main \
+	VperformanceTB \
+	VperformanceTB___024root__DepSet_hde8d3fdf__0 \
+	VperformanceTB___024root__DepSet_hfc8efcbb__0 \
+	VperformanceTB__main \
 
 # Generated module classes, non-fast-path, compile with low/medium optimization
 VM_CLASSES_SLOW += \
-	VfunctionalTB__ConstPool_0 \
-	VfunctionalTB___024root__Slow \
-	VfunctionalTB___024root__DepSet_h8b5e2a7d__0__Slow \
-	VfunctionalTB___024root__DepSet_h52e1c9d3__0__Slow \
+	VperformanceTB__ConstPool_0 \
+	VperformanceTB___024root__Slow \
+	VperformanceTB___024root__DepSet_hde8d3fdf__0__Slow \
+	VperformanceTB___024root__DepSet_hfc8efcbb__0__Slow \
 
 # Generated support classes, fast-path, compile with highest optimization
 VM_SUPPORT_FAST += \
-	VfunctionalTB__Trace__0 \
+	VperformanceTB__Trace__0 \
 
 # Generated support classes, non-fast-path, compile with low/medium optimization
 VM_SUPPORT_SLOW += \
-	VfunctionalTB__Syms \
-	VfunctionalTB__Trace__0__Slow \
-	VfunctionalTB__TraceDecls__0__Slow \
+	VperformanceTB__Syms \
+	VperformanceTB__Trace__0__Slow \
+	VperformanceTB__TraceDecls__0__Slow \
 
 # Global classes, need linked once per executable, fast-path, compile with highest optimization
 VM_GLOBAL_FAST += \

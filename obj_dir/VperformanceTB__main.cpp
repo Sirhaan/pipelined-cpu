@@ -2,7 +2,7 @@
 // DESCRIPTION: main() calling loop, created with Verilator --main
 
 #include "verilated.h"
-#include "VfunctionalTB.h"
+#include "VperformanceTB.h"
 
 //======================
 
@@ -14,7 +14,7 @@ int main(int argc, char** argv, char**) {
     contextp->commandArgs(argc, argv);
 
     // Construct the Verilated model, from Vtop.h generated from Verilating
-    const std::unique_ptr<VfunctionalTB> topp{new VfunctionalTB{contextp.get()}};
+    const std::unique_ptr<VperformanceTB> topp{new VperformanceTB{contextp.get()}};
 
     // Simulate until $finish
     while (!contextp->gotFinish()) {

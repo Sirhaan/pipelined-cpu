@@ -2,7 +2,7 @@
 # DESCRIPTION: Verilator output: Makefile for building Verilated archive or executable
 #
 # Execute this makefile from the object directory:
-#    make -f VfunctionalTB.mk
+#    make -f VperformanceTB.mk
 
 default: simv
 
@@ -30,9 +30,9 @@ VM_SC_TARGET_ARCH = linux
 
 ### Vars...
 # Design prefix (from --prefix)
-VM_PREFIX = VfunctionalTB
+VM_PREFIX = VperformanceTB
 # Module prefix (from --prefix)
-VM_MODPREFIX = VfunctionalTB
+VM_MODPREFIX = VperformanceTB
 # User CFLAGS (from -CFLAGS on Verilator command line)
 VM_USER_CFLAGS = \
 	-DVL_TIME_CONTEXT \
@@ -49,7 +49,7 @@ VM_USER_DIR = \
 
 ### Default rules...
 # Include list of all generated classes
-include VfunctionalTB_classes.mk
+include VperformanceTB_classes.mk
 # Include global rules
 include $(VERILATOR_ROOT)/include/verilated.mk
 

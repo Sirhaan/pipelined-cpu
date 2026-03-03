@@ -24,6 +24,6 @@
 ./rtl/memory/MemoryArbitrator.sv
 
 # Testbench
-./tb/functionalTB.sv
+#./tb/functionalTB.sv
 ./tb/performanceCounter.sv
-#./tb/performanceTB.sv
+./tb/performanceTB.sv

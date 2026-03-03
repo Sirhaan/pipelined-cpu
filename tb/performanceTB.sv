@@ -2,6 +2,7 @@
 
 module performanceTB();
 logic clk, rst ;
+logic perf_print;
 initial begin
     clk = 0;
     rst = 1;
@@ -27,8 +28,9 @@ performanceCounter perfCounter (
     .mem_write_mem(dut.MEMMEM[0]),
     .branch_taken(dut.pcSrcID),
     .reg_write_wb(dut.WBWB[0]),
-    .write_reg_wb(dut.write_reg_wb),
-    .is_branchID(dut.MEMID[`BRANCH_STAGE])
+    .write_reg_wb(dut.writeRegWB),
+    .is_branchID(dut.MEMID[`BRANCH_STAGE - 1]),
+    .perf_print(perf_print)
 );
 
 initial begin
@@ -98,10 +100,20 @@ end
             $display("T=%0t | [BREAK/SYSCALL] Benchmark complete — pipeline drained",
                      $time);
             print_config();
-            perf.report();
+
             $finish;
         end
     end
+    integer cycle_count = 0;
+integer instr_count = 0;
+
+always @(posedge clk) begin
+    if (!rst) begin
+        cycle_count <= cycle_count + 1;
+        if (dut.pcWrite) instr_count <= instr_count + 1;
+    end
+end
+
     //timeout
  initial begin
         #(`SIM_TIMEOUT_PERF);
@@ -109,7 +121,6 @@ end
         $display("[TIMEOUT] Last PC=%08h instID=%08h", dut.pcCurrent, dut.instID);
         $display("[TIMEOUT] Did you forget to end your program with BREAK (0x0000000d)?");
         print_config();
-        perf.report();
         $finish;
     end
 
@@ -126,9 +137,14 @@ end
                      `ICACHE_SIZE, `ICACHE_WAYS, `ICACHE_LATENCY);
             $display("  DCache size       : %0d bytes,  %0d-way,  latency=%0d cycles",
                      `DCACHE_SIZE, `DCACHE_WAYS, `DCACHE_LATENCY);
-            $display("  Branch resolution : ID stage (flush penalty=%0d cycle)",
+            $display("  Branch resolution : EX stage (flush penalty=%0d cycle)",
                      `BRANCH_STAGE - 1);
             $display("=============================================================");
+            $display("Cycles: %0d  Instructions: %0d  CPI: %0.2f",
+         cycle_count, instr_count, real'(cycle_count)/real'(instr_count));
         end
     endtask
+
+// At BREAK:
+
 endmodule

@@ -1,24 +1,24 @@
 // Verilated -*- C++ -*-
 // DESCRIPTION: Verilator output: Symbol table implementation internals
 
-#include "VfunctionalTB__pch.h"
-#include "VfunctionalTB.h"
-#include "VfunctionalTB___024root.h"
+#include "VperformanceTB__pch.h"
+#include "VperformanceTB.h"
+#include "VperformanceTB___024root.h"
 
 // FUNCTIONS
-VfunctionalTB__Syms::~VfunctionalTB__Syms()
+VperformanceTB__Syms::~VperformanceTB__Syms()
 {
 #ifdef VM_TRACE
     if (__Vm_dumping) _traceDumpClose();
 #endif  // VM_TRACE
 }
 
-void VfunctionalTB__Syms::_traceDump() {
+void VperformanceTB__Syms::_traceDump() {
     const VerilatedLockGuard lock(__Vm_dumperMutex);
     __Vm_dumperp->dump(VL_TIME_Q());
 }
 
-void VfunctionalTB__Syms::_traceDumpOpen() {
+void VperformanceTB__Syms::_traceDumpOpen() {
     const VerilatedLockGuard lock(__Vm_dumperMutex);
     if (VL_UNLIKELY(!__Vm_dumperp)) {
         __Vm_dumperp = new VerilatedVcdC();
@@ -29,13 +29,13 @@ void VfunctionalTB__Syms::_traceDumpOpen() {
     }
 }
 
-void VfunctionalTB__Syms::_traceDumpClose() {
+void VperformanceTB__Syms::_traceDumpClose() {
     const VerilatedLockGuard lock(__Vm_dumperMutex);
     __Vm_dumping = false;
     VL_DO_CLEAR(delete __Vm_dumperp, __Vm_dumperp = nullptr);
 }
 
-VfunctionalTB__Syms::VfunctionalTB__Syms(VerilatedContext* contextp, const char* namep, VfunctionalTB* modelp)
+VperformanceTB__Syms::VperformanceTB__Syms(VerilatedContext* contextp, const char* namep, VperformanceTB* modelp)
     : VerilatedSyms{contextp}
     // Setup internal state of the Syms class
     , __Vm_modelp{modelp}

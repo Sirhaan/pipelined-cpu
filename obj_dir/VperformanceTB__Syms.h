@@ -4,24 +4,24 @@
 // Internal details; most calling programs do not need this header,
 // unless using verilator public meta comments.
 
-#ifndef VERILATED_VFUNCTIONALTB__SYMS_H_
-#define VERILATED_VFUNCTIONALTB__SYMS_H_  // guard
+#ifndef VERILATED_VPERFORMANCETB__SYMS_H_
+#define VERILATED_VPERFORMANCETB__SYMS_H_  // guard
 
 #include "verilated.h"
 #include "verilated_vcd_c.h"
 
 // INCLUDE MODEL CLASS
 
-#include "VfunctionalTB.h"
+#include "VperformanceTB.h"
 
 // INCLUDE MODULE CLASSES
-#include "VfunctionalTB___024root.h"
+#include "VperformanceTB___024root.h"
 
 // SYMS CLASS (contains all model state)
-class alignas(VL_CACHE_LINE_BYTES)VfunctionalTB__Syms final : public VerilatedSyms {
+class alignas(VL_CACHE_LINE_BYTES)VperformanceTB__Syms final : public VerilatedSyms {
   public:
     // INTERNAL STATE
-    VfunctionalTB* const __Vm_modelp;
+    VperformanceTB* const __Vm_modelp;
     bool __Vm_dumping = false;  // Dumping is active
     VerilatedMutex __Vm_dumperMutex;  // Protect __Vm_dumperp
     VerilatedVcdC* __Vm_dumperp VL_GUARDED_BY(__Vm_dumperMutex) = nullptr;  /// Trace class for $dump*
@@ -31,11 +31,11 @@ class alignas(VL_CACHE_LINE_BYTES)VfunctionalTB__Syms final : public VerilatedSy
     bool __Vm_didInit = false;
 
     // MODULE INSTANCE STATE
-    VfunctionalTB___024root        TOP;
+    VperformanceTB___024root       TOP;
 
     // CONSTRUCTORS
-    VfunctionalTB__Syms(VerilatedContext* contextp, const char* namep, VfunctionalTB* modelp);
-    ~VfunctionalTB__Syms();
+    VperformanceTB__Syms(VerilatedContext* contextp, const char* namep, VperformanceTB* modelp);
+    ~VperformanceTB__Syms();
 
     // METHODS
     const char* name() { return TOP.name(); }

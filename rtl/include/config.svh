@@ -12,11 +12,12 @@
 `define ICACHE_SIZE      256        // Total icache size in bytes
 `define ICACHE_WAYS      2          // Set-associativity (number of ways)
 `define ICACHE_LATENCY   20       // Miss penalty in cycles
+`define ICACHE_BLOCK_SIZE  16
 
 `define DCACHE_SIZE      256        // Total dcache size in bytes
 `define DCACHE_WAYS      2          // Set-associativity
 `define DCACHE_LATENCY   20         // Miss penalty in cycles
-
+`define DCACHE_BLOCK_SIZE  16
 // Unified memory backing store latency (should equal cache latencies above)
 `define MEM_LATENCY      `ICACHE_LATENCY
 `define MEM_DEPTH        10       // 2^10 words in  MEM array
@@ -56,11 +57,11 @@
 
 // -----------------------------------------------------------------------------
 // Debug Verbosity
-// Comment/uncomment to control output volume
+
 // -----------------------------------------------------------------------------
 `define DEBUG_PIPELINE   1    // Per-cycle pipeline state in testbench
-//`define DEBUG_CACHE    1    // Cache FSM transitions (very verbose)
-//`define DEBUG_HDU      1    // HDU hazard decisions each cycle
+`define DEBUG_CACHE    1    // Cache FSM transitions (very verbose)
+`define DEBUG_HDU      1    // HDU hazard decisions each cycle
 // define tb file
 // -----------------
 // Performance counter module — included in performance testbench

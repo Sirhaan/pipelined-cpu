@@ -3,11 +3,11 @@
 //
 // Internal details; most user sources do not need this header,
 // unless using verilator public meta comments.
-// Suggest use VfunctionalTB.h instead.
+// Suggest use VperformanceTB.h instead.
 
 
-#ifndef VERILATED_VFUNCTIONALTB__PCH_H_
-#define VERILATED_VFUNCTIONALTB__PCH_H_  // guard
+#ifndef VERILATED_VPERFORMANCETB__PCH_H_
+#define VERILATED_VPERFORMANCETB__PCH_H_  // guard
 
 // GCC and Clang only will precompile headers (PCH) for the first header.
 // So, make sure this is the one and only PCH.
@@ -20,7 +20,7 @@
 
 #include "verilated.h"
 
-#include "VfunctionalTB__Syms.h"
-#include "VfunctionalTB.h"
+#include "VperformanceTB__Syms.h"
+#include "VperformanceTB.h"
 
 #endif  // guard

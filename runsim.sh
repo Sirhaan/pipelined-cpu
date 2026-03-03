@@ -15,8 +15,8 @@ verilator \
     --trace \
     -Wall \
     -f rtl.f \
-    --top-module functionalTB \
     -o simv \
+    --top-module performanceTB \
     --Wno-UNUSEDPARAM \
     --Wno-UNDRIVEN \
     --Wno-UNUSEDSIGNAL \
