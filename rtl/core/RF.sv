@@ -4,9 +4,9 @@ module RF( // @suppress "Design unit name 'Reg_Files' does not match file name '
     input clk,
     input rst,
     input RegWrite, //control
-    input [4:0] ReadReg1 , //Address of register
-    input [4:0] ReadReg2,
-    input [4:0] WriteReg,
+    input [4:0] rs1 , //Address of register
+    input [4:0] rs2,
+    input [4:0] rd,
     output reg [31:0] ReadData1,
     output reg [31:0] ReadData2,
     input [31:0] WriteData
@@ -24,14 +24,14 @@ Register[0] <= 32'b0;
         end
     end
         else if(RegWrite)begin
-            if(WriteReg!=5'b0)begin
-                Register[WriteReg] <= WriteData;
+            if(rd!=5'b0)begin
+                Register[rd] <= WriteData;
             end
         end
 end
 always_comb begin
-    ReadData1 = Register[ReadReg1];
-    ReadData2 = Register[ReadReg2];
+    ReadData1 = Register[rs1];
+    ReadData2 = Register[rs2];
 end
 
 

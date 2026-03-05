@@ -13,7 +13,8 @@ verilator \
     --sv \
     --binary \
     --trace \
-    -Wall \
+    --timing \          # ← ADD THIS — needed for #delay in testbench clk gen
+    -Wall  \
     -f rtl.f \
     -o simv \
     --top-module performanceTB \

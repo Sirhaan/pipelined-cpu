@@ -17,7 +17,8 @@ module dcacheController #(
     output logic [DATA_WIDTH-1:0]  mem_wdata,
     output logic                   mem_read, mem_write,
     input  logic [DATA_WIDTH-1:0]  mem_rdata,
-    input  logic                   mem_ready
+    input  logic                   mem_ready,
+    input logic [3:0] cpu_ben
 );
 
     // =========================================================================
@@ -55,7 +56,7 @@ localparam LAST_WORD = OFFSET_BITS'(WORDS_PER_BLOCK - 1);
     logic [SET_BITS-1:0]        fill_set;
     logic [OFFSET_BITS-1:0]     fill_offset;   // word offset of the CPU request
     logic [WAY_BITS-1:0]        active_way;
-
+logic [3:0] cpu_ben_reg;  // byte enable for current CPU operation
     // Fill word counter - walks 0..WORDS_PER_BLOCK-1 during ALLOCATE/EVICT
     logic [OFFSET_BITS-1:0]     fill_word;
 
@@ -218,6 +219,7 @@ localparam LAST_WORD = OFFSET_BITS'(WORDS_PER_BLOCK - 1);
                 fill_tag    <= cpu_addr[ADDR_WIDTH-1 : SET_BITS+OFFSET_BITS+2];
                 fill_set    <= cpu_addr[SET_BITS+OFFSET_BITS+1 : OFFSET_BITS+2];
                 fill_offset <= cpu_addr[OFFSET_BITS+1 : 2];
+                cpu_ben_reg <= cpu_ben;
             end
         end
     end
@@ -241,8 +243,11 @@ localparam LAST_WORD = OFFSET_BITS'(WORDS_PER_BLOCK - 1);
 
             // Write hit
             if (state == COMPARE && cacheHit && is_write_op) begin
-                data_array[hit_way_index][current_set][current_offset] <= wdata_reg;
-                dirtyBits[hit_way_index][current_set]                  <= 1'b1;
+            for(int b = 0; b < BYTES_PER_WORD; b++) begin
+                if(cpu_ben_reg[b]) data_array[hit_way_index][current_set][current_offset][b*8 +: 8] <= wdata_reg[b*8+7 -: 8];
+            end
+                dirtyBits[hit_way_index][current_set]               <= 1'b1;
+
             end
 
             // Allocate fill - one word per ack
@@ -253,7 +258,10 @@ localparam LAST_WORD = OFFSET_BITS'(WORDS_PER_BLOCK - 1);
                 end
                 if (is_write_op && (fill_word == fill_offset)) begin
                     // Write-allocate: use CPU data for this word
-                    data_array[active_way][fill_set][fill_word] <= wdata_reg;
+                    for (int b = 0; b < BYTES_PER_WORD; b++) begin
+                        if(cpu_ben_reg[b]) data_array[active_way][fill_set][fill_word][b*8 +: 8] <= wdata_reg[b*8+7 -: 8];
+                        else data_array[active_way][fill_set][fill_word][b*8 +: 8] <= mem_rdata[b*8+7 -: 8];
+                    end
                     dirtyBits[active_way][fill_set]             <= 1'b1;
                 end else begin
                     data_array[active_way][fill_set][fill_word] <= mem_rdata;

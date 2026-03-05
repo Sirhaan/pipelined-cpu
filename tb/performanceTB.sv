@@ -26,7 +26,7 @@ performanceCounter perfCounter (
     .dc_ready(dut.dc_ready),
     .mem_read_mem(dut.MEMMEM[1]),
     .mem_write_mem(dut.MEMMEM[0]),
-    .branch_taken(dut.pcSrcID),
+    .branch_taken(dut.pcSrcEX),
     .reg_write_wb(dut.WBWB[0]),
     .write_reg_wb(dut.writeRegWB),
     .is_branchID(dut.MEMID[`BRANCH_STAGE - 1]),
@@ -63,47 +63,49 @@ end
         rst = 0;
         $display("T=%0t | Reset released, benchmark running...\n", $time);
     end
-    logic        break_detected;
-    logic [31:0] break_pc;
+       logic        break_detected;
+    logic [2:0]  special_pipe;
+    logic        is_special_id;
 
-    logic [2:0] special_pipe;
-    logic       is_special_id;
+    // RV32I EBREAK opcode
+    assign is_special_id = (dut.instID == 32'h00100073);
 
-    assign is_special_id = (dut.instID[31:26] == `OPCODE_SPECIAL) &&
-                           ((dut.instID[5:0] == `FUNCT_BREAK) ||
-                            (dut.instID[5:0] == `FUNCT_SYSCALL));
+    wire ic_stall_wire = dut.ic_stall;
+    wire dc_stall_wire = dut.dc_stall;
 
     always_ff @(posedge clk) begin
         if (rst) begin
             special_pipe   <= 3'b0;
             break_detected <= 1'b0;
-            break_pc       <= 32'b0;
         end else if (!ic_stall_wire && !dc_stall_wire) begin
-            // Advance the pipe flag with the pipeline
             special_pipe <= {special_pipe[1:0], is_special_id};
-            if (special_pipe[2] && !break_detected) begin
+            if (special_pipe[2] && !break_detected)
                 break_detected <= 1'b1;
-                break_pc       <= dut.AluResMEM; // Approximate; or track PC separately
-            end
         end
     end
 
-    // Wire aliases for readability
-    wire ic_stall_wire = dut.ic_stall;
-    wire dc_stall_wire = dut.dc_stall;
+
  // -------------------------------------------------------------------------
     // Termination: BREAK/SYSCALL reached MEM stage
     // -------------------------------------------------------------------------
     always @(posedge clk) begin
         if (break_detected) begin
-            repeat(5) @(posedge clk);   // drain remaining WB
-            $display("T=%0t | [BREAK/SYSCALL] Benchmark complete — pipeline drained",
-                     $time);
-            print_config();
+            repeat(5) @(posedge clk);
+            $display("T=%0t | [EBREAK] Benchmark complete — pipeline drained", $time);
 
+            // Pass/fail check — x28 = t3
+            if (dut.Reg_Files.Register[28] == 32'd1)
+                $display("  RESULT: PASS");
+            else
+                $display("  RESULT: FAIL — test number %0d failed (x28 = %0h)",
+                         dut.Reg_Files.Register[28],
+                         dut.Reg_Files.Register[28]);
+
+            print_config();
             $finish;
         end
     end
+
     integer cycle_count = 0;
 integer instr_count = 0;
 
@@ -115,15 +117,15 @@ always @(posedge clk) begin
 end
 
     //timeout
- initial begin
+  initial begin
         #(`SIM_TIMEOUT_PERF);
-        $display("\n[TIMEOUT] %0t ns elapsed — benchmark did not terminate!", $time);
+        $display("\n[TIMEOUT] %0t ns — benchmark did not terminate!", $time);
         $display("[TIMEOUT] Last PC=%08h instID=%08h", dut.pcCurrent, dut.instID);
-        $display("[TIMEOUT] Did you forget to end your program with BREAK (0x0000000d)?");
+        $display("[TIMEOUT] x28=%0h (1=pass, other=failing test number)",
+                 dut.Reg_Files.Register[28]);
         print_config();
         $finish;
     end
-
 
     //test config printer
      task print_config;

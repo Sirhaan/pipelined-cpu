@@ -28,7 +28,7 @@ performanceCounter perfCounter (
     .dc_ready(dut.dc_ready),
     .mem_read_mem(dut.MEMMEM[1]),
     .mem_write_mem(dut.MEMMEM[0]),
-    .branch_taken(dut.pcSrcID),
+    .branch_taken(dut.pcSrcEX),
     .reg_write_wb(dut.WBWB[0]),
     .write_reg_wb(dut.writeRegWB),
     .is_branchID(dut.MEMID[2])

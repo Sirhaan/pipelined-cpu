@@ -16,10 +16,10 @@ module  UMEM #(
     output logic [DATA_WIDTH-1:0] umem_rdata
 );
 initial begin
-    $readmemh(`PROG_FILE_PERF, ram);
+    $readmemh(`PROG_FILE_FUNC, ram);
 end
     // Keep your RAM and timer, remove ALL arbitration logic
-    logic [DATA_WIDTH-1:0] ram [0:1023];
+    logic [DATA_WIDTH-1:0] ram [0:(1<<MEM_DEPTH)-1];
     logic [4:0]  timer;
     logic        busy;
 

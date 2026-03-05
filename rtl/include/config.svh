@@ -67,6 +67,6 @@
 // Performance counter module — included in performance testbench
 // -----------------
 `define PERF_TB 1   // Define to run performance testbench instead of functional
-   `define PROG_FILE_FUNC   "programs/program.hex"       // Functional validation program
-`define PROG_FILE_PERF   "programs/program_perf.hex"  // Functional validation program
+   `define PROG_FILE_FUNC   "program/hex/add.hex"       // Functional validation program
+`define PROG_FILE_PERF "program/hex/auipc.hex"
 `endif // CPU_CONFIG_SVH

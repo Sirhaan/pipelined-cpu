@@ -1,0 +1,48 @@
+
+./hex/lui.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	00200e13          	li	t3,2
+   4:	000000b7          	lui	ra,0x0
+   8:	00000393          	li	t2,0
+   c:	04709a63          	bne	ra,t2,60 <fail>
+
+00000010 <test_3>:
+  10:	00300e13          	li	t3,3
+  14:	fffff0b7          	lui	ra,0xfffff
+  18:	4010d093          	srai	ra,ra,0x1
+  1c:	80000393          	li	t2,-2048
+  20:	04709063          	bne	ra,t2,60 <fail>
+
+00000024 <test_4>:
+  24:	00400e13          	li	t3,4
+  28:	7ffff0b7          	lui	ra,0x7ffff
+  2c:	4140d093          	srai	ra,ra,0x14
+  30:	7ff00393          	li	t2,2047
+  34:	02709663          	bne	ra,t2,60 <fail>
+
+00000038 <test_5>:
+  38:	00500e13          	li	t3,5
+  3c:	800000b7          	lui	ra,0x80000
+  40:	4140d093          	srai	ra,ra,0x14
+  44:	80000393          	li	t2,-2048
+  48:	00709c63          	bne	ra,t2,60 <fail>
+
+0000004c <test_6>:
+  4c:	00600e13          	li	t3,6
+  50:	80000037          	lui	zero,0x80000
+  54:	00000393          	li	t2,0
+  58:	00701463          	bne	zero,t2,60 <fail>
+  5c:	01c01663          	bne	zero,t3,68 <pass>
+
+00000060 <fail>:
+  60:	0ff0000f          	fence
+  64:	00100073          	.word	0x00100073
+
+00000068 <pass>:
+  68:	0ff0000f          	fence
+  6c:	00100e13          	li	t3,1
+  70:	00100073          	.word	0x00100073

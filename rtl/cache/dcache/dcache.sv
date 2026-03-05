@@ -18,7 +18,8 @@ module dcache #(
     output logic        mem_read,
     output logic        mem_write,
     input  logic [31:0] mem_rdata,
-    input  logic        mem_ready
+    input  logic        mem_ready,
+    input logic [3:0] cpu_ben
 );
 
     logic dcache_req_valid;
@@ -43,6 +44,7 @@ module dcache #(
         .NUM_WAYS(NUM_WAYS)
     ) ctrl (
         .clk(clk), .rst(rst),
+        .cpu_ben(cpu_ben),
         .cpu_addr(cpu_addr), .cpu_wdata(cpu_wdata),
         .cpu_read(cpu_read), .cpu_write(cpu_write),
         .cpu_rdata(cpu_rdata), .cpu_ready(cpu_ready),

@@ -1,94 +1,36 @@
-module ControlUnit (
-    input [5:0] OpCode,
-    output [1:0] wb_bundle, // {RegWrite, MemtoReg}
-    output [2:0] m_bundle,  // {Branch, MemRead, MemWrite}
-    output [4:0] ex_bundle  // {RegDst, ALUOp[2:0], ALUSrc}
+module ControlUnit(
+    input logic [6:0] OpCode,
+    output logic [1:0] wb_bundle,
+    output logic [3:0]ex_bundle,
+    output logic [2:0]mem_bundle
 );
+localparam R_TYPE = 7'b0110011;
+localparam I_TYPE = 7'b0010011;
+localparam LOAD   = 7'b0000011;
+localparam STORE  = 7'b0100011;
+localparam BRANCH = 7'b1100011;
+localparam JAL    = 7'b1101111;
+localparam JALR   = 7'b1100111;
+localparam LUI    = 7'b0110111;
+localparam AUIPC  = 7'b0010111;
 
-    // Internal registers for each control signal
-    reg RegWrite, MemtoReg;
-    reg Branch, MemRead, MemWrite;
-    reg RegDst, ALUSrc;
-    reg [2:0] ALUOp;
 
-    always_comb begin
-        // Default Values
-        RegWrite = 1'b0; 
-        MemtoReg = 1'b0;
-        Branch   = 1'b0;
-        MemRead  = 1'b0; 
-        MemWrite = 1'b0;
-        RegDst   = 1'b0;
-        ALUSrc   = 1'b0; 
-        ALUOp    = 3'b000;
-
-        case (OpCode)
-            // R-Type Instructions (add, sub, and, or, slt)
-            6'b000000: begin
-                RegWrite = 1'b1;
-                RegDst   = 1'b1;
-                ALUOp    = 3'b010; // Use Funct field for ALU
-            end
-
-            // ADDI (Add Immediate)
-            6'b001000: begin
-                RegWrite = 1'b1;
-                ALUSrc   = 1'b1;
-                ALUOp    = 3'b000; // Force Addition
-            end
-
-            // LW (Load Word)
-            6'b100011: begin
-                RegWrite = 1'b1;
-                MemtoReg = 1'b1;
-                MemRead  = 1'b1;
-                ALUSrc   = 1'b1;
-                ALUOp    = 3'b000; // Force Addition for address
-            end
-
-            // SW (Store Word)
-            6'b101011: begin
-                MemWrite = 1'b1;
-                ALUSrc   = 1'b1;
-                ALUOp    = 3'b000; // Force Addition for address
-            end
-
-            // BEQ (Branch if Equal)
-            6'b000100: begin
-                Branch   = 1'b1;
-                ALUOp    = 3'b001; // Force Subtraction
-            end
-            
-            // LUI
-            6'b001111: begin
-                RegWrite = 1'b1;
-                ALUSrc   = 1'b1;
-                ALUOp    = 3'b100; // ALU decoder must pass imm<<16
-            end
-
-            // ORI
-            6'b001101: begin
-                RegWrite = 1'b1;
-                ALUSrc   = 1'b1;
-                ALUOp    = 3'b011;
-            end
-
-            // ANDI  
-            6'b001100: begin
-                RegWrite = 1'b1;
-                ALUSrc   = 1'b1;
-                ALUOp    = 3'b101;
-            end
-
-            default: begin
-                // nop - all defaults already set
-            end
-        endcase
-    end
-
-    // Pack the bundles 
-    assign wb_bundle = {RegWrite, MemtoReg};        
-    assign m_bundle  = {Branch, MemRead, MemWrite}; 
-    assign ex_bundle = {RegDst, ALUOp, ALUSrc};     
+always_comb begin
+    wb_bundle = 2'b0;
+    ex_bundle = 4'b0;
+    mem_bundle = 3'b0;
+    case(OpCode)
+        R_TYPE:  begin wb_bundle = 2'b10; ex_bundle = 4'b010_0; end // RegWrite, R-type ALU
+        I_TYPE:   begin wb_bundle = 2'b10; ex_bundle = 4'b011_1; end // RegWrite, I-type ALU, AluSrc=imm
+        LOAD:    begin wb_bundle = 2'b11; mem_bundle  = 3'b010; ex_bundle = 4'b000_1; end // MemToReg, MemRead
+        STORE:   begin                    mem_bundle  = 3'b001; ex_bundle = 4'b000_1; end // MemWrite
+        BRANCH:  begin                    mem_bundle  = 3'b100; ex_bundle = 4'b001_0; end // Branch
+        JAL:     begin wb_bundle = 2'b10; ex_bundle = 4'b000_1; end // Jump, writes PC+4
+        JALR:    begin wb_bundle = 2'b10; ex_bundle = 4'b000_1; end // Jump, writes PC+4
+        LUI:     begin wb_bundle = 2'b10; ex_bundle = 4'b000_1; end // ⚠ needs pipeline support
+        AUIPC:   begin wb_bundle = 2'b10; ex_bundle = 4'b000_1; end // ⚠ needs pipeline support
+        default: begin wb_bundle = 2'b00; mem_bundle  = 3'b000; ex_bundle = 4'b000_0; end
+    endcase
+end
 
 endmodule

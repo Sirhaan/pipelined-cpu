@@ -1,0 +1,36 @@
+
+./hex/auipc.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	00200e13          	li	t3,2
+   4:	00000013          	nop
+   8:	00002517          	auipc	a0,0x2
+   c:	71c50513          	addi	a0,a0,1820 # 2724 <pass+0x26d4>
+  10:	004005ef          	jal	a1,14 <_start+0x14>
+  14:	40b50533          	sub	a0,a0,a1
+  18:	000023b7          	lui	t2,0x2
+  1c:	71038393          	addi	t2,t2,1808 # 2710 <pass+0x26c0>
+  20:	02751463          	bne	a0,t2,48 <fail>
+
+00000024 <test_3>:
+  24:	00300e13          	li	t3,3
+  28:	ffffe517          	auipc	a0,0xffffe
+  2c:	8fc50513          	addi	a0,a0,-1796 # ffffd924 <pass+0xffffd8d4>
+  30:	004005ef          	jal	a1,34 <test_3+0x10>
+  34:	40b50533          	sub	a0,a0,a1
+  38:	ffffe3b7          	lui	t2,0xffffe
+  3c:	8f038393          	addi	t2,t2,-1808 # ffffd8f0 <pass+0xffffd8a0>
+  40:	00751463          	bne	a0,t2,48 <fail>
+  44:	01c01663          	bne	zero,t3,50 <pass>
+
+00000048 <fail>:
+  48:	0ff0000f          	fence
+  4c:	00100073          	.word	0x00100073
+
+00000050 <pass>:
+  50:	0ff0000f          	fence
+  54:	00100e13          	li	t3,1
+  58:	00100073          	.word	0x00100073
