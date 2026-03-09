@@ -34,7 +34,7 @@ performanceCounter perfCounter (
 );
 
 initial begin
-    $dumpfile("performanceTB.vcd");
+    $dumpfile("sim/performanceTB.vcd");
     $dumpvars(0, performanceTB);
 end
 

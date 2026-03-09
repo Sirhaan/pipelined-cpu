@@ -22,8 +22,12 @@
 # Memory
 ./rtl/memory/UMEM.sv
 ./rtl/memory/MemoryArbitrator.sv
-
+#branch predictor 
+./rtl/branchPredictor/branchPredictor.sv
+./rtl/branchPredictor/SaturatingCounter.sv
+./rtl/branchPredictor/BTB.sv
+./rtl/branchPredictor/BHT.sv
 # Testbench
-#./tb/functionalTB.sv
+
 ./tb/performanceCounter.sv
 ./tb/performanceTB.sv

@@ -77,10 +77,11 @@ VL_ATTR_COLD void VperformanceTB___024root___dump_triggers__stl(VperformanceTB__
 }
 #endif  // VL_DEBUG
 
-extern const VlUnpacked<CData/*3:0*/, 128> VperformanceTB__ConstPool__TABLE_h39fa20de_0;
 extern const VlUnpacked<CData/*1:0*/, 128> VperformanceTB__ConstPool__TABLE_hf4afd3a1_0;
 extern const VlUnpacked<CData/*3:0*/, 128> VperformanceTB__ConstPool__TABLE_h6eb401fc_0;
 extern const VlUnpacked<CData/*2:0*/, 128> VperformanceTB__ConstPool__TABLE_h26d4c584_0;
+extern const VlUnpacked<CData/*3:0*/, 128> VperformanceTB__ConstPool__TABLE_h39fa20de_0;
+extern const VlUnpacked<CData/*1:0*/, 8> VperformanceTB__ConstPool__TABLE_h33d05a79_0;
 
 VL_ATTR_COLD void VperformanceTB___024root___stl_sequent__TOP__0(VperformanceTB___024root* vlSelf) {
     if (false && vlSelf) {}  // Prevent unused
@@ -119,8 +120,6 @@ VL_ATTR_COLD void VperformanceTB___024root___stl_sequent__TOP__0(VperformanceTB_
     performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__lru__DOT__unnamedblk4__DOT__temp_node = 0;
     CData/*0:0*/ performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__lru__DOT____Vlvbound_he7efbe5b__0;
     performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__lru__DOT____Vlvbound_he7efbe5b__0 = 0;
-    CData/*0:0*/ performanceTB__DOT__dut__DOT__hdu_instance__DOT____VdfgTmp_heb2fc36b__0;
-    performanceTB__DOT__dut__DOT__hdu_instance__DOT____VdfgTmp_heb2fc36b__0 = 0;
     IData/*31:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__dcache_req_wdata;
     performanceTB__DOT__dut__DOT__D_CACHE__DOT__dcache_req_wdata = 0;
     CData/*1:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__valid_ways_current;
@@ -133,10 +132,140 @@ VL_ATTR_COLD void VperformanceTB___024root___stl_sequent__TOP__0(VperformanceTB_
     performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__lru__DOT__unnamedblk4__DOT__temp_node = 0;
     CData/*0:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__lru__DOT____Vlvbound_he7efbe5b__0;
     performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__lru__DOT____Vlvbound_he7efbe5b__0 = 0;
-    CData/*6:0*/ __Vtableidx3;
+    CData/*0:0*/ performanceTB__DOT__dut__DOT__hdu_instance__DOT____VdfgTmp_heb2fc36b__0;
+    performanceTB__DOT__dut__DOT__hdu_instance__DOT____VdfgTmp_heb2fc36b__0 = 0;
+    CData/*2:0*/ __Vtableidx3;
     __Vtableidx3 = 0;
-    CData/*6:0*/ __Vtableidx4;
+    CData/*2:0*/ __Vtableidx4;
     __Vtableidx4 = 0;
+    CData/*2:0*/ __Vtableidx5;
+    __Vtableidx5 = 0;
+    CData/*2:0*/ __Vtableidx6;
+    __Vtableidx6 = 0;
+    CData/*2:0*/ __Vtableidx7;
+    __Vtableidx7 = 0;
+    CData/*2:0*/ __Vtableidx8;
+    __Vtableidx8 = 0;
+    CData/*2:0*/ __Vtableidx9;
+    __Vtableidx9 = 0;
+    CData/*2:0*/ __Vtableidx10;
+    __Vtableidx10 = 0;
+    CData/*2:0*/ __Vtableidx11;
+    __Vtableidx11 = 0;
+    CData/*2:0*/ __Vtableidx12;
+    __Vtableidx12 = 0;
+    CData/*2:0*/ __Vtableidx13;
+    __Vtableidx13 = 0;
+    CData/*2:0*/ __Vtableidx14;
+    __Vtableidx14 = 0;
+    CData/*2:0*/ __Vtableidx15;
+    __Vtableidx15 = 0;
+    CData/*2:0*/ __Vtableidx16;
+    __Vtableidx16 = 0;
+    CData/*2:0*/ __Vtableidx17;
+    __Vtableidx17 = 0;
+    CData/*2:0*/ __Vtableidx18;
+    __Vtableidx18 = 0;
+    CData/*2:0*/ __Vtableidx19;
+    __Vtableidx19 = 0;
+    CData/*2:0*/ __Vtableidx20;
+    __Vtableidx20 = 0;
+    CData/*2:0*/ __Vtableidx21;
+    __Vtableidx21 = 0;
+    CData/*2:0*/ __Vtableidx22;
+    __Vtableidx22 = 0;
+    CData/*2:0*/ __Vtableidx23;
+    __Vtableidx23 = 0;
+    CData/*2:0*/ __Vtableidx24;
+    __Vtableidx24 = 0;
+    CData/*2:0*/ __Vtableidx25;
+    __Vtableidx25 = 0;
+    CData/*2:0*/ __Vtableidx26;
+    __Vtableidx26 = 0;
+    CData/*2:0*/ __Vtableidx27;
+    __Vtableidx27 = 0;
+    CData/*2:0*/ __Vtableidx28;
+    __Vtableidx28 = 0;
+    CData/*2:0*/ __Vtableidx29;
+    __Vtableidx29 = 0;
+    CData/*2:0*/ __Vtableidx30;
+    __Vtableidx30 = 0;
+    CData/*2:0*/ __Vtableidx31;
+    __Vtableidx31 = 0;
+    CData/*2:0*/ __Vtableidx32;
+    __Vtableidx32 = 0;
+    CData/*2:0*/ __Vtableidx33;
+    __Vtableidx33 = 0;
+    CData/*2:0*/ __Vtableidx34;
+    __Vtableidx34 = 0;
+    CData/*2:0*/ __Vtableidx35;
+    __Vtableidx35 = 0;
+    CData/*2:0*/ __Vtableidx36;
+    __Vtableidx36 = 0;
+    CData/*2:0*/ __Vtableidx37;
+    __Vtableidx37 = 0;
+    CData/*2:0*/ __Vtableidx38;
+    __Vtableidx38 = 0;
+    CData/*2:0*/ __Vtableidx39;
+    __Vtableidx39 = 0;
+    CData/*2:0*/ __Vtableidx40;
+    __Vtableidx40 = 0;
+    CData/*2:0*/ __Vtableidx41;
+    __Vtableidx41 = 0;
+    CData/*2:0*/ __Vtableidx42;
+    __Vtableidx42 = 0;
+    CData/*2:0*/ __Vtableidx43;
+    __Vtableidx43 = 0;
+    CData/*2:0*/ __Vtableidx44;
+    __Vtableidx44 = 0;
+    CData/*2:0*/ __Vtableidx45;
+    __Vtableidx45 = 0;
+    CData/*2:0*/ __Vtableidx46;
+    __Vtableidx46 = 0;
+    CData/*2:0*/ __Vtableidx47;
+    __Vtableidx47 = 0;
+    CData/*2:0*/ __Vtableidx48;
+    __Vtableidx48 = 0;
+    CData/*2:0*/ __Vtableidx49;
+    __Vtableidx49 = 0;
+    CData/*2:0*/ __Vtableidx50;
+    __Vtableidx50 = 0;
+    CData/*2:0*/ __Vtableidx51;
+    __Vtableidx51 = 0;
+    CData/*2:0*/ __Vtableidx52;
+    __Vtableidx52 = 0;
+    CData/*2:0*/ __Vtableidx53;
+    __Vtableidx53 = 0;
+    CData/*2:0*/ __Vtableidx54;
+    __Vtableidx54 = 0;
+    CData/*2:0*/ __Vtableidx55;
+    __Vtableidx55 = 0;
+    CData/*2:0*/ __Vtableidx56;
+    __Vtableidx56 = 0;
+    CData/*2:0*/ __Vtableidx57;
+    __Vtableidx57 = 0;
+    CData/*2:0*/ __Vtableidx58;
+    __Vtableidx58 = 0;
+    CData/*2:0*/ __Vtableidx59;
+    __Vtableidx59 = 0;
+    CData/*2:0*/ __Vtableidx60;
+    __Vtableidx60 = 0;
+    CData/*2:0*/ __Vtableidx61;
+    __Vtableidx61 = 0;
+    CData/*2:0*/ __Vtableidx62;
+    __Vtableidx62 = 0;
+    CData/*2:0*/ __Vtableidx63;
+    __Vtableidx63 = 0;
+    CData/*2:0*/ __Vtableidx64;
+    __Vtableidx64 = 0;
+    CData/*2:0*/ __Vtableidx65;
+    __Vtableidx65 = 0;
+    CData/*2:0*/ __Vtableidx66;
+    __Vtableidx66 = 0;
+    CData/*6:0*/ __Vtableidx67;
+    __Vtableidx67 = 0;
+    CData/*6:0*/ __Vtableidx68;
+    __Vtableidx68 = 0;
     // Body
     vlSelf->performanceTB__DOT__dut__DOT__immID = (
                                                    (0x40U 
@@ -334,6 +463,14 @@ VL_ATTR_COLD void VperformanceTB___024root___stl_sequent__TOP__0(VperformanceTB_
                                                              >> 0x14U))
                                                           : 0U)
                                                          : 0U))))));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__counter_update_en = 0ULL;
+    if ((4U & (IData)(vlSelf->performanceTB__DOT__dut__DOT__MEMEX))) {
+        vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__counter_update_en 
+            = (vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__counter_update_en 
+               | ((QData)((IData)(1U)) << (0x3fU & 
+                                           (vlSelf->performanceTB__DOT__dut__DOT__pcEX 
+                                            >> 2U))));
+    }
     vlSelf->performanceTB__DOT__dut__DOT__ic_mem_ready = 0U;
     performanceTB__DOT__dut__DOT__D_CACHE__DOT__dcache_req_wdata = 0U;
     vlSelf->performanceTB__DOT__dut__DOT__dc_mem_ready = 0U;
@@ -360,6 +497,10 @@ VL_ATTR_COLD void VperformanceTB___024root___stl_sequent__TOP__0(VperformanceTB_
                  & (IData)(vlSelf->performanceTB__DOT__dut__DOT__MEMMEM)));
     vlSelf->performanceTB__DOT__dut__DOT__D_CACHE__DOT__dcache_req_addr 
         = (0xfffffffcU & vlSelf->performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__addr_reg);
+    vlSelf->performanceTB__DOT__dut__DOT__predict_target 
+        = vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__btb__DOT__target
+        [(0x3fU & (vlSelf->performanceTB__DOT__dut__DOT__pc__DOT__PCRegister 
+                   >> 2U))];
     performanceTB__DOT__dut__DOT__ICACHE__DOT__m_read = 0U;
     vlSelf->performanceTB__DOT__dut__DOT__D_CACHE__DOT__dcache_req_valid = 0U;
     vlSelf->performanceTB__DOT__dut__DOT__D_CACHE__DOT__dcache_req_write = 0U;
@@ -392,11 +533,262 @@ VL_ATTR_COLD void VperformanceTB___024root___stl_sequent__TOP__0(VperformanceTB_
             }
         }
     }
-    __Vtableidx4 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__FuncEX) 
-                     << 3U) | (7U & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__EXEX) 
-                                     >> 1U)));
-    performanceTB__DOT__dut__DOT__AluCtrlEX = VperformanceTB__ConstPool__TABLE_h39fa20de_0
-        [__Vtableidx4];
+    vlSelf->performanceTB__DOT__dut__DOT__predict_taken 
+        = (1U & (IData)(((((QData)((IData)((1U & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__63__KET____DOT__state) 
+                                                  >> 1U)))) 
+                           << 0x3fU) | (((QData)((IData)(
+                                                         (1U 
+                                                          & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__62__KET____DOT__state) 
+                                                             >> 1U)))) 
+                                         << 0x3eU) 
+                                        | (((QData)((IData)(
+                                                            (1U 
+                                                             & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__61__KET____DOT__state) 
+                                                                >> 1U)))) 
+                                            << 0x3dU) 
+                                           | (((QData)((IData)(
+                                                               (1U 
+                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__60__KET____DOT__state) 
+                                                                   >> 1U)))) 
+                                               << 0x3cU) 
+                                              | (((QData)((IData)(
+                                                                  (1U 
+                                                                   & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__59__KET____DOT__state) 
+                                                                      >> 1U)))) 
+                                                  << 0x3bU) 
+                                                 | (((QData)((IData)(
+                                                                     (1U 
+                                                                      & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__58__KET____DOT__state) 
+                                                                         >> 1U)))) 
+                                                     << 0x3aU) 
+                                                    | (((QData)((IData)(
+                                                                        (1U 
+                                                                         & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__57__KET____DOT__state) 
+                                                                            >> 1U)))) 
+                                                        << 0x39U) 
+                                                       | (((QData)((IData)(
+                                                                           (1U 
+                                                                            & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__56__KET____DOT__state) 
+                                                                               >> 1U)))) 
+                                                           << 0x38U) 
+                                                          | (((QData)((IData)(
+                                                                              (1U 
+                                                                               & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__55__KET____DOT__state) 
+                                                                                >> 1U)))) 
+                                                              << 0x37U) 
+                                                             | (((QData)((IData)(
+                                                                                (1U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__54__KET____DOT__state) 
+                                                                                >> 1U)))) 
+                                                                 << 0x36U) 
+                                                                | (((QData)((IData)(
+                                                                                (1U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__53__KET____DOT__state) 
+                                                                                >> 1U)))) 
+                                                                    << 0x35U) 
+                                                                   | (((QData)((IData)(
+                                                                                (1U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__52__KET____DOT__state) 
+                                                                                >> 1U)))) 
+                                                                       << 0x34U) 
+                                                                      | (((QData)((IData)(
+                                                                                (1U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__51__KET____DOT__state) 
+                                                                                >> 1U)))) 
+                                                                          << 0x33U) 
+                                                                         | (((QData)((IData)(
+                                                                                (1U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__50__KET____DOT__state) 
+                                                                                >> 1U)))) 
+                                                                             << 0x32U) 
+                                                                            | (((QData)((IData)(
+                                                                                (1U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__49__KET____DOT__state) 
+                                                                                >> 1U)))) 
+                                                                                << 0x31U) 
+                                                                               | (((QData)((IData)(
+                                                                                (1U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__48__KET____DOT__state) 
+                                                                                >> 1U)))) 
+                                                                                << 0x30U) 
+                                                                                | (((QData)((IData)(
+                                                                                (1U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__47__KET____DOT__state) 
+                                                                                >> 1U)))) 
+                                                                                << 0x2fU) 
+                                                                                | (((QData)((IData)(
+                                                                                (1U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__46__KET____DOT__state) 
+                                                                                >> 1U)))) 
+                                                                                << 0x2eU) 
+                                                                                | (((QData)((IData)(
+                                                                                (1U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__45__KET____DOT__state) 
+                                                                                >> 1U)))) 
+                                                                                << 0x2dU) 
+                                                                                | (((QData)((IData)(
+                                                                                (1U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__44__KET____DOT__state) 
+                                                                                >> 1U)))) 
+                                                                                << 0x2cU) 
+                                                                                | (((QData)((IData)(
+                                                                                (1U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__43__KET____DOT__state) 
+                                                                                >> 1U)))) 
+                                                                                << 0x2bU) 
+                                                                                | (((QData)((IData)(
+                                                                                (1U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__42__KET____DOT__state) 
+                                                                                >> 1U)))) 
+                                                                                << 0x2aU) 
+                                                                                | (((QData)((IData)(
+                                                                                (1U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__41__KET____DOT__state) 
+                                                                                >> 1U)))) 
+                                                                                << 0x29U) 
+                                                                                | (((QData)((IData)(
+                                                                                (1U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__40__KET____DOT__state) 
+                                                                                >> 1U)))) 
+                                                                                << 0x28U) 
+                                                                                | (((QData)((IData)(
+                                                                                (1U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__39__KET____DOT__state) 
+                                                                                >> 1U)))) 
+                                                                                << 0x27U) 
+                                                                                | (((QData)((IData)(
+                                                                                (1U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__38__KET____DOT__state) 
+                                                                                >> 1U)))) 
+                                                                                << 0x26U) 
+                                                                                | (((QData)((IData)(
+                                                                                (1U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__37__KET____DOT__state) 
+                                                                                >> 1U)))) 
+                                                                                << 0x25U) 
+                                                                                | (((QData)((IData)(
+                                                                                (1U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__36__KET____DOT__state) 
+                                                                                >> 1U)))) 
+                                                                                << 0x24U) 
+                                                                                | (((QData)((IData)(
+                                                                                (1U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__35__KET____DOT__state) 
+                                                                                >> 1U)))) 
+                                                                                << 0x23U) 
+                                                                                | (((QData)((IData)(
+                                                                                (1U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__34__KET____DOT__state) 
+                                                                                >> 1U)))) 
+                                                                                << 0x22U) 
+                                                                                | (((QData)((IData)(
+                                                                                (1U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__33__KET____DOT__state) 
+                                                                                >> 1U)))) 
+                                                                                << 0x21U) 
+                                                                                | (((QData)((IData)(
+                                                                                (1U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__32__KET____DOT__state) 
+                                                                                >> 1U)))) 
+                                                                                << 0x20U) 
+                                                                                | (QData)((IData)(
+                                                                                ((0x80000000U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__31__KET____DOT__state) 
+                                                                                << 0x1eU)) 
+                                                                                | ((0x40000000U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__30__KET____DOT__state) 
+                                                                                << 0x1dU)) 
+                                                                                | ((0x20000000U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__29__KET____DOT__state) 
+                                                                                << 0x1cU)) 
+                                                                                | ((0x10000000U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__28__KET____DOT__state) 
+                                                                                << 0x1bU)) 
+                                                                                | ((0x8000000U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__27__KET____DOT__state) 
+                                                                                << 0x1aU)) 
+                                                                                | ((0x4000000U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__26__KET____DOT__state) 
+                                                                                << 0x19U)) 
+                                                                                | ((0x2000000U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__25__KET____DOT__state) 
+                                                                                << 0x18U)) 
+                                                                                | ((0x1000000U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__24__KET____DOT__state) 
+                                                                                << 0x17U)) 
+                                                                                | ((0x800000U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__23__KET____DOT__state) 
+                                                                                << 0x16U)) 
+                                                                                | ((0x400000U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__22__KET____DOT__state) 
+                                                                                << 0x15U)) 
+                                                                                | ((0x200000U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__21__KET____DOT__state) 
+                                                                                << 0x14U)) 
+                                                                                | ((0x100000U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__20__KET____DOT__state) 
+                                                                                << 0x13U)) 
+                                                                                | ((0x80000U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__19__KET____DOT__state) 
+                                                                                << 0x12U)) 
+                                                                                | ((0x40000U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__18__KET____DOT__state) 
+                                                                                << 0x11U)) 
+                                                                                | ((0x20000U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__17__KET____DOT__state) 
+                                                                                << 0x10U)) 
+                                                                                | ((0x10000U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__16__KET____DOT__state) 
+                                                                                << 0xfU)) 
+                                                                                | ((0x8000U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__15__KET____DOT__state) 
+                                                                                << 0xeU)) 
+                                                                                | ((0x4000U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__14__KET____DOT__state) 
+                                                                                << 0xdU)) 
+                                                                                | ((0x2000U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__13__KET____DOT__state) 
+                                                                                << 0xcU)) 
+                                                                                | ((0x1000U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__12__KET____DOT__state) 
+                                                                                << 0xbU)) 
+                                                                                | ((0x800U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__11__KET____DOT__state) 
+                                                                                << 0xaU)) 
+                                                                                | ((0x400U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__10__KET____DOT__state) 
+                                                                                << 9U)) 
+                                                                                | ((0x200U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__9__KET____DOT__state) 
+                                                                                << 8U)) 
+                                                                                | ((0x100U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__8__KET____DOT__state) 
+                                                                                << 7U)) 
+                                                                                | ((0x80U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__7__KET____DOT__state) 
+                                                                                << 6U)) 
+                                                                                | ((0x40U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__6__KET____DOT__state) 
+                                                                                << 5U)) 
+                                                                                | ((0x20U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__5__KET____DOT__state) 
+                                                                                << 4U)) 
+                                                                                | ((0x10U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__4__KET____DOT__state) 
+                                                                                << 3U)) 
+                                                                                | ((8U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__3__KET____DOT__state) 
+                                                                                << 2U)) 
+                                                                                | ((4U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__2__KET____DOT__state) 
+                                                                                << 1U)) 
+                                                                                | ((2U 
+                                                                                & (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__1__KET____DOT__state)) 
+                                                                                | (1U 
+                                                                                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__0__KET____DOT__state) 
+                                                                                >> 1U))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))) 
+                         >> (0x3fU & (vlSelf->performanceTB__DOT__dut__DOT__pc__DOT__PCRegister 
+                                      >> 2U)))));
     performanceTB__DOT__dut__DOT__hdu_instance__DOT____VdfgTmp_heb2fc36b__0 
         = ((0U != (IData)(vlSelf->performanceTB__DOT__dut__DOT__RdEX)) 
            & (((IData)(vlSelf->performanceTB__DOT__dut__DOT__RdEX) 
@@ -405,13 +797,50 @@ VL_ATTR_COLD void VperformanceTB___024root___stl_sequent__TOP__0(VperformanceTB_
                                           == (0x1fU 
                                               & (vlSelf->performanceTB__DOT__dut__DOT__instID 
                                                  >> 0x14U)))));
-    __Vtableidx3 = (0x7fU & vlSelf->performanceTB__DOT__dut__DOT__instID);
+    __Vtableidx67 = (0x7fU & vlSelf->performanceTB__DOT__dut__DOT__instID);
     performanceTB__DOT__dut__DOT__WBID = VperformanceTB__ConstPool__TABLE_hf4afd3a1_0
-        [__Vtableidx3];
+        [__Vtableidx67];
     performanceTB__DOT__dut__DOT__EXID = VperformanceTB__ConstPool__TABLE_h6eb401fc_0
-        [__Vtableidx3];
+        [__Vtableidx67];
     vlSelf->performanceTB__DOT__dut__DOT__MEMID = VperformanceTB__ConstPool__TABLE_h26d4c584_0
-        [__Vtableidx3];
+        [__Vtableidx67];
+    vlSelf->performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__addr_active 
+        = ((0U == (IData)(vlSelf->performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__state))
+            ? vlSelf->performanceTB__DOT__dut__DOT__AluResMEM
+            : vlSelf->performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__addr_reg);
+    __Vtableidx68 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__FuncEX) 
+                      << 3U) | (7U & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__EXEX) 
+                                      >> 1U)));
+    performanceTB__DOT__dut__DOT__AluCtrlEX = VperformanceTB__ConstPool__TABLE_h39fa20de_0
+        [__Vtableidx68];
+    performanceTB__DOT__dut__DOT__forwardA = 0U;
+    if ((((((IData)(vlSelf->performanceTB__DOT__dut__DOT__WBMEM) 
+            >> 1U) & (0U != (IData)(vlSelf->performanceTB__DOT__dut__DOT__writeRegMEM))) 
+          & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__writeRegMEM) 
+             == (IData)(vlSelf->performanceTB__DOT__dut__DOT__Rs1EX))) 
+         & (~ ((IData)(vlSelf->performanceTB__DOT__dut__DOT__MEMMEM) 
+               >> 1U)))) {
+        performanceTB__DOT__dut__DOT__forwardA = 2U;
+    } else if (((((IData)(vlSelf->performanceTB__DOT__dut__DOT__WBWB) 
+                  >> 1U) & (0U != (IData)(vlSelf->performanceTB__DOT__dut__DOT__writeRegWB))) 
+                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__writeRegWB) 
+                   == (IData)(vlSelf->performanceTB__DOT__dut__DOT__Rs1EX)))) {
+        performanceTB__DOT__dut__DOT__forwardA = 1U;
+    }
+    performanceTB__DOT__dut__DOT__forwardB = 0U;
+    if ((((((IData)(vlSelf->performanceTB__DOT__dut__DOT__WBMEM) 
+            >> 1U) & (0U != (IData)(vlSelf->performanceTB__DOT__dut__DOT__writeRegMEM))) 
+          & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__writeRegMEM) 
+             == (IData)(vlSelf->performanceTB__DOT__dut__DOT__Rs2EX))) 
+         & (~ ((IData)(vlSelf->performanceTB__DOT__dut__DOT__MEMMEM) 
+               >> 1U)))) {
+        performanceTB__DOT__dut__DOT__forwardB = 2U;
+    } else if (((((IData)(vlSelf->performanceTB__DOT__dut__DOT__WBWB) 
+                  >> 1U) & (0U != (IData)(vlSelf->performanceTB__DOT__dut__DOT__writeRegWB))) 
+                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__writeRegWB) 
+                   == (IData)(vlSelf->performanceTB__DOT__dut__DOT__Rs2EX)))) {
+        performanceTB__DOT__dut__DOT__forwardB = 1U;
+    }
     performanceTB__DOT__dut__DOT__loadResult = ((4U 
                                                  & (IData)(vlSelf->performanceTB__DOT__dut__DOT__funct3WB))
                                                  ? 
@@ -528,38 +957,6 @@ VL_ATTR_COLD void VperformanceTB___024root___stl_sequent__TOP__0(VperformanceTB_
                                                       << 8U) 
                                                      | (0xffU 
                                                         & vlSelf->performanceTB__DOT__dut__DOT__dc_rdata_latch)))))));
-    performanceTB__DOT__dut__DOT__forwardA = 0U;
-    if ((((((IData)(vlSelf->performanceTB__DOT__dut__DOT__WBMEM) 
-            >> 1U) & (0U != (IData)(vlSelf->performanceTB__DOT__dut__DOT__writeRegMEM))) 
-          & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__writeRegMEM) 
-             == (IData)(vlSelf->performanceTB__DOT__dut__DOT__Rs1EX))) 
-         & (~ ((IData)(vlSelf->performanceTB__DOT__dut__DOT__MEMMEM) 
-               >> 1U)))) {
-        performanceTB__DOT__dut__DOT__forwardA = 2U;
-    } else if (((((IData)(vlSelf->performanceTB__DOT__dut__DOT__WBWB) 
-                  >> 1U) & (0U != (IData)(vlSelf->performanceTB__DOT__dut__DOT__writeRegWB))) 
-                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__writeRegWB) 
-                   == (IData)(vlSelf->performanceTB__DOT__dut__DOT__Rs1EX)))) {
-        performanceTB__DOT__dut__DOT__forwardA = 1U;
-    }
-    performanceTB__DOT__dut__DOT__forwardB = 0U;
-    if ((((((IData)(vlSelf->performanceTB__DOT__dut__DOT__WBMEM) 
-            >> 1U) & (0U != (IData)(vlSelf->performanceTB__DOT__dut__DOT__writeRegMEM))) 
-          & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__writeRegMEM) 
-             == (IData)(vlSelf->performanceTB__DOT__dut__DOT__Rs2EX))) 
-         & (~ ((IData)(vlSelf->performanceTB__DOT__dut__DOT__MEMMEM) 
-               >> 1U)))) {
-        performanceTB__DOT__dut__DOT__forwardB = 2U;
-    } else if (((((IData)(vlSelf->performanceTB__DOT__dut__DOT__WBWB) 
-                  >> 1U) & (0U != (IData)(vlSelf->performanceTB__DOT__dut__DOT__writeRegWB))) 
-                & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__writeRegWB) 
-                   == (IData)(vlSelf->performanceTB__DOT__dut__DOT__Rs2EX)))) {
-        performanceTB__DOT__dut__DOT__forwardB = 1U;
-    }
-    vlSelf->performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__addr_active 
-        = ((0U == (IData)(vlSelf->performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__state))
-            ? vlSelf->performanceTB__DOT__dut__DOT__AluResMEM
-            : vlSelf->performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__addr_reg);
     vlSelf->performanceTB__DOT__dut__DOT__umem_write = 0U;
     vlSelf->performanceTB__DOT__dut__DOT__umem_read = 0U;
     vlSelf->performanceTB__DOT__dut__DOT__umem_wdata = 0U;
@@ -570,12 +967,6 @@ VL_ATTR_COLD void VperformanceTB___024root___stl_sequent__TOP__0(VperformanceTB_
             performanceTB__DOT__dut__DOT__ICACHE__DOT__m_read = 1U;
         }
     }
-    vlSelf->performanceTB__DOT__dut__DOT__finalResultWB 
-        = ((IData)(vlSelf->performanceTB__DOT__dut__DOT__isJumpWB)
-            ? vlSelf->performanceTB__DOT__dut__DOT__pcPlus4WB
-            : ((1U & (IData)(vlSelf->performanceTB__DOT__dut__DOT__WBWB))
-                ? performanceTB__DOT__dut__DOT__loadResult
-                : vlSelf->performanceTB__DOT__dut__DOT__AluResWB));
     vlSelf->performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__addr_active 
         = ((0U == (IData)(vlSelf->performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__state))
             ? vlSelf->performanceTB__DOT__dut__DOT__pc__DOT__PCRegister
@@ -641,30 +1032,12 @@ VL_ATTR_COLD void VperformanceTB___024root___stl_sequent__TOP__0(VperformanceTB_
                                        == (vlSelf->performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__addr_active 
                                            >> 7U))) 
               << 1U));
-    performanceTB__DOT__dut__DOT__AluInA = ((0x37U 
-                                             == (0x7fU 
-                                                 & vlSelf->performanceTB__DOT__dut__DOT__instEX))
-                                             ? 0U : 
-                                            ((0x17U 
-                                              == (0x7fU 
-                                                  & vlSelf->performanceTB__DOT__dut__DOT__instEX))
-                                              ? vlSelf->performanceTB__DOT__dut__DOT__pcEX
-                                              : ((2U 
-                                                  == (IData)(performanceTB__DOT__dut__DOT__forwardA))
-                                                  ? vlSelf->performanceTB__DOT__dut__DOT__AluResMEM
-                                                  : 
-                                                 ((1U 
-                                                   == (IData)(performanceTB__DOT__dut__DOT__forwardA))
-                                                   ? vlSelf->performanceTB__DOT__dut__DOT__finalResultWB
-                                                   : vlSelf->performanceTB__DOT__dut__DOT__regData1EX))));
-    performanceTB__DOT__dut__DOT__AluMuxBFwd = ((2U 
-                                                 == (IData)(performanceTB__DOT__dut__DOT__forwardB))
-                                                 ? vlSelf->performanceTB__DOT__dut__DOT__AluResMEM
-                                                 : 
-                                                ((1U 
-                                                  == (IData)(performanceTB__DOT__dut__DOT__forwardB))
-                                                  ? vlSelf->performanceTB__DOT__dut__DOT__finalResultWB
-                                                  : vlSelf->performanceTB__DOT__dut__DOT__regData2EX));
+    vlSelf->performanceTB__DOT__dut__DOT__finalResultWB 
+        = ((IData)(vlSelf->performanceTB__DOT__dut__DOT__isJumpWB)
+            ? vlSelf->performanceTB__DOT__dut__DOT__pcPlus4WB
+            : ((1U & (IData)(vlSelf->performanceTB__DOT__dut__DOT__WBWB))
+                ? performanceTB__DOT__dut__DOT__loadResult
+                : vlSelf->performanceTB__DOT__dut__DOT__AluResWB));
     vlSelf->performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__victim_way = 0U;
     if ((1U & (~ (IData)(performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__valid_vec)))) {
         vlSelf->performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__victim_way = 0U;
@@ -760,9 +1133,30 @@ VL_ATTR_COLD void VperformanceTB___024root___stl_sequent__TOP__0(VperformanceTB_
         vlSelf->performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__hit_way_index = 1U;
     }
     vlSelf->performanceTB__DOT__dut__DOT__dc_ready = 0U;
-    performanceTB__DOT__dut__DOT__AluInB = ((1U & (IData)(vlSelf->performanceTB__DOT__dut__DOT__EXEX))
-                                             ? vlSelf->performanceTB__DOT__dut__DOT__immEX
-                                             : performanceTB__DOT__dut__DOT__AluMuxBFwd);
+    performanceTB__DOT__dut__DOT__AluInA = ((0x37U 
+                                             == (0x7fU 
+                                                 & vlSelf->performanceTB__DOT__dut__DOT__instEX))
+                                             ? 0U : 
+                                            ((0x17U 
+                                              == (0x7fU 
+                                                  & vlSelf->performanceTB__DOT__dut__DOT__instEX))
+                                              ? vlSelf->performanceTB__DOT__dut__DOT__pcEX
+                                              : ((2U 
+                                                  == (IData)(performanceTB__DOT__dut__DOT__forwardA))
+                                                  ? vlSelf->performanceTB__DOT__dut__DOT__AluResMEM
+                                                  : 
+                                                 ((1U 
+                                                   == (IData)(performanceTB__DOT__dut__DOT__forwardA))
+                                                   ? vlSelf->performanceTB__DOT__dut__DOT__finalResultWB
+                                                   : vlSelf->performanceTB__DOT__dut__DOT__regData1EX))));
+    performanceTB__DOT__dut__DOT__AluMuxBFwd = ((2U 
+                                                 == (IData)(performanceTB__DOT__dut__DOT__forwardB))
+                                                 ? vlSelf->performanceTB__DOT__dut__DOT__AluResMEM
+                                                 : 
+                                                ((1U 
+                                                  == (IData)(performanceTB__DOT__dut__DOT__forwardB))
+                                                  ? vlSelf->performanceTB__DOT__dut__DOT__finalResultWB
+                                                  : vlSelf->performanceTB__DOT__dut__DOT__regData2EX));
     vlSelf->performanceTB__DOT__dut__DOT__ic_inst = 0U;
     if ((0U == (IData)(vlSelf->performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__state))) {
         if ((0U != (IData)(vlSelf->performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__way_hit))) {
@@ -916,8 +1310,13 @@ VL_ATTR_COLD void VperformanceTB___024root___stl_sequent__TOP__0(VperformanceTB_
                & (~ (IData)(vlSelf->performanceTB__DOT__dut__DOT__dc_stall))))) {
         if (((((IData)(vlSelf->performanceTB__DOT__dut__DOT__MEMEX) 
                >> 1U) & (IData)(performanceTB__DOT__dut__DOT__hdu_instance__DOT____VdfgTmp_heb2fc36b__0)) 
-             & ((0U == (IData)(performanceTB__DOT__dut__DOT__forwardA)) 
-                | (0U == (IData)(performanceTB__DOT__dut__DOT__forwardB))))) {
+             & ((((IData)(vlSelf->performanceTB__DOT__dut__DOT__RdEX) 
+                  == (0x1fU & (vlSelf->performanceTB__DOT__dut__DOT__instID 
+                               >> 0xfU))) & (0U == (IData)(performanceTB__DOT__dut__DOT__forwardA))) 
+                | (((IData)(vlSelf->performanceTB__DOT__dut__DOT__RdEX) 
+                    == (0x1fU & (vlSelf->performanceTB__DOT__dut__DOT__instID 
+                                 >> 0x14U))) & (0U 
+                                                == (IData)(performanceTB__DOT__dut__DOT__forwardB)))))) {
             vlSelf->performanceTB__DOT__dut__DOT__pcWrite = 0U;
             vlSelf->performanceTB__DOT__dut__DOT__IFIDwrite = 0U;
             performanceTB__DOT__dut__DOT__hazardSel = 0U;
@@ -937,47 +1336,22 @@ VL_ATTR_COLD void VperformanceTB___024root___stl_sequent__TOP__0(VperformanceTB_
                                                     (0x1fU 
                                                      & (vlSelf->performanceTB__DOT__dut__DOT__instID 
                                                         >> 0x14U)))))))) 
-                    & ((0U == (IData)(performanceTB__DOT__dut__DOT__forwardA)) 
-                       | (0U == (IData)(performanceTB__DOT__dut__DOT__forwardB))))) {
+                    & ((((IData)(vlSelf->performanceTB__DOT__dut__DOT__RdEX) 
+                         == (0x1fU & (vlSelf->performanceTB__DOT__dut__DOT__instID 
+                                      >> 0xfU))) & 
+                        (0U == (IData)(performanceTB__DOT__dut__DOT__forwardA))) 
+                       | (((IData)(vlSelf->performanceTB__DOT__dut__DOT__RdEX) 
+                           == (0x1fU & (vlSelf->performanceTB__DOT__dut__DOT__instID 
+                                        >> 0x14U))) 
+                          & (0U == (IData)(performanceTB__DOT__dut__DOT__forwardB)))))) {
             vlSelf->performanceTB__DOT__dut__DOT__pcWrite = 0U;
             vlSelf->performanceTB__DOT__dut__DOT__IFIDwrite = 0U;
             performanceTB__DOT__dut__DOT__hazardSel = 0U;
         }
     }
-    vlSelf->performanceTB__DOT__dut__DOT__AluResultEX 
-        = ((8U & (IData)(performanceTB__DOT__dut__DOT__AluCtrlEX))
-            ? ((4U & (IData)(performanceTB__DOT__dut__DOT__AluCtrlEX))
-                ? 0U : ((2U & (IData)(performanceTB__DOT__dut__DOT__AluCtrlEX))
-                         ? 0U : ((1U & (IData)(performanceTB__DOT__dut__DOT__AluCtrlEX))
-                                  ? ((performanceTB__DOT__dut__DOT__AluInA 
-                                      < performanceTB__DOT__dut__DOT__AluInB)
-                                      ? 1U : 0U) : 
-                                 (VL_LTS_III(32, performanceTB__DOT__dut__DOT__AluInA, performanceTB__DOT__dut__DOT__AluInB)
-                                   ? 1U : 0U)))) : 
-           ((4U & (IData)(performanceTB__DOT__dut__DOT__AluCtrlEX))
-             ? ((2U & (IData)(performanceTB__DOT__dut__DOT__AluCtrlEX))
-                 ? ((1U & (IData)(performanceTB__DOT__dut__DOT__AluCtrlEX))
-                     ? VL_SHIFTRS_III(32,32,5, performanceTB__DOT__dut__DOT__AluInA, 
-                                      (0x1fU & performanceTB__DOT__dut__DOT__AluInB))
-                     : (performanceTB__DOT__dut__DOT__AluInA 
-                        >> (0x1fU & performanceTB__DOT__dut__DOT__AluInB)))
-                 : ((1U & (IData)(performanceTB__DOT__dut__DOT__AluCtrlEX))
-                     ? (performanceTB__DOT__dut__DOT__AluInA 
-                        << (0x1fU & performanceTB__DOT__dut__DOT__AluInB))
-                     : (performanceTB__DOT__dut__DOT__AluInA 
-                        ^ performanceTB__DOT__dut__DOT__AluInB)))
-             : ((2U & (IData)(performanceTB__DOT__dut__DOT__AluCtrlEX))
-                 ? ((1U & (IData)(performanceTB__DOT__dut__DOT__AluCtrlEX))
-                     ? (performanceTB__DOT__dut__DOT__AluInA 
-                        | performanceTB__DOT__dut__DOT__AluInB)
-                     : (performanceTB__DOT__dut__DOT__AluInA 
-                        & performanceTB__DOT__dut__DOT__AluInB))
-                 : (performanceTB__DOT__dut__DOT__AluInA 
-                    + (((1U == (IData)(performanceTB__DOT__dut__DOT__AluCtrlEX))
-                         ? (~ performanceTB__DOT__dut__DOT__AluInB)
-                         : performanceTB__DOT__dut__DOT__AluInB) 
-                       + (IData)((QData)((IData)((1U 
-                                                  == (IData)(performanceTB__DOT__dut__DOT__AluCtrlEX))))))))));
+    performanceTB__DOT__dut__DOT__AluInB = ((1U & (IData)(vlSelf->performanceTB__DOT__dut__DOT__EXEX))
+                                             ? vlSelf->performanceTB__DOT__dut__DOT__immEX
+                                             : performanceTB__DOT__dut__DOT__AluMuxBFwd);
     performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__lru__DOT__unnamedblk4__DOT__temp_node = 0U;
     vlSelf->performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__lru__DOT__tree_next[0U] 
         = vlSelf->performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__lru__DOT__tree
@@ -1048,6 +1422,43 @@ VL_ATTR_COLD void VperformanceTB___024root___stl_sequent__TOP__0(VperformanceTB_
                                              == (0x1fU 
                                                  & (vlSelf->performanceTB__DOT__dut__DOT__instID 
                                                     >> 0x14U))))))));
+    vlSelf->performanceTB__DOT__dut__DOT__AluResultEX 
+        = ((8U & (IData)(performanceTB__DOT__dut__DOT__AluCtrlEX))
+            ? ((4U & (IData)(performanceTB__DOT__dut__DOT__AluCtrlEX))
+                ? 0U : ((2U & (IData)(performanceTB__DOT__dut__DOT__AluCtrlEX))
+                         ? 0U : ((1U & (IData)(performanceTB__DOT__dut__DOT__AluCtrlEX))
+                                  ? ((performanceTB__DOT__dut__DOT__AluInA 
+                                      < performanceTB__DOT__dut__DOT__AluInB)
+                                      ? 1U : 0U) : 
+                                 (VL_LTS_III(32, performanceTB__DOT__dut__DOT__AluInA, performanceTB__DOT__dut__DOT__AluInB)
+                                   ? 1U : 0U)))) : 
+           ((4U & (IData)(performanceTB__DOT__dut__DOT__AluCtrlEX))
+             ? ((2U & (IData)(performanceTB__DOT__dut__DOT__AluCtrlEX))
+                 ? ((1U & (IData)(performanceTB__DOT__dut__DOT__AluCtrlEX))
+                     ? VL_SHIFTRS_III(32,32,5, performanceTB__DOT__dut__DOT__AluInA, 
+                                      (0x1fU & performanceTB__DOT__dut__DOT__AluInB))
+                     : (performanceTB__DOT__dut__DOT__AluInA 
+                        >> (0x1fU & performanceTB__DOT__dut__DOT__AluInB)))
+                 : ((1U & (IData)(performanceTB__DOT__dut__DOT__AluCtrlEX))
+                     ? (performanceTB__DOT__dut__DOT__AluInA 
+                        << (0x1fU & performanceTB__DOT__dut__DOT__AluInB))
+                     : (performanceTB__DOT__dut__DOT__AluInA 
+                        ^ performanceTB__DOT__dut__DOT__AluInB)))
+             : ((2U & (IData)(performanceTB__DOT__dut__DOT__AluCtrlEX))
+                 ? ((1U & (IData)(performanceTB__DOT__dut__DOT__AluCtrlEX))
+                     ? (performanceTB__DOT__dut__DOT__AluInA 
+                        | performanceTB__DOT__dut__DOT__AluInB)
+                     : (performanceTB__DOT__dut__DOT__AluInA 
+                        & performanceTB__DOT__dut__DOT__AluInB))
+                 : (performanceTB__DOT__dut__DOT__AluInA 
+                    + (((1U == (IData)(performanceTB__DOT__dut__DOT__AluCtrlEX))
+                         ? (~ performanceTB__DOT__dut__DOT__AluInB)
+                         : performanceTB__DOT__dut__DOT__AluInB) 
+                       + (IData)((QData)((IData)((1U 
+                                                  == (IData)(performanceTB__DOT__dut__DOT__AluCtrlEX))))))))));
+    vlSelf->performanceTB__DOT__dut__DOT__cpu_ben = 0xfU;
+    vlSelf->performanceTB__DOT__dut__DOT__shiftedWdata 
+        = performanceTB__DOT__dut__DOT__AluMuxBFwd;
     if ((0U == (IData)(vlSelf->performanceTB__DOT__dut__DOT__funct3EX))) {
         if ((2U & vlSelf->performanceTB__DOT__dut__DOT__AluResultEX)) {
             if ((1U & vlSelf->performanceTB__DOT__dut__DOT__AluResultEX)) {
@@ -1071,42 +1482,396 @@ VL_ATTR_COLD void VperformanceTB___024root___stl_sequent__TOP__0(VperformanceTB_
             vlSelf->performanceTB__DOT__dut__DOT__shiftedWdata 
                 = (0xffU & performanceTB__DOT__dut__DOT__AluMuxBFwd);
         }
+    } else if ((1U == (IData)(vlSelf->performanceTB__DOT__dut__DOT__funct3EX))) {
+        if ((2U & vlSelf->performanceTB__DOT__dut__DOT__AluResultEX)) {
+            if ((2U & vlSelf->performanceTB__DOT__dut__DOT__AluResultEX)) {
+                vlSelf->performanceTB__DOT__dut__DOT__cpu_ben = 0xcU;
+                vlSelf->performanceTB__DOT__dut__DOT__shiftedWdata 
+                    = (performanceTB__DOT__dut__DOT__AluMuxBFwd 
+                       << 0x10U);
+            }
+        } else {
+            vlSelf->performanceTB__DOT__dut__DOT__cpu_ben = 3U;
+            vlSelf->performanceTB__DOT__dut__DOT__shiftedWdata 
+                = (0xffffU & performanceTB__DOT__dut__DOT__AluMuxBFwd);
+        }
     } else {
         vlSelf->performanceTB__DOT__dut__DOT__cpu_ben = 0xfU;
         vlSelf->performanceTB__DOT__dut__DOT__shiftedWdata 
             = performanceTB__DOT__dut__DOT__AluMuxBFwd;
     }
+    vlSelf->performanceTB__DOT__dut__DOT__branch_taken 
+        = ((4U & (IData)(vlSelf->performanceTB__DOT__dut__DOT__FuncEX))
+            ? ((2U & (IData)(vlSelf->performanceTB__DOT__dut__DOT__FuncEX))
+                ? ((1U & (IData)(vlSelf->performanceTB__DOT__dut__DOT__FuncEX))
+                    ? (0U == vlSelf->performanceTB__DOT__dut__DOT__AluResultEX)
+                    : (1U == vlSelf->performanceTB__DOT__dut__DOT__AluResultEX))
+                : ((1U & (IData)(vlSelf->performanceTB__DOT__dut__DOT__FuncEX))
+                    ? (0U == vlSelf->performanceTB__DOT__dut__DOT__AluResultEX)
+                    : (1U == vlSelf->performanceTB__DOT__dut__DOT__AluResultEX)))
+            : ((1U & (~ ((IData)(vlSelf->performanceTB__DOT__dut__DOT__FuncEX) 
+                         >> 1U))) && ((1U & (IData)(vlSelf->performanceTB__DOT__dut__DOT__FuncEX))
+                                       ? (0U != vlSelf->performanceTB__DOT__dut__DOT__AluResultEX)
+                                       : (0U == vlSelf->performanceTB__DOT__dut__DOT__AluResultEX))));
+    __Vtableidx3 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                     << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__63__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__63__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx3];
+    __Vtableidx4 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                     << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__62__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__62__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx4];
+    __Vtableidx5 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                     << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__61__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__61__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx5];
+    __Vtableidx6 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                     << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__60__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__60__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx6];
+    __Vtableidx7 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                     << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__59__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__59__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx7];
+    __Vtableidx8 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                     << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__58__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__58__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx8];
+    __Vtableidx9 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                     << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__57__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__57__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx9];
+    __Vtableidx10 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__56__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__56__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx10];
+    __Vtableidx11 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__55__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__55__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx11];
+    __Vtableidx12 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__54__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__54__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx12];
+    __Vtableidx13 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__53__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__53__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx13];
+    __Vtableidx14 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__52__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__52__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx14];
+    __Vtableidx15 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__51__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__51__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx15];
+    __Vtableidx16 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__50__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__50__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx16];
+    __Vtableidx17 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__49__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__49__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx17];
+    __Vtableidx18 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__48__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__48__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx18];
+    __Vtableidx19 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__47__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__47__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx19];
+    __Vtableidx20 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__46__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__46__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx20];
+    __Vtableidx21 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__45__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__45__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx21];
+    __Vtableidx22 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__44__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__44__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx22];
+    __Vtableidx23 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__43__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__43__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx23];
+    __Vtableidx24 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__42__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__42__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx24];
+    __Vtableidx25 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__41__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__41__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx25];
+    __Vtableidx26 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__40__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__40__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx26];
+    __Vtableidx27 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__39__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__39__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx27];
+    __Vtableidx28 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__38__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__38__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx28];
+    __Vtableidx29 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__37__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__37__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx29];
+    __Vtableidx30 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__36__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__36__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx30];
+    __Vtableidx31 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__35__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__35__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx31];
+    __Vtableidx32 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__34__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__34__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx32];
+    __Vtableidx33 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__33__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__33__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx33];
+    __Vtableidx34 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__32__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__32__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx34];
+    __Vtableidx35 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__31__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__31__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx35];
+    __Vtableidx36 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__30__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__30__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx36];
+    __Vtableidx37 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__29__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__29__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx37];
+    __Vtableidx38 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__28__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__28__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx38];
+    __Vtableidx39 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__27__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__27__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx39];
+    __Vtableidx40 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__26__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__26__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx40];
+    __Vtableidx41 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__25__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__25__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx41];
+    __Vtableidx42 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__24__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__24__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx42];
+    __Vtableidx43 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__23__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__23__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx43];
+    __Vtableidx44 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__22__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__22__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx44];
+    __Vtableidx45 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__21__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__21__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx45];
+    __Vtableidx46 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__20__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__20__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx46];
+    __Vtableidx47 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__19__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__19__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx47];
+    __Vtableidx48 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__18__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__18__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx48];
+    __Vtableidx49 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__17__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__17__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx49];
+    __Vtableidx50 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__16__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__16__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx50];
+    __Vtableidx51 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__15__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__15__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx51];
+    __Vtableidx52 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__14__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__14__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx52];
+    __Vtableidx53 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__13__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__13__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx53];
+    __Vtableidx54 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__12__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__12__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx54];
+    __Vtableidx55 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__11__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__11__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx55];
+    __Vtableidx56 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__10__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__10__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx56];
+    __Vtableidx57 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__9__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__9__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx57];
+    __Vtableidx58 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__8__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__8__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx58];
+    __Vtableidx59 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__7__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__7__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx59];
+    __Vtableidx60 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__6__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__6__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx60];
+    __Vtableidx61 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__5__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__5__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx61];
+    __Vtableidx62 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__4__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__4__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx62];
+    __Vtableidx63 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__3__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__3__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx63];
+    __Vtableidx64 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__2__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__2__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx64];
+    __Vtableidx65 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__1__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__1__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx65];
+    __Vtableidx66 = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                      << 2U) | (IData)(vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__0__KET____DOT__state));
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__0__KET____DOT__new_state 
+        = VperformanceTB__ConstPool__TABLE_h33d05a79_0
+        [__Vtableidx66];
     vlSelf->performanceTB__DOT__dut__DOT__pcSrcEX = 
         ((((IData)(vlSelf->performanceTB__DOT__dut__DOT__MEMEX) 
-           >> 2U) & ((4U & (IData)(vlSelf->performanceTB__DOT__dut__DOT__FuncEX))
-                      ? ((2U & (IData)(vlSelf->performanceTB__DOT__dut__DOT__FuncEX))
-                          ? ((1U & (IData)(vlSelf->performanceTB__DOT__dut__DOT__FuncEX))
-                              ? (0U == vlSelf->performanceTB__DOT__dut__DOT__AluResultEX)
-                              : (1U == vlSelf->performanceTB__DOT__dut__DOT__AluResultEX))
-                          : ((1U & (IData)(vlSelf->performanceTB__DOT__dut__DOT__FuncEX))
-                              ? (0U == vlSelf->performanceTB__DOT__dut__DOT__AluResultEX)
-                              : (1U == vlSelf->performanceTB__DOT__dut__DOT__AluResultEX)))
-                      : ((1U & (~ ((IData)(vlSelf->performanceTB__DOT__dut__DOT__FuncEX) 
-                                   >> 1U))) && ((1U 
-                                                 & (IData)(vlSelf->performanceTB__DOT__dut__DOT__FuncEX))
-                                                 ? 
-                                                (0U 
-                                                 != vlSelf->performanceTB__DOT__dut__DOT__AluResultEX)
-                                                 : 
-                                                (0U 
-                                                 == vlSelf->performanceTB__DOT__dut__DOT__AluResultEX))))) 
+           >> 2U) & (IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken)) 
          | (0x6fU == (0x7fU & vlSelf->performanceTB__DOT__dut__DOT__instEX)));
+    vlSelf->performanceTB__DOT__dut__DOT__mispredict 
+        = (((IData)(vlSelf->performanceTB__DOT__dut__DOT__MEMEX) 
+            >> 2U) & (((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                       != (IData)(vlSelf->performanceTB__DOT__dut__DOT__predict_taken_EX)) 
+                      | ((IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken) 
+                         & (vlSelf->performanceTB__DOT__dut__DOT__branchTargetEX 
+                            != vlSelf->performanceTB__DOT__dut__DOT__predict_target_EX))));
     vlSelf->performanceTB__DOT__dut__DOT__IFflushEX 
-        = ((IData)(vlSelf->performanceTB__DOT__dut__DOT__pcSrcEX) 
-           | (0x67U == (0x7fU & vlSelf->performanceTB__DOT__dut__DOT__instEX)));
+        = (((~ (IData)(vlSelf->performanceTB__DOT__dut__DOT__predict_taken_EX)) 
+            & (IData)(vlSelf->performanceTB__DOT__dut__DOT__pcSrcEX)) 
+           | ((0x67U == (0x7fU & vlSelf->performanceTB__DOT__dut__DOT__instEX)) 
+              | (IData)(vlSelf->performanceTB__DOT__dut__DOT__mispredict)));
     vlSelf->performanceTB__DOT__dut__DOT__pcPlus4IF 
         = ((IData)(4U) + vlSelf->performanceTB__DOT__dut__DOT__pc__DOT__PCRegister);
     vlSelf->performanceTB__DOT__dut__DOT__nextPc = 
         ((0x67U == (0x7fU & vlSelf->performanceTB__DOT__dut__DOT__instEX))
           ? (0xfffffffeU & vlSelf->performanceTB__DOT__dut__DOT__AluResultEX)
-          : ((IData)(vlSelf->performanceTB__DOT__dut__DOT__pcSrcEX)
+          : (((IData)(vlSelf->performanceTB__DOT__dut__DOT__pcSrcEX) 
+              & (~ (IData)(vlSelf->performanceTB__DOT__dut__DOT__predict_taken_EX)))
               ? vlSelf->performanceTB__DOT__dut__DOT__branchTargetEX
-              : vlSelf->performanceTB__DOT__dut__DOT__pcPlus4IF));
+              : (((IData)(vlSelf->performanceTB__DOT__dut__DOT__mispredict) 
+                  & (~ (IData)(vlSelf->performanceTB__DOT__dut__DOT__branch_taken)))
+                  ? vlSelf->performanceTB__DOT__dut__DOT__pcPlus4EX
+                  : (((IData)(vlSelf->performanceTB__DOT__dut__DOT__predict_taken) 
+                      & (vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__btb__DOT__valid
+                         [(0x3fU & (vlSelf->performanceTB__DOT__dut__DOT__pc__DOT__PCRegister 
+                                    >> 2U))] & (vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__btb__DOT__tag
+                                                [(0x3fU 
+                                                  & (vlSelf->performanceTB__DOT__dut__DOT__pc__DOT__PCRegister 
+                                                     >> 2U))] 
+                                                == 
+                                                (vlSelf->performanceTB__DOT__dut__DOT__pc__DOT__PCRegister 
+                                                 >> 8U))))
+                      ? vlSelf->performanceTB__DOT__dut__DOT__predict_target
+                      : vlSelf->performanceTB__DOT__dut__DOT__pcPlus4IF))));
 }
 
 VL_ATTR_COLD void VperformanceTB___024root___eval_stl(VperformanceTB___024root* vlSelf) {
@@ -1149,7 +1914,10 @@ VL_ATTR_COLD void VperformanceTB___024root___dump_triggers__act(VperformanceTB__
         VL_DBG_MSGF("         'act' region trigger index 0 is active: @(posedge performanceTB.clk)\n");
     }
     if ((2ULL & vlSelf->__VactTriggered.word(0U))) {
-        VL_DBG_MSGF("         'act' region trigger index 1 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
+        VL_DBG_MSGF("         'act' region trigger index 1 is active: @(posedge performanceTB.clk or posedge performanceTB.rst)\n");
+    }
+    if ((4ULL & vlSelf->__VactTriggered.word(0U))) {
+        VL_DBG_MSGF("         'act' region trigger index 2 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
     }
 }
 #endif  // VL_DEBUG
@@ -1167,7 +1935,10 @@ VL_ATTR_COLD void VperformanceTB___024root___dump_triggers__nba(VperformanceTB__
         VL_DBG_MSGF("         'nba' region trigger index 0 is active: @(posedge performanceTB.clk)\n");
     }
     if ((2ULL & vlSelf->__VnbaTriggered.word(0U))) {
-        VL_DBG_MSGF("         'nba' region trigger index 1 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
+        VL_DBG_MSGF("         'nba' region trigger index 1 is active: @(posedge performanceTB.clk or posedge performanceTB.rst)\n");
+    }
+    if ((4ULL & vlSelf->__VnbaTriggered.word(0U))) {
+        VL_DBG_MSGF("         'nba' region trigger index 2 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
     }
 }
 #endif  // VL_DEBUG
@@ -1189,6 +1960,8 @@ VL_ATTR_COLD void VperformanceTB___024root___ctor_var_reset(VperformanceTB___024
     vlSelf->performanceTB__DOT__dut__DOT__ic_inst = VL_RAND_RESET_I(32);
     vlSelf->performanceTB__DOT__dut__DOT__ic_ready = VL_RAND_RESET_I(1);
     vlSelf->performanceTB__DOT__dut__DOT__pcWrite = VL_RAND_RESET_I(1);
+    vlSelf->performanceTB__DOT__dut__DOT__predict_taken = VL_RAND_RESET_I(1);
+    vlSelf->performanceTB__DOT__dut__DOT__predict_target = VL_RAND_RESET_I(32);
     vlSelf->performanceTB__DOT__dut__DOT__IFIDwrite = VL_RAND_RESET_I(1);
     vlSelf->performanceTB__DOT__dut__DOT__immID = VL_RAND_RESET_I(32);
     vlSelf->performanceTB__DOT__dut__DOT__instID = VL_RAND_RESET_I(32);
@@ -1196,6 +1969,8 @@ VL_ATTR_COLD void VperformanceTB___024root___ctor_var_reset(VperformanceTB___024
     vlSelf->performanceTB__DOT__dut__DOT__pcID = VL_RAND_RESET_I(32);
     vlSelf->performanceTB__DOT__dut__DOT__MEMID = VL_RAND_RESET_I(3);
     vlSelf->performanceTB__DOT__dut__DOT__finalCRLTID = VL_RAND_RESET_I(9);
+    vlSelf->performanceTB__DOT__dut__DOT__predict_taken_ID = VL_RAND_RESET_I(1);
+    vlSelf->performanceTB__DOT__dut__DOT__predict_target_ID = VL_RAND_RESET_I(32);
     vlSelf->performanceTB__DOT__dut__DOT__WBEX = VL_RAND_RESET_I(2);
     vlSelf->performanceTB__DOT__dut__DOT__MEMEX = VL_RAND_RESET_I(3);
     vlSelf->performanceTB__DOT__dut__DOT__EXEX = VL_RAND_RESET_I(4);
@@ -1213,6 +1988,13 @@ VL_ATTR_COLD void VperformanceTB___024root___ctor_var_reset(VperformanceTB___024
     vlSelf->performanceTB__DOT__dut__DOT__branchTargetEX = VL_RAND_RESET_I(32);
     vlSelf->performanceTB__DOT__dut__DOT__pcSrcEX = VL_RAND_RESET_I(1);
     vlSelf->performanceTB__DOT__dut__DOT__IFflushEX = VL_RAND_RESET_I(1);
+    vlSelf->performanceTB__DOT__dut__DOT__branch_taken = VL_RAND_RESET_I(1);
+    vlSelf->performanceTB__DOT__dut__DOT__mispredict = VL_RAND_RESET_I(1);
+    vlSelf->performanceTB__DOT__dut__DOT__funct3EX = VL_RAND_RESET_I(3);
+    vlSelf->performanceTB__DOT__dut__DOT__predict_taken_EX = VL_RAND_RESET_I(1);
+    vlSelf->performanceTB__DOT__dut__DOT__predict_target_EX = VL_RAND_RESET_I(32);
+    vlSelf->performanceTB__DOT__dut__DOT__cpu_ben = VL_RAND_RESET_I(4);
+    vlSelf->performanceTB__DOT__dut__DOT__shiftedWdata = VL_RAND_RESET_I(32);
     vlSelf->performanceTB__DOT__dut__DOT__WBMEM = VL_RAND_RESET_I(2);
     vlSelf->performanceTB__DOT__dut__DOT__MEMMEM = VL_RAND_RESET_I(3);
     vlSelf->performanceTB__DOT__dut__DOT__AluResMEM = VL_RAND_RESET_I(32);
@@ -1221,12 +2003,18 @@ VL_ATTR_COLD void VperformanceTB___024root___ctor_var_reset(VperformanceTB___024
     vlSelf->performanceTB__DOT__dut__DOT__isJumpMEM = VL_RAND_RESET_I(1);
     vlSelf->performanceTB__DOT__dut__DOT__dc_rdata = VL_RAND_RESET_I(32);
     vlSelf->performanceTB__DOT__dut__DOT__dc_ready = VL_RAND_RESET_I(1);
+    vlSelf->performanceTB__DOT__dut__DOT__funct3MEM = VL_RAND_RESET_I(3);
+    vlSelf->performanceTB__DOT__dut__DOT__byteOffMEM = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__cpu_benMEM = VL_RAND_RESET_I(4);
+    vlSelf->performanceTB__DOT__dut__DOT__shiftedWdataMEM = VL_RAND_RESET_I(32);
     vlSelf->performanceTB__DOT__dut__DOT__WBWB = VL_RAND_RESET_I(2);
     vlSelf->performanceTB__DOT__dut__DOT__AluResWB = VL_RAND_RESET_I(32);
     vlSelf->performanceTB__DOT__dut__DOT__writeRegWB = VL_RAND_RESET_I(5);
     vlSelf->performanceTB__DOT__dut__DOT__pcPlus4WB = VL_RAND_RESET_I(32);
     vlSelf->performanceTB__DOT__dut__DOT__isJumpWB = VL_RAND_RESET_I(1);
     vlSelf->performanceTB__DOT__dut__DOT__finalResultWB = VL_RAND_RESET_I(32);
+    vlSelf->performanceTB__DOT__dut__DOT__funct3WB = VL_RAND_RESET_I(3);
+    vlSelf->performanceTB__DOT__dut__DOT__byteOffWB = VL_RAND_RESET_I(2);
     vlSelf->performanceTB__DOT__dut__DOT__ic_stall = VL_RAND_RESET_I(1);
     vlSelf->performanceTB__DOT__dut__DOT__dc_stall = VL_RAND_RESET_I(1);
     vlSelf->performanceTB__DOT__dut__DOT__dc_done = VL_RAND_RESET_I(1);
@@ -1238,20 +2026,149 @@ VL_ATTR_COLD void VperformanceTB___024root___ctor_var_reset(VperformanceTB___024
     vlSelf->performanceTB__DOT__dut__DOT__umem_addr = VL_RAND_RESET_I(32);
     vlSelf->performanceTB__DOT__dut__DOT__umem_wdata = VL_RAND_RESET_I(32);
     vlSelf->performanceTB__DOT__dut__DOT__umem_rdata = VL_RAND_RESET_I(32);
-    vlSelf->performanceTB__DOT__dut__DOT__funct3EX = VL_RAND_RESET_I(3);
-    vlSelf->performanceTB__DOT__dut__DOT__funct3MEM = VL_RAND_RESET_I(3);
-    vlSelf->performanceTB__DOT__dut__DOT__funct3WB = VL_RAND_RESET_I(3);
-    vlSelf->performanceTB__DOT__dut__DOT__byteOffMEM = VL_RAND_RESET_I(2);
-    vlSelf->performanceTB__DOT__dut__DOT__byteOffWB = VL_RAND_RESET_I(2);
-    vlSelf->performanceTB__DOT__dut__DOT__cpu_ben = VL_RAND_RESET_I(4);
-    vlSelf->performanceTB__DOT__dut__DOT__shiftedWdata = VL_RAND_RESET_I(32);
-    vlSelf->performanceTB__DOT__dut__DOT__cpu_benMEM = VL_RAND_RESET_I(4);
-    vlSelf->performanceTB__DOT__dut__DOT__shiftedWdataMEM = VL_RAND_RESET_I(32);
     vlSelf->performanceTB__DOT__dut__DOT____Vcellinp__D_CACHE__cpu_write = VL_RAND_RESET_I(1);
     vlSelf->performanceTB__DOT__dut__DOT____Vcellinp__D_CACHE__cpu_read = VL_RAND_RESET_I(1);
     vlSelf->performanceTB__DOT__dut__DOT__dc_rdata_latch = VL_RAND_RESET_I(32);
     vlSelf->performanceTB__DOT__dut__DOT__stall_WB = VL_RAND_RESET_I(1);
     vlSelf->performanceTB__DOT__dut__DOT__pc__DOT__PCRegister = VL_RAND_RESET_I(32);
+    for (int __Vi0 = 0; __Vi0 < 64; ++__Vi0) {
+        vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__btb__DOT__valid[__Vi0] = VL_RAND_RESET_I(1);
+    }
+    for (int __Vi0 = 0; __Vi0 < 64; ++__Vi0) {
+        vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__btb__DOT__tag[__Vi0] = VL_RAND_RESET_I(24);
+    }
+    for (int __Vi0 = 0; __Vi0 < 64; ++__Vi0) {
+        vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__btb__DOT__target[__Vi0] = VL_RAND_RESET_I(32);
+    }
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__counter_update_en = VL_RAND_RESET_Q(64);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__63__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__63__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__62__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__62__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__61__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__61__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__60__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__60__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__59__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__59__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__58__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__58__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__57__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__57__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__56__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__56__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__55__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__55__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__54__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__54__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__53__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__53__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__52__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__52__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__51__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__51__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__50__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__50__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__49__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__49__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__48__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__48__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__47__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__47__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__46__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__46__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__45__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__45__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__44__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__44__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__43__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__43__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__42__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__42__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__41__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__41__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__40__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__40__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__39__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__39__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__38__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__38__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__37__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__37__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__36__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__36__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__35__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__35__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__34__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__34__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__33__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__33__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__32__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__32__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__31__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__31__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__30__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__30__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__29__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__29__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__28__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__28__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__27__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__27__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__26__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__26__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__25__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__25__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__24__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__24__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__23__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__23__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__22__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__22__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__21__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__21__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__20__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__20__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__19__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__19__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__18__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__18__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__17__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__17__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__16__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__16__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__15__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__15__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__14__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__14__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__13__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__13__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__12__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__12__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__11__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__11__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__10__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__10__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__9__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__9__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__8__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__8__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__7__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__7__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__6__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__6__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__5__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__5__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__4__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__4__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__3__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__3__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__2__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__2__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__1__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__1__KET____DOT__new_state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__0__KET____DOT__state = VL_RAND_RESET_I(2);
+    vlSelf->performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__0__KET____DOT__new_state = VL_RAND_RESET_I(2);
     for (int __Vi0 = 0; __Vi0 < 2; ++__Vi0) {
         for (int __Vi1 = 0; __Vi1 < 8; ++__Vi1) {
             for (int __Vi2 = 0; __Vi2 < 4; ++__Vi2) {
@@ -1285,9 +2202,6 @@ VL_ATTR_COLD void VperformanceTB___024root___ctor_var_reset(VperformanceTB___024
     }
     for (int __Vi0 = 0; __Vi0 < 8; ++__Vi0) {
         vlSelf->performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__lru__DOT__tree_next[__Vi0] = VL_RAND_RESET_I(2);
-    }
-    for (int __Vi0 = 0; __Vi0 < 32; ++__Vi0) {
-        vlSelf->performanceTB__DOT__dut__DOT__Reg_Files__DOT__Register[__Vi0] = VL_RAND_RESET_I(32);
     }
     vlSelf->performanceTB__DOT__dut__DOT__D_CACHE__DOT__dcache_req_valid = VL_RAND_RESET_I(1);
     vlSelf->performanceTB__DOT__dut__DOT__D_CACHE__DOT__dcache_req_addr = VL_RAND_RESET_I(32);
@@ -1343,6 +2257,9 @@ VL_ATTR_COLD void VperformanceTB___024root___ctor_var_reset(VperformanceTB___024
     }
     vlSelf->performanceTB__DOT__dut__DOT__UnifiedMem__DOT__timer = VL_RAND_RESET_I(5);
     vlSelf->performanceTB__DOT__dut__DOT__UnifiedMem__DOT__busy = VL_RAND_RESET_I(1);
+    for (int __Vi0 = 0; __Vi0 < 32; ++__Vi0) {
+        vlSelf->performanceTB__DOT__dut__DOT__Reg_Files__DOT__Register[__Vi0] = VL_RAND_RESET_I(32);
+    }
     vlSelf->performanceTB__DOT__perfCounter__DOT__total_cycles = VL_RAND_RESET_Q(64);
     vlSelf->performanceTB__DOT__perfCounter__DOT__instruction_retired = VL_RAND_RESET_Q(64);
     vlSelf->performanceTB__DOT__perfCounter__DOT__ic_hits = VL_RAND_RESET_Q(64);
@@ -1361,4 +2278,5 @@ VL_ATTR_COLD void VperformanceTB___024root___ctor_var_reset(VperformanceTB___024
     vlSelf->performanceTB__DOT__perfCounter__DOT__unnamedblk1__DOT__dc_miss_rate = 0;
     vlSelf->performanceTB__DOT__perfCounter__DOT__unnamedblk1__DOT__branch_mispredict_rate = 0;
     vlSelf->__Vtrigprevexpr___TOP__performanceTB__DOT__clk__0 = VL_RAND_RESET_I(1);
+    vlSelf->__Vtrigprevexpr___TOP__performanceTB__DOT__rst__0 = VL_RAND_RESET_I(1);
 }

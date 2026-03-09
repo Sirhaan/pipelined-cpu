@@ -17,9 +17,15 @@ void VperformanceTB___024root___eval_triggers__act(VperformanceTB___024root* vlS
     // Body
     vlSelf->__VactTriggered.set(0U, ((IData)(vlSelf->performanceTB__DOT__clk) 
                                      & (~ (IData)(vlSelf->__Vtrigprevexpr___TOP__performanceTB__DOT__clk__0))));
-    vlSelf->__VactTriggered.set(1U, vlSelf->__VdlySched.awaitingCurrentTime());
+    vlSelf->__VactTriggered.set(1U, (((IData)(vlSelf->performanceTB__DOT__clk) 
+                                      & (~ (IData)(vlSelf->__Vtrigprevexpr___TOP__performanceTB__DOT__clk__0))) 
+                                     | ((IData)(vlSelf->performanceTB__DOT__rst) 
+                                        & (~ (IData)(vlSelf->__Vtrigprevexpr___TOP__performanceTB__DOT__rst__0)))));
+    vlSelf->__VactTriggered.set(2U, vlSelf->__VdlySched.awaitingCurrentTime());
     vlSelf->__Vtrigprevexpr___TOP__performanceTB__DOT__clk__0 
         = vlSelf->performanceTB__DOT__clk;
+    vlSelf->__Vtrigprevexpr___TOP__performanceTB__DOT__rst__0 
+        = vlSelf->performanceTB__DOT__rst;
 #ifdef VL_DEBUG
     if (VL_UNLIKELY(vlSymsp->_vm_contextp__->debug())) {
         VperformanceTB___024root___dump_triggers__act(vlSelf);

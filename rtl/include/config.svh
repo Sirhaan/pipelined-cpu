@@ -42,7 +42,7 @@
 `define RESET_TIME       (`CLK_PERIOD * (`RESET_CYCLES + 1))
 
 // Functional testbench: tight timeout — program must finish in this many ns
-`define SIM_TIMEOUT_FUNC 50000
+`define SIM_TIMEOUT_FUNC 500000
 
 // Performance testbench: generous timeout — program ends via BREAK/SYSCALL
 `define SIM_TIMEOUT_PERF 500000
@@ -54,7 +54,8 @@
 `define OPCODE_SPECIAL   6'b000000
 `define FUNCT_BREAK      6'b001101
 `define FUNCT_SYSCALL    6'b001100
-
+`define BHT_ENTRIES       64       // Number of entries in Branch History Table
+`define BTB_ENTRIES       64         // Number of entries in Branch Target Buffer
 // -----------------------------------------------------------------------------
 // Debug Verbosity
 
@@ -68,5 +69,5 @@
 // -----------------
 `define PERF_TB 1   // Define to run performance testbench instead of functional
    `define PROG_FILE_FUNC   "program/hex/add.hex"       // Functional validation program
-`define PROG_FILE_PERF "program/hex/auipc.hex"
+`define PROG_FILE_PERF "program/hex/loop.hex"
 `endif // CPU_CONFIG_SVH

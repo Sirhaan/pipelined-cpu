@@ -1,7 +1,9 @@
 
 #!/bin/bash
 # run_tests.sh — build and simulate a list of tests, report pass/fail
+# Add to top of buildTest.sh
 
+# rest of existing buildTest.sh below...
 TESTS=$@
 PASS=0
 FAIL=0
@@ -26,26 +28,7 @@ open('rtl/include/config.svh', 'w').write(content)
 
     # Recompile and run
     verilator --sv --binary --timing \
-        +incdir+./rtl/include/ \
-        ./rtl/core/pipelinedCpu.sv \
-        ./rtl/core/ALU.sv \
-        ./rtl/core/Decoder.sv \
-        ./rtl/core/RF.sv \
-        ./rtl/core/FU.sv \
-        ./rtl/core/HDU.sv \
-        ./rtl/core/ControlUnit.sv \
-        ./rtl/core/PC.sv \
-        ./rtl/core/ImmGen.sv \
-        ./rtl/cache/dcache/dcache.sv \
-        ./rtl/cache/dcache/dcacheController.sv \
-        ./rtl/cache/icache/icache.sv \
-        ./rtl/cache/icache/icacheController.sv \
-        ./rtl/cache/replacement/TPLRU.sv \
-        ./rtl/cache/replacement/BPLRU.sv \
-        ./rtl/memory/UMEM.sv \
-        ./rtl/memory/MemoryArbitrator.sv \
-        ./tb/performanceCounter.sv \
-        ./tb/performanceTB.sv \
+         -f rtl.f \
         --top-module performanceTB \
         --Wno-UNUSEDPARAM --Wno-UNDRIVEN --Wno-UNUSEDSIGNAL \
         --Wno-BLKSEQ --Wno-EOFNEWLINE --Wno-PINCONNECTEMPTY \
@@ -53,13 +36,15 @@ open('rtl/include/config.svh', 'w').write(content)
         2>/dev/null
 
     # Run and capture result
-    RESULT=$(./obj_dir/VperformanceTB 2>&1 | grep "RESULT:")
+      OUTPUT=$(./obj_dir/VperformanceTB 2>&1)
+    RESULT=$(echo "$OUTPUT" | grep "RESULT:")
+    PERF=$(echo "$OUTPUT" | grep "Cycles:")
 
     if echo "$RESULT" | grep -q "PASS"; then
-        echo "  ✓ PASS"
+        echo "  ✓ PASS  |  $PERF"
         PASS=$((PASS + 1))
     else
-        echo "  ✗ FAIL — $RESULT"
+        echo "  ✗ FAIL  |  $PERF"
         FAIL=$((FAIL + 1))
         FAILED_TESTS="$FAILED_TESTS $TEST"
     fi

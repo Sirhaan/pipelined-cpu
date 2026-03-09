@@ -8,6 +8,14 @@
 #   ./build_test.sh lw           # compiles rv32ui/lw.S
 #   ./build_test.sh all          # compiles all rv32ui tests
 #=============================================================================
+if [ -f "$1.S" ]; then
+    riscv64-unknown-elf-gcc -march=rv32i -mabi=ilp32 -nostdlib \
+        -T link.ld -I . \
+        $1.S -o $1.elf
+    riscv64-unknown-elf-objcopy -O verilog $1.elf $1.hex.raw
+    python3 convert_hex.py $1.hex.raw hex/$1.hex
+    exit 0
+fi
 
 set -e
 

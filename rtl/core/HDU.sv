@@ -76,18 +76,21 @@ module HDU(
         // Priority 3: Load-use / branch hazards
         // Only check when caches are happy
         if (!ic_stall && !dc_stall) begin
-            if (load_use_hazard &&
-                (forwardA == 2'b00 || forwardB == 2'b00)) begin
-                pcWrite     = 1'b0;
-                IF_ID_write = 1'b0;
-                hazardSel   = 1'b0;
-            end
-            else if ((branch_hazard_EX || branch_hazard_MEM) &&
-                     (forwardA == 2'b00 || forwardB == 2'b00)) begin
-                pcWrite     = 1'b0;
-                IF_ID_write = 1'b0;
-                hazardSel   = 1'b0;
-            end
+            // Load-use hazard
+if (load_use_hazard &&
+    ((ID_EX_rd == IF_ID_rs1 && forwardA == 2'b00) ||
+     (ID_EX_rd == IF_ID_rs2 && forwardB == 2'b00))) begin
+    pcWrite     = 1'b0;
+    IF_ID_write = 1'b0;
+    hazardSel   = 1'b0;
+end
+else if ((branch_hazard_EX || branch_hazard_MEM) &&
+    ((ID_EX_rd == IF_ID_rs1 && forwardA == 2'b00) ||
+     (ID_EX_rd == IF_ID_rs2 && forwardB == 2'b00))) begin
+    pcWrite     = 1'b0;
+    IF_ID_write = 1'b0;
+    hazardSel   = 1'b0;
+end
         end
     end
 
