@@ -6,8 +6,10 @@ Load (lw)25025%1.16290.0
 Store (sw)10010%1.00100.0
 Branch (beq/bne)12012%1.30156.0
 Jump (j/jal)808%1.25100.0TOTAL1000100%1.14 (Avg)1136.5Key AssumptionsALU Instructions: Base CPI of 1.0
-for the new loop.s performance result was 
-PASS  |  Cycles: 836  Instructions: 502  CPI: 1.67 , plus minor pipeline fill overhead.Loads: Includes stalls for Load-Use hazards where the result is required by the immediate next instruction.Branches: Assumes a "Predict-Not-Taken" strategy with a 2-cycle penalty on misprediction/taken branches.Jumps: 1-cycle penalty due to unavoidable pipeline flushes.🛠️.Instruction Mix VisualizationComputational: 45%Memory Access: 35%Control Flow: 20%🚀 How to RunPrerequisites:Install the RISC-V GNU Toolchain.Use a simulator like Venus or Spike.Execution:# Assemble the code
+after adding gshare the performance of gshare vs bimodal branch predictor is
+ GSHARE:  ✓ PASS  |  Cycles: 536  Instructions: 478  CPI: 1.12
+ BIMODAL:   ✓ PASS  |  Cycles: 762   Instructions: 478  CPI: 1.59 , 
+ plus minor pipeline fill overhead.Loads: Includes stalls for Load-Use hazards where the result is required by the immediate next instruction.Branches: Assumes a "Predict-Not-Taken" strategy with a 2-cycle penalty on misprediction/taken branches.Jumps: 1-cycle penalty due to unavoidable pipeline flushes.🛠️.Instruction Mix VisualizationComputational: 45%Memory Access: 35%Control Flow: 20%🚀 How to RunPrerequisites:Install the RISC-V GNU Toolchain.Use a simulator like Venus or Spike.Execution:# Assemble the code
 riscv64-unknown-elf-as -o program.o program.s
 
 # Run in a functional simulator
