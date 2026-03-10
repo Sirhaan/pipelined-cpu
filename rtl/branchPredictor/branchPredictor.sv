@@ -14,6 +14,8 @@ module BranchPredictor #(
     input  logic [DATA_WIDTH-1:0] update_pc,
     input  logic                  actual_taken,
     input  logic [DATA_WIDTH-1:0] actual_target,
+    input  logic [$clog2(BHT_ENTRIES)-1:0] update_ghr, // GHR value at time of update
+     output logic [$clog2(BHT_ENTRIES)-1:0] ghr_snapshot, // For debugging
     // outputs to IF stage
     output logic                  predict_taken,
     output logic                  btb_hit,
@@ -46,6 +48,8 @@ BHT #(
     .update_en(update_en),
     .update_pc(update_pc),
     .actual_taken(actual_taken),
+    .update_ghr(update_ghr),
+    .ghr_snapshot(ghr_snapshot),
     .predict_taken(predict_taken)
 );
 endmodule

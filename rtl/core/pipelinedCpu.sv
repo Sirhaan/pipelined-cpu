@@ -107,7 +107,10 @@ module pipelinedCpu #(
     // Arbiter <-> UMEM
     logic                  umem_read, umem_write, umem_ready;
     logic [ADDR_WIDTH-1:0] umem_addr, umem_wdata, umem_rdata;
-
+// ghr
+    logic [$clog2(`BHT_ENTRIES)-1:0] ghr_snapshot; 
+    logic [$clog2(`BHT_ENTRIES)-1:0] ghr_snapshot_ID; 
+    logic [$clog2(`BHT_ENTRIES)-1:0] ghr_snapshot_EX; 
     assign pcWrite_final   = pcWrite;
     assign IFIDwrite_final = IFIDwrite;
 
@@ -147,7 +150,9 @@ end
         .actual_target (branchTargetEX),
         .predict_taken (predict_taken),
         .btb_hit       (btb_hit),
-        .predict_target(predict_target)
+        .predict_target(predict_target),
+        .update_ghr    (ghr_snapshot_EX),
+        .ghr_snapshot  (ghr_snapshot)
     );
 
     // =========================================================================
@@ -246,12 +251,14 @@ end
             pcID              <= 32'b0;
             predict_taken_ID  <= 1'b0;
             predict_target_ID <= 32'b0;
+            ghr_snapshot_ID <= 0;
         end else if (IFIDwrite_final) begin
             instID            <= ic_inst;
             pcPlus4ID         <= pcPlus4IF;
             pcID              <= pcCurrent;
             predict_taken_ID  <= predict_taken;
             predict_target_ID <= predict_target;
+            ghr_snapshot_ID <= ghr_snapshot;
         end
     end
 
@@ -355,6 +362,7 @@ end
             funct3EX            <= 3'b0;
             predict_taken_EX    <= 1'b0;
             predict_target_EX   <= 32'b0;
+            ghr_snapshot_EX     <= 0;
         end else if (!dc_stall && !ic_stall) begin
             {WBEX, MEMEX, EXEX} <= finalCRLTID;
             regData1EX          <= regData1ID;
@@ -371,6 +379,7 @@ end
             funct3EX            <= instID[14:12];
             predict_taken_EX    <= predict_taken_ID;
             predict_target_EX   <= predict_target_ID;
+            ghr_snapshot_EX     <= ghr_snapshot_ID;
         end
     end
 
