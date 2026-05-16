@@ -69,5 +69,5 @@
 // -----------------
 `define PERF_TB 1   // Define to run performance testbench instead of functional
    `define PROG_FILE_FUNC   "program/hex/add.hex"       // Functional validation program
-`define PROG_FILE_PERF "program/hex/loop.hex"
+`define PROG_FILE_PERF "program/hex/sw.hex"
 `endif // CPU_CONFIG_SVH

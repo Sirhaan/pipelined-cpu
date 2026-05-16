@@ -21,7 +21,7 @@ VL_ATTR_COLD void VperformanceTB___024root___eval_initial__TOP(VperformanceTB___
     __Vtemp_1[4U] = 0x696d2f70U;
     __Vtemp_1[5U] = 0x73U;
     vlSymsp->_vm_contextp__->dumpfile(VL_CVT_PACK_STR_NW(6, __Vtemp_1));
-    VL_PRINTF_MT("-Info: tb/performanceTB.sv:38: $dumpvar ignored, as Verilated without --trace\n");
+    vlSymsp->_traceDumpOpen();
     vlSelf->performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__valid[0U][0U] = 0U;
     vlSelf->performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__valid[0U][1U] = 0U;
     vlSelf->performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__valid[0U][2U] = 0U;
@@ -38,11 +38,13 @@ VL_ATTR_COLD void VperformanceTB___024root___eval_initial__TOP(VperformanceTB___
     vlSelf->performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__valid[1U][5U] = 0U;
     vlSelf->performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__valid[1U][6U] = 0U;
     vlSelf->performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__valid[1U][7U] = 0U;
+    vlSelf->performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__unnamedblk1__DOT__unnamedblk2__DOT__s = 8U;
+    vlSelf->performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__unnamedblk1__DOT__w = 2U;
     __Vtemp_2[0U] = 0x2e686578U;
-    __Vtemp_2[1U] = 0x6c6f6f70U;
-    __Vtemp_2[2U] = 0x6865782fU;
-    __Vtemp_2[3U] = 0x72616d2fU;
-    __Vtemp_2[4U] = 0x70726f67U;
+    __Vtemp_2[1U] = 0x782f7377U;
+    __Vtemp_2[2U] = 0x6d2f6865U;
+    __Vtemp_2[3U] = 0x6f677261U;
+    __Vtemp_2[4U] = 0x7072U;
     VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp_2)
                  ,  &(vlSelf->performanceTB__DOT__dut__DOT__UnifiedMem__DOT__ram)
                  , 0, ~0ULL);

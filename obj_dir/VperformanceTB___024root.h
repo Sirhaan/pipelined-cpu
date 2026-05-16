@@ -25,8 +25,11 @@ class alignas(VL_CACHE_LINE_BYTES) VperformanceTB___024root final : public Veril
         CData/*0:0*/ performanceTB__DOT__dut__DOT__ic_ready;
         CData/*0:0*/ performanceTB__DOT__dut__DOT__pcWrite;
         CData/*0:0*/ performanceTB__DOT__dut__DOT__predict_taken;
+        CData/*0:0*/ performanceTB__DOT__dut__DOT__hazardSel;
         CData/*0:0*/ performanceTB__DOT__dut__DOT__IFIDwrite;
+        CData/*1:0*/ performanceTB__DOT__dut__DOT__WBID;
         CData/*2:0*/ performanceTB__DOT__dut__DOT__MEMID;
+        CData/*3:0*/ performanceTB__DOT__dut__DOT__EXID;
         CData/*0:0*/ performanceTB__DOT__dut__DOT__predict_taken_ID;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__WBEX;
         CData/*2:0*/ performanceTB__DOT__dut__DOT__MEMEX;
@@ -35,6 +38,9 @@ class alignas(VL_CACHE_LINE_BYTES) VperformanceTB___024root final : public Veril
         CData/*4:0*/ performanceTB__DOT__dut__DOT__Rs2EX;
         CData/*4:0*/ performanceTB__DOT__dut__DOT__RdEX;
         CData/*3:0*/ performanceTB__DOT__dut__DOT__FuncEX;
+        CData/*1:0*/ performanceTB__DOT__dut__DOT__forwardA;
+        CData/*1:0*/ performanceTB__DOT__dut__DOT__forwardB;
+        CData/*3:0*/ performanceTB__DOT__dut__DOT__AluCtrlEX;
         CData/*0:0*/ performanceTB__DOT__dut__DOT__pcSrcEX;
         CData/*0:0*/ performanceTB__DOT__dut__DOT__IFflushEX;
         CData/*0:0*/ performanceTB__DOT__dut__DOT__branch_taken;
@@ -63,15 +69,20 @@ class alignas(VL_CACHE_LINE_BYTES) VperformanceTB___024root final : public Veril
         CData/*0:0*/ performanceTB__DOT__dut__DOT__umem_read;
         CData/*0:0*/ performanceTB__DOT__dut__DOT__umem_write;
         CData/*0:0*/ performanceTB__DOT__dut__DOT__umem_ready;
+        CData/*5:0*/ performanceTB__DOT__dut__DOT__ghr_snapshot_ID;
+        CData/*5:0*/ performanceTB__DOT__dut__DOT__ghr_snapshot_EX;
         CData/*0:0*/ performanceTB__DOT__dut__DOT____Vcellinp__D_CACHE__cpu_write;
         CData/*0:0*/ performanceTB__DOT__dut__DOT____Vcellinp__D_CACHE__cpu_read;
         CData/*0:0*/ performanceTB__DOT__dut__DOT__stall_WB;
+        CData/*5:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__GHR;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__63__KET____DOT__state;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__63__KET____DOT__new_state;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__62__KET____DOT__state;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__62__KET____DOT__new_state;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__61__KET____DOT__state;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__61__KET____DOT__new_state;
+    };
+    struct {
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__60__KET____DOT__state;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__60__KET____DOT__new_state;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__59__KET____DOT__state;
@@ -81,8 +92,6 @@ class alignas(VL_CACHE_LINE_BYTES) VperformanceTB___024root final : public Veril
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__57__KET____DOT__state;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__57__KET____DOT__new_state;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__56__KET____DOT__state;
-    };
-    struct {
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__56__KET____DOT__new_state;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__55__KET____DOT__state;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__55__KET____DOT__new_state;
@@ -138,6 +147,8 @@ class alignas(VL_CACHE_LINE_BYTES) VperformanceTB___024root final : public Veril
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__30__KET____DOT__new_state;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__29__KET____DOT__state;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__29__KET____DOT__new_state;
+    };
+    struct {
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__28__KET____DOT__state;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__28__KET____DOT__new_state;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__27__KET____DOT__state;
@@ -147,8 +158,6 @@ class alignas(VL_CACHE_LINE_BYTES) VperformanceTB___024root final : public Veril
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__25__KET____DOT__state;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__25__KET____DOT__new_state;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__24__KET____DOT__state;
-    };
-    struct {
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__24__KET____DOT__new_state;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__23__KET____DOT__state;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__23__KET____DOT__new_state;
@@ -198,14 +207,19 @@ class alignas(VL_CACHE_LINE_BYTES) VperformanceTB___024root final : public Veril
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__1__KET____DOT__new_state;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__0__KET____DOT__state;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__SaturatingCounter_instance__BRA__0__KET____DOT__new_state;
+        CData/*0:0*/ performanceTB__DOT__dut__DOT__ICACHE__DOT__m_read;
         CData/*2:0*/ performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__fill_set;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__fill_offset;
         CData/*0:0*/ performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__active_way;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__fill_word;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__state;
+    };
+    struct {
         CData/*1:0*/ performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__way_hit;
         CData/*0:0*/ performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__hit_way_index;
+        CData/*1:0*/ performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__valid_vec;
         CData/*0:0*/ performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__victim_way;
+        CData/*0:0*/ performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__lru_update;
         CData/*0:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__dcache_req_valid;
         CData/*0:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__dcache_req_write;
         CData/*0:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__is_read_op;
@@ -213,8 +227,6 @@ class alignas(VL_CACHE_LINE_BYTES) VperformanceTB___024root final : public Veril
         CData/*2:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__fill_set;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__fill_offset;
         CData/*0:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__active_way;
-    };
-    struct {
         CData/*3:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__cpu_ben_reg;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__fill_word;
         CData/*2:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__state;
@@ -222,10 +234,14 @@ class alignas(VL_CACHE_LINE_BYTES) VperformanceTB___024root final : public Veril
         CData/*1:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__way_hit;
         CData/*0:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__hit_way_index;
         CData/*0:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__victim_way;
+        CData/*1:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__valid_ways_current;
+        CData/*0:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__lru_update_en;
+        CData/*0:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__lru_access_way;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__MemoryArbitrator_instance__DOT__state;
         CData/*1:0*/ performanceTB__DOT__dut__DOT__MemoryArbitrator_instance__DOT__next_state;
         CData/*4:0*/ performanceTB__DOT__dut__DOT__UnifiedMem__DOT__timer;
         CData/*0:0*/ performanceTB__DOT__dut__DOT__UnifiedMem__DOT__busy;
+        CData/*0:0*/ performanceTB__DOT__dut__DOT__hdu_instance__DOT____VdfgTmp_heb2fc36b__0;
         CData/*0:0*/ performanceTB__DOT__perfCounter__DOT__ic_stall_prev;
         CData/*0:0*/ performanceTB__DOT__perfCounter__DOT__dc_stall_prev;
         CData/*0:0*/ performanceTB__DOT__perfCounter__DOT__branch_taken_prev;
@@ -251,36 +267,56 @@ class alignas(VL_CACHE_LINE_BYTES) VperformanceTB___024root final : public Veril
         IData/*31:0*/ performanceTB__DOT__dut__DOT__pcEX;
         IData/*31:0*/ performanceTB__DOT__dut__DOT__pcPlus4EX;
         IData/*31:0*/ performanceTB__DOT__dut__DOT__instEX;
+        IData/*31:0*/ performanceTB__DOT__dut__DOT__AluMuxBFwd;
+        IData/*31:0*/ performanceTB__DOT__dut__DOT__AluInA;
+        IData/*31:0*/ performanceTB__DOT__dut__DOT__AluInB;
         IData/*31:0*/ performanceTB__DOT__dut__DOT__AluResultEX;
         IData/*31:0*/ performanceTB__DOT__dut__DOT__branchTargetEX;
         IData/*31:0*/ performanceTB__DOT__dut__DOT__predict_target_EX;
         IData/*31:0*/ performanceTB__DOT__dut__DOT__shiftedWdata;
         IData/*31:0*/ performanceTB__DOT__dut__DOT__AluResMEM;
+        IData/*31:0*/ performanceTB__DOT__dut__DOT__writeDataMEM;
         IData/*31:0*/ performanceTB__DOT__dut__DOT__pcPlus4MEM;
         IData/*31:0*/ performanceTB__DOT__dut__DOT__dc_rdata;
         IData/*31:0*/ performanceTB__DOT__dut__DOT__shiftedWdataMEM;
+    };
+    struct {
         IData/*31:0*/ performanceTB__DOT__dut__DOT__AluResWB;
+        IData/*31:0*/ performanceTB__DOT__dut__DOT__MEMDataWB;
         IData/*31:0*/ performanceTB__DOT__dut__DOT__pcPlus4WB;
         IData/*31:0*/ performanceTB__DOT__dut__DOT__finalResultWB;
+        IData/*31:0*/ performanceTB__DOT__dut__DOT__loadResult;
         IData/*31:0*/ performanceTB__DOT__dut__DOT__umem_addr;
         IData/*31:0*/ performanceTB__DOT__dut__DOT__umem_wdata;
         IData/*31:0*/ performanceTB__DOT__dut__DOT__umem_rdata;
         IData/*31:0*/ performanceTB__DOT__dut__DOT__dc_rdata_latch;
         IData/*31:0*/ performanceTB__DOT__dut__DOT__pc__DOT__PCRegister;
+        IData/*31:0*/ performanceTB__DOT__dut__DOT__ICACHE__DOT__m_addr;
         IData/*31:0*/ performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__addr_reg;
         IData/*24:0*/ performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__fill_tag;
         IData/*31:0*/ performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__addr_active;
+        IData/*31:0*/ performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__unnamedblk1__DOT__w;
+        IData/*31:0*/ performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__unnamedblk1__DOT__unnamedblk2__DOT__s;
+        IData/*31:0*/ performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__lru__DOT__unnamedblk4__DOT__temp_node;
+        IData/*31:0*/ performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__lru__DOT__unnamedblk4__DOT__unnamedblk5__DOT__iterator;
         IData/*31:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__dcache_req_addr;
+        IData/*31:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__dcache_req_wdata;
         IData/*31:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__addr_reg;
         IData/*31:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__wdata_reg;
         IData/*24:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__fill_tag;
         IData/*31:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__addr_active;
+        IData/*31:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__unnamedblk2__DOT__b;
+        IData/*31:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__unnamedblk3__DOT__b;
+        IData/*31:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__lru__DOT__unnamedblk4__DOT__temp_node;
+        IData/*31:0*/ performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__lru__DOT__unnamedblk4__DOT__unnamedblk5__DOT__iterator;
+        IData/*31:0*/ performanceTB__DOT__dut__DOT__Reg_Files__DOT__i;
+        IData/*31:0*/ performanceTB__DOT__dut__DOT__ALUUnit__DOT__B_mux;
         IData/*31:0*/ __VactIterCount;
         QData/*63:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__counter_update_en;
+        QData/*63:0*/ performanceTB__DOT__dut__DOT__BranchPredictor_instance__DOT__bht__DOT__prediction;
+        QData/*32:0*/ performanceTB__DOT__dut__DOT__ALUUnit__DOT__sum_ext;
         QData/*63:0*/ performanceTB__DOT__perfCounter__DOT__total_cycles;
         QData/*63:0*/ performanceTB__DOT__perfCounter__DOT__instruction_retired;
-    };
-    struct {
         QData/*63:0*/ performanceTB__DOT__perfCounter__DOT__ic_hits;
         QData/*63:0*/ performanceTB__DOT__perfCounter__DOT__ic_misses;
         QData/*63:0*/ performanceTB__DOT__perfCounter__DOT__ic_stall_cycles;
@@ -305,6 +341,7 @@ class alignas(VL_CACHE_LINE_BYTES) VperformanceTB___024root final : public Veril
         VlUnpacked<CData/*1:0*/, 8> performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__lru__DOT__tree_next;
         VlUnpacked<IData/*31:0*/, 1024> performanceTB__DOT__dut__DOT__UnifiedMem__DOT__ram;
         VlUnpacked<IData/*31:0*/, 32> performanceTB__DOT__dut__DOT__Reg_Files__DOT__Register;
+        VlUnpacked<CData/*0:0*/, 6> __Vm_traceActivity;
     };
     double performanceTB__DOT__perfCounter__DOT__unnamedblk1__DOT__CPI;
     double performanceTB__DOT__perfCounter__DOT__unnamedblk1__DOT__ic_miss_rate;

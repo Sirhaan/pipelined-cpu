@@ -27,7 +27,7 @@ open('rtl/include/config.svh', 'w').write(content)
 "
 
     # Recompile and run
-    verilator --sv --binary --timing \
+    verilator --sv --binary --trace --timing \
          -f rtl.f \
         --top-module performanceTB \
         --Wno-UNUSEDPARAM --Wno-UNDRIVEN --Wno-UNUSEDSIGNAL \
