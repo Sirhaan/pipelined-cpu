@@ -585,4 +585,15 @@ assign IDflushEX = (pcSrcEX && !predict_taken_EX) || isJALREX || mispredict;
                            WBWB[0]  ? loadResult  :
                                       AluResWB;
 
+`ifdef DEBUG_PIPELINE
+    always_ff @(posedge clk) begin
+        if (!rst && instEX[6:0] == 7'b0010011 &&
+            (instEX[14:12] == 3'b000 || instEX[14:12] == 3'b110 || instEX[14:12] == 3'b111)) begin
+            $display("DEBUG ALU: PC=%08h inst=%08h func3=%b func7_5=%b AluCtrl=%b A=%08h B=%08h imm=%08h result=%08h",
+                     pcEX, instEX, instEX[14:12], instEX[30], AluCtrlEX,
+                     AluInA, AluInB, immEX, AluResultEX);
+        end
+    end
+`endif
+
 endmodule

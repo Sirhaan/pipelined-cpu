@@ -90,7 +90,10 @@ end
     // -------------------------------------------------------------------------
     always @(posedge clk) begin
         if (break_detected) begin
-            repeat(5) @(posedge clk);
+            repeat(5) begin
+                @(posedge clk);
+                while (ic_stall_wire || dc_stall_wire) @(posedge clk);
+            end
             $display("T=%0t | [EBREAK] Benchmark complete — pipeline drained", $time);
 
             // Pass/fail check — x28 = t3

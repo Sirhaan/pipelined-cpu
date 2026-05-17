@@ -70,7 +70,7 @@ VL_INLINE_OPT VlCoroutine VperformanceTB___024root___eval_initial__TOP__Vtiming_
     // Body
     co_await vlSelf->__VdlySched.delay(0x7a120ULL, 
                                        nullptr, "tb/performanceTB.sv", 
-                                       121);
+                                       124);
     VL_WRITEF("\n[TIMEOUT] %0t ns \342\200\224 benchmark did not terminate!\n[TIMEOUT] Last PC=%08x instID=%08x\n[TIMEOUT] x28=%0x (1=pass, other=failing test number)\n",
               64,VL_TIME_UNITED_Q(1),-12,32,vlSelf->performanceTB__DOT__dut__DOT__pc__DOT__PCRegister,
               32,vlSelf->performanceTB__DOT__dut__DOT__instID,
@@ -81,7 +81,7 @@ VL_INLINE_OPT VlCoroutine VperformanceTB___024root___eval_initial__TOP__Vtiming_
               32,vlSelf->performanceTB__DOT__instr_count,
               64,(VL_ISTOR_D_I(32, vlSelf->performanceTB__DOT__cycle_count) 
                   / VL_ISTOR_D_I(32, vlSelf->performanceTB__DOT__instr_count)));
-    VL_FINISH_MT("tb/performanceTB.sv", 127, "");
+    VL_FINISH_MT("tb/performanceTB.sv", 130, "");
 }
 
 VL_INLINE_OPT VlCoroutine VperformanceTB___024root___eval_initial__TOP__Vtiming__3(VperformanceTB___024root* vlSelf) {
@@ -113,27 +113,67 @@ VL_INLINE_OPT VlCoroutine VperformanceTB___024root___eval_initial__TOP__Vtiming_
                                                                nullptr, 
                                                                "@(posedge performanceTB.clk)", 
                                                                "tb/performanceTB.sv", 
-                                                               93);
+                                                               94);
+            while (((IData)(vlSelf->performanceTB__DOT__dut__DOT__ic_stall) 
+                    | (IData)(vlSelf->performanceTB__DOT__dut__DOT__dc_stall))) {
+                co_await vlSelf->__VtrigSched_h01766083__0.trigger(0U, 
+                                                                   nullptr, 
+                                                                   "@(posedge performanceTB.clk)", 
+                                                                   "tb/performanceTB.sv", 
+                                                                   95);
+            }
             co_await vlSelf->__VtrigSched_h01766083__0.trigger(0U, 
                                                                nullptr, 
                                                                "@(posedge performanceTB.clk)", 
                                                                "tb/performanceTB.sv", 
-                                                               93);
+                                                               94);
+            while (((IData)(vlSelf->performanceTB__DOT__dut__DOT__ic_stall) 
+                    | (IData)(vlSelf->performanceTB__DOT__dut__DOT__dc_stall))) {
+                co_await vlSelf->__VtrigSched_h01766083__0.trigger(0U, 
+                                                                   nullptr, 
+                                                                   "@(posedge performanceTB.clk)", 
+                                                                   "tb/performanceTB.sv", 
+                                                                   95);
+            }
             co_await vlSelf->__VtrigSched_h01766083__0.trigger(0U, 
                                                                nullptr, 
                                                                "@(posedge performanceTB.clk)", 
                                                                "tb/performanceTB.sv", 
-                                                               93);
+                                                               94);
+            while (((IData)(vlSelf->performanceTB__DOT__dut__DOT__ic_stall) 
+                    | (IData)(vlSelf->performanceTB__DOT__dut__DOT__dc_stall))) {
+                co_await vlSelf->__VtrigSched_h01766083__0.trigger(0U, 
+                                                                   nullptr, 
+                                                                   "@(posedge performanceTB.clk)", 
+                                                                   "tb/performanceTB.sv", 
+                                                                   95);
+            }
             co_await vlSelf->__VtrigSched_h01766083__0.trigger(0U, 
                                                                nullptr, 
                                                                "@(posedge performanceTB.clk)", 
                                                                "tb/performanceTB.sv", 
-                                                               93);
+                                                               94);
+            while (((IData)(vlSelf->performanceTB__DOT__dut__DOT__ic_stall) 
+                    | (IData)(vlSelf->performanceTB__DOT__dut__DOT__dc_stall))) {
+                co_await vlSelf->__VtrigSched_h01766083__0.trigger(0U, 
+                                                                   nullptr, 
+                                                                   "@(posedge performanceTB.clk)", 
+                                                                   "tb/performanceTB.sv", 
+                                                                   95);
+            }
             co_await vlSelf->__VtrigSched_h01766083__0.trigger(0U, 
                                                                nullptr, 
                                                                "@(posedge performanceTB.clk)", 
                                                                "tb/performanceTB.sv", 
-                                                               93);
+                                                               94);
+            while (((IData)(vlSelf->performanceTB__DOT__dut__DOT__ic_stall) 
+                    | (IData)(vlSelf->performanceTB__DOT__dut__DOT__dc_stall))) {
+                co_await vlSelf->__VtrigSched_h01766083__0.trigger(0U, 
+                                                                   nullptr, 
+                                                                   "@(posedge performanceTB.clk)", 
+                                                                   "tb/performanceTB.sv", 
+                                                                   95);
+            }
             VL_WRITEF("T=%0t | [EBREAK] Benchmark complete \342\200\224 pipeline drained\n",
                       64,VL_TIME_UNITED_Q(1),-12);
             if ((1U == vlSelf->performanceTB__DOT__dut__DOT__Reg_Files__DOT__Register
@@ -150,7 +190,7 @@ VL_INLINE_OPT VlCoroutine VperformanceTB___024root___eval_initial__TOP__Vtiming_
                       32,vlSelf->performanceTB__DOT__instr_count,
                       64,(VL_ISTOR_D_I(32, vlSelf->performanceTB__DOT__cycle_count) 
                           / VL_ISTOR_D_I(32, vlSelf->performanceTB__DOT__instr_count)));
-            VL_FINISH_MT("tb/performanceTB.sv", 105, "");
+            VL_FINISH_MT("tb/performanceTB.sv", 108, "");
         }
     }
 }
@@ -166,7 +206,7 @@ extern const VlUnpacked<CData/*2:0*/, 256> VperformanceTB__ConstPool__TABLE_h9ce
 extern const VlUnpacked<CData/*0:0*/, 256> VperformanceTB__ConstPool__TABLE_h9ca8a42a_0;
 extern const VlUnpacked<CData/*0:0*/, 128> VperformanceTB__ConstPool__TABLE_h8af05f84_0;
 extern const VlUnpacked<CData/*0:0*/, 128> VperformanceTB__ConstPool__TABLE_h594b7fee_0;
-extern const VlUnpacked<CData/*3:0*/, 128> VperformanceTB__ConstPool__TABLE_h39fa20de_0;
+extern const VlUnpacked<CData/*3:0*/, 128> VperformanceTB__ConstPool__TABLE_h0c0ea2cf_0;
 extern const VlUnpacked<CData/*1:0*/, 128> VperformanceTB__ConstPool__TABLE_hf4afd3a1_0;
 extern const VlUnpacked<CData/*3:0*/, 128> VperformanceTB__ConstPool__TABLE_h6eb401fc_0;
 extern const VlUnpacked<CData/*2:0*/, 128> VperformanceTB__ConstPool__TABLE_h26d4c584_0;
@@ -526,6 +566,26 @@ VL_INLINE_OPT void VperformanceTB___024root___nba_sequent__TOP__0(VperformanceTB
     __Vdlyvset__performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__tag_array__v0 = 0U;
     __Vdlyvset__performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__valid__v0 = 0U;
     __Vdlyvset__performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__valid__v16 = 0U;
+    if (VL_UNLIKELY((((~ (IData)(vlSelf->performanceTB__DOT__rst)) 
+                      & (0x13U == (0x7fU & vlSelf->performanceTB__DOT__dut__DOT__instEX))) 
+                     & (((0U == (7U & (vlSelf->performanceTB__DOT__dut__DOT__instEX 
+                                       >> 0xcU))) | 
+                         (6U == (7U & (vlSelf->performanceTB__DOT__dut__DOT__instEX 
+                                       >> 0xcU)))) 
+                        | (7U == (7U & (vlSelf->performanceTB__DOT__dut__DOT__instEX 
+                                        >> 0xcU))))))) {
+        VL_WRITEF("DEBUG ALU: PC=%08x inst=%08x func3=%b func7_5=%b AluCtrl=%b A=%08x B=%08x imm=%08x result=%08x\n",
+                  32,vlSelf->performanceTB__DOT__dut__DOT__pcEX,
+                  32,vlSelf->performanceTB__DOT__dut__DOT__instEX,
+                  3,(7U & (vlSelf->performanceTB__DOT__dut__DOT__instEX 
+                           >> 0xcU)),1,(1U & (vlSelf->performanceTB__DOT__dut__DOT__instEX 
+                                              >> 0x1eU)),
+                  4,(IData)(vlSelf->performanceTB__DOT__dut__DOT__AluCtrlEX),
+                  32,vlSelf->performanceTB__DOT__dut__DOT__AluInA,
+                  32,vlSelf->performanceTB__DOT__dut__DOT__AluInB,
+                  32,vlSelf->performanceTB__DOT__dut__DOT__immEX,
+                  32,vlSelf->performanceTB__DOT__dut__DOT__AluResultEX);
+    }
     __Vdlyvset__performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__tag_array__v0 = 0U;
     if ((1U & (~ (IData)(vlSelf->performanceTB__DOT__rst)))) {
         if (VL_UNLIKELY(((1U == (IData)(vlSelf->performanceTB__DOT__dut__DOT__D_CACHE__DOT__ctrl__DOT__state)) 
@@ -1237,13 +1297,13 @@ VL_INLINE_OPT void VperformanceTB___024root___nba_sequent__TOP__0(VperformanceTB
         vlSelf->performanceTB__DOT__dut__DOT__ghr_snapshot_EX = 0U;
         vlSelf->performanceTB__DOT__dut__DOT__predict_target_EX = 0U;
         vlSelf->performanceTB__DOT__dut__DOT__predict_taken_EX = 0U;
-        vlSelf->performanceTB__DOT__dut__DOT__immEX = 0U;
         vlSelf->performanceTB__DOT__dut__DOT__regData1EX = 0U;
         vlSelf->performanceTB__DOT__dut__DOT__regData2EX = 0U;
         vlSelf->performanceTB__DOT__dut__DOT__Rs1EX = 0U;
         vlSelf->performanceTB__DOT__dut__DOT__Rs2EX = 0U;
         vlSelf->performanceTB__DOT__dut__DOT__EXEX = 0U;
         vlSelf->performanceTB__DOT__dut__DOT__FuncEX = 0U;
+        vlSelf->performanceTB__DOT__dut__DOT__immEX = 0U;
         vlSelf->performanceTB__DOT__dut__DOT__branchTargetEX = 0U;
         vlSelf->performanceTB__DOT__dut__DOT__pcEX = 0U;
         vlSelf->performanceTB__DOT__dut__DOT__ghr_snapshot_ID = 0U;
@@ -1266,8 +1326,6 @@ VL_INLINE_OPT void VperformanceTB___024root___nba_sequent__TOP__0(VperformanceTB
                 = vlSelf->performanceTB__DOT__dut__DOT__predict_target_ID;
             vlSelf->performanceTB__DOT__dut__DOT__predict_taken_EX 
                 = vlSelf->performanceTB__DOT__dut__DOT__predict_taken_ID;
-            vlSelf->performanceTB__DOT__dut__DOT__immEX 
-                = vlSelf->performanceTB__DOT__dut__DOT__immID;
             vlSelf->performanceTB__DOT__dut__DOT__regData1EX 
                 = vlSelf->performanceTB__DOT__dut__DOT__Reg_Files__DOT__Register
                 [(0x1fU & (vlSelf->performanceTB__DOT__dut__DOT__instID 
@@ -1288,6 +1346,8 @@ VL_INLINE_OPT void VperformanceTB___024root___nba_sequent__TOP__0(VperformanceTB
                 = ((8U & (vlSelf->performanceTB__DOT__dut__DOT__instID 
                           >> 0x1bU)) | (7U & (vlSelf->performanceTB__DOT__dut__DOT__instID 
                                               >> 0xcU)));
+            vlSelf->performanceTB__DOT__dut__DOT__immEX 
+                = vlSelf->performanceTB__DOT__dut__DOT__immID;
             vlSelf->performanceTB__DOT__dut__DOT__branchTargetEX 
                 = (vlSelf->performanceTB__DOT__dut__DOT__pcID 
                    + vlSelf->performanceTB__DOT__dut__DOT__immID);
@@ -1614,7 +1674,7 @@ VL_INLINE_OPT void VperformanceTB___024root___nba_sequent__TOP__0(VperformanceTB
                       << 3U) | (7U & ((IData)(vlSelf->performanceTB__DOT__dut__DOT__EXEX) 
                                       >> 1U)));
     vlSelf->performanceTB__DOT__dut__DOT__AluCtrlEX 
-        = VperformanceTB__ConstPool__TABLE_h39fa20de_0
+        = VperformanceTB__ConstPool__TABLE_h0c0ea2cf_0
         [__Vtableidx68];
     vlSelf->performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__fill_word 
         = __Vdly__performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__fill_word;

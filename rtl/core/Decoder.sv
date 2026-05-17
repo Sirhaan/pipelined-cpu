@@ -6,9 +6,9 @@ module Decoder(
 );
 
     always_comb begin
-        AluControl = 4'b0000; // Default to AND
+        AluControl = 4'b0000; // Default to ADD
         case (AluOp)
-            3'b000: AluControl = 4'b0010; // ADD (for LW/SW/ADDI)
+            3'b000: AluControl = 4'b0000; // ADD (for LW/SW address calculation)
             3'b001: begin
                 case(Func[2:0])
                   3'b000: AluControl = 4'b0001; // BEQ  → SUB, check Zero

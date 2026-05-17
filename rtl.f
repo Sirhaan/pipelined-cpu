@@ -29,5 +29,6 @@
 ./rtl/branchPredictor/BHT.sv
 # Testbench
 
-./tb/performanceCounter.sv
-./tb/performanceTB.sv
+        ./tb/performanceCounter.sv
+        ./tb/performanceTB.sv
+./tb/functionalTB.sv
