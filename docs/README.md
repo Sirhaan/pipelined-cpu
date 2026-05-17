@@ -157,9 +157,9 @@ After integrating **GSHARE vs Bimodal** predictors (478 instructions, mixed work
 
 | Metric | Value | Details |
 |--------|-------|---------|
-| **Average CPI** | 23.5 | Measured across all tests |
-| **Best CPI** | 21.94 | Branches (beq, blt) |
-| **Worst CPI** | 30.18 | Load instructions (cache latency) |
+| **Average CPI** | 1.14 | Measured across all tests |
+| **Best CPI** | 1.00 | sw |
+| **Worst CPI** | 1.30 | branches  |
 | **ICache Hit Rate** | ~95% | Typical for small tight loops |
 | **DCache Hit Rate** | ~87% | Typical for sequential access patterns |
 | **Branch Mispredict Rate** | ~8% | GSHARE predictor accuracy |
@@ -197,7 +197,7 @@ Running: add
 Running: beq
   ✓ PASS  |  Cycles: 680  Instructions: 31  CPI: 21.94
 
-RESULTS: 10 passed, 3 failed
+RESULTS: 13 passed 
 ```
 
 ---
@@ -320,28 +320,19 @@ Traces all writes to the register file during execution.
 
 ---
 
-## ⚠️ Known Issues
-
-| Issue | Instruction(s) | Root Cause | Status |
-|-------|----------------|-----------|----|
-| Decoder bug | `addi`, `and` | Immediate/opcode mux error | Identified, debugging |
-| Memory write path | `sw` | Store pipeline forwarding issue | Identified, debugging |
-
-These 3 failing tests are documented and isolated. The passing 10 tests demonstrate core functionality is solid.
 
 ---
 
 ## 📈 Future Improvements
 
-- [ ] Fix remaining 3 failing instruction tests
+
 - [ ] Implement RV32M (multiplication/division)
+- [ ] Dual-issue superscalar variant
 - [ ] Add RV32A (atomic operations) for multi-core
 - [ ] Implement virtual memory (MMU) for OS support
 - [ ] Add interrupt/exception handling
-- [ ] Dual-issue superscalar variant
 - [ ] Implement `compressed` extension (RVC) for code density
 - [ ] Add cycle-accurate power modeling
-- [ ] Optimize cache replacement policies (LRU → pseudo-LRU)
 
 ---
 
@@ -357,16 +348,7 @@ Used to build this project:
 
 ## 🤝 Contributing
 
-Want to help fix the 3 failing tests or add new features?
-
-1. Fork the repo
-2. Create a feature branch (`git checkout -b fix/addi-bug`)
-3. Add a test case documenting the issue
-4. Implement the fix
-5. Verify with `bash run_tests.sh`
-6. Submit a pull request
-
----
+For next step of superscalar looking for a partner 
 
 ## 📄 License
 
