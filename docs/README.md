@@ -376,4 +376,4 @@ Built with **SystemVerilog**, verified with **Verilator** (open-source simulator
 Open an issue on GitHub or check the [full documentation](docs/README.md).
 
 **Last Updated:** May 17, 2026  
-**Test Results:** 10/13 PASS | Latest run: `addi` ✗ FAIL | Average CPI: 23.5 | Branch Predictor: GSHARE
+**Test Results:** 13/13 PASS  | Average CPI: 1.14 | Branch Predictor: GSHARE
