@@ -1,16 +1,18 @@
-`include "config.svh"
+import pkg::*;
 
 module pipelinedCpu #(
-    parameter DATA_WIDTH  = `DATA_WIDTH,
-    parameter ADDR_WIDTH  = `ADDR_WIDTH,
-    parameter MEM_DEPTH   = `MEM_DEPTH,
-    parameter ICACHE_SIZE = `ICACHE_SIZE,
-    parameter DCACHE_SIZE = `DCACHE_SIZE,
-    parameter ICACHE_WAYS = `ICACHE_WAYS,
-    parameter DCACHE_WAYS = `DCACHE_WAYS
+    parameter DATA_WIDTH  = pkg::DATA_WIDTH,
+    parameter ADDR_WIDTH  = pkg::ADDR_WIDTH,
+    parameter MEM_DEPTH   = pkg::MEM_DEPTH,
+    parameter ICACHE_SIZE = pkg::ICACHE_SIZE,
+    parameter DCACHE_SIZE = pkg::DCACHE_SIZE,
+    parameter ICACHE_WAYS = pkg::ICACHE_WAYS,
+    parameter DCACHE_WAYS = pkg::DCACHE_WAYS
 )(
     input logic clk,
-    input logic rst
+    input logic rst,
+    output logic [31:0] debug_pc,
+    output logic [31:0] debug_reg28
 );
 
     // =========================================================================
@@ -108,11 +110,12 @@ module pipelinedCpu #(
     logic                  umem_read, umem_write, umem_ready;
     logic [ADDR_WIDTH-1:0] umem_addr, umem_wdata, umem_rdata;
 // ghr
-    logic [$clog2(`BHT_ENTRIES)-1:0] ghr_snapshot; 
-    logic [$clog2(`BHT_ENTRIES)-1:0] ghr_snapshot_ID; 
-    logic [$clog2(`BHT_ENTRIES)-1:0] ghr_snapshot_EX; 
+    logic [$clog2(pkg::BHT_ENTRIES)-1:0] ghr_snapshot; 
+    logic [$clog2(pkg::BHT_ENTRIES)-1:0] ghr_snapshot_ID; 
+    logic [$clog2(pkg::BHT_ENTRIES)-1:0] ghr_snapshot_EX; 
     assign pcWrite_final   = pcWrite;
     assign IFIDwrite_final = IFIDwrite;
+    assign debug_pc        = pcCurrent;
 
     // =========================================================================
     // IF Stage: Instruction Fetch + Branch Prediction
@@ -137,9 +140,9 @@ end
     );
 
     BranchPredictor #(
-        .DATA_WIDTH (`DATA_WIDTH),
-        .BHT_ENTRIES(`BHT_ENTRIES),
-        .BTB_ENTRIES(`BTB_ENTRIES)
+        .DATA_WIDTH (pkg::DATA_WIDTH),
+        .BHT_ENTRIES(pkg::BHT_ENTRIES),
+        .BTB_ENTRIES(pkg::BTB_ENTRIES)
     ) BranchPredictor_instance (
         .clk           (clk),
         .rst           (rst),
@@ -163,7 +166,7 @@ end
         .ADDR_WIDTH(ADDR_WIDTH),
         .DATA_WIDTH(DATA_WIDTH),
         .CACHE_SIZE(ICACHE_SIZE),
-        .LATENCY   (`ICACHE_LATENCY),
+        .LATENCY   (pkg::ICACHE_LATENCY),
         .NUM_WAYS  (ICACHE_WAYS)
     ) ICACHE (
         .clk      (clk),
@@ -182,7 +185,7 @@ end
         .ADDR_WIDTH(ADDR_WIDTH),
         .DATA_WIDTH(DATA_WIDTH),
         .CACHE_SIZE(DCACHE_SIZE),
-        .LATENCY   (`DCACHE_LATENCY),
+        .LATENCY   (pkg::DCACHE_LATENCY),
         .NUM_WAYS  (DCACHE_WAYS)
     ) D_CACHE (
         .clk      (clk),
@@ -224,7 +227,7 @@ end
     );
 
     UMEM #(
-        .LATENCY   (`MEM_LATENCY),
+        .LATENCY   (pkg::MEM_LATENCY),
         .ADDR_WIDTH(ADDR_WIDTH),
         .DATA_WIDTH(DATA_WIDTH),
         .MEM_DEPTH (MEM_DEPTH)
@@ -273,15 +276,16 @@ end
     assign regWrite_en = WBWB[1];
 
     RF Reg_Files (
-        .clk      (clk),
-        .rst      (rst),
-        .RegWrite (regWrite_en),
-        .rs1      (instID[19:15]),
-        .rs2      (instID[24:20]),
-        .rd       (writeRegWB),
-        .WriteData(finalResultWB),
-        .ReadData1(regData1ID),
-        .ReadData2(regData2ID)
+        .clk         (clk),
+        .rst         (rst),
+        .RegWrite    (regWrite_en),
+        .rs1         (instID[19:15]),
+        .rs2         (instID[24:20]),
+        .rd          (writeRegWB),
+        .WriteData   (finalResultWB),
+        .ReadData1   (regData1ID),
+        .ReadData2   (regData2ID),
+        .debug_reg28 (debug_reg28)
     );
 
     ImmGen imm_gen (

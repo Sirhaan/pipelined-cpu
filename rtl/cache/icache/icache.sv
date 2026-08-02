@@ -1,11 +1,11 @@
-`include "rtl/include/config.svh"
+import pkg::*;
 
 module icache #(
-    parameter ADDR_WIDTH = `ADDR_WIDTH,
-    parameter DATA_WIDTH = `DATA_WIDTH,
-    parameter CACHE_SIZE = `ICACHE_SIZE,
-    parameter LATENCY    = `ICACHE_LATENCY,
-    parameter NUM_WAYS   = `ICACHE_WAYS
+    parameter ADDR_WIDTH = pkg::ADDR_WIDTH,
+    parameter DATA_WIDTH = pkg::DATA_WIDTH,
+    parameter CACHE_SIZE = pkg::ICACHE_SIZE,
+    parameter LATENCY    = pkg::ICACHE_LATENCY,
+    parameter NUM_WAYS   = pkg::ICACHE_WAYS
 )(
     input  logic clk, rst,
 

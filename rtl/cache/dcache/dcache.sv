@@ -1,11 +1,11 @@
-`include "config.svh"
+import pkg::*;
 
 module dcache #(
-    parameter ADDR_WIDTH = `ADDR_WIDTH,
-    parameter DATA_WIDTH = `DATA_WIDTH,
-    parameter CACHE_SIZE = `DCACHE_SIZE,
-    parameter LATENCY    = `DCACHE_LATENCY,
-    parameter NUM_WAYS   = `DCACHE_WAYS
+    parameter ADDR_WIDTH = pkg::ADDR_WIDTH,
+    parameter DATA_WIDTH = pkg::DATA_WIDTH,
+    parameter CACHE_SIZE = pkg::DCACHE_SIZE,
+    parameter LATENCY    = pkg::DCACHE_LATENCY,
+    parameter NUM_WAYS   = pkg::DCACHE_WAYS
 ) (
     input  logic clk, rst,
     input  logic [ADDR_WIDTH-1:0] cpu_addr,

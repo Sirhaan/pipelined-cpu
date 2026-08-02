@@ -48,7 +48,7 @@ VL_INLINE_OPT VlCoroutine VperformanceTB___024root___eval_initial__TOP__Vtiming_
     VperformanceTB__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    VperformanceTB___024root___eval_initial__TOP__Vtiming__1\n"); );
     // Body
-    VL_WRITEF("=============================================================\n  PERFORMANCE BENCHMARK TESTBENCH\n  Program : program/hex/sw.hex\n  Timeout : 500000 ns\n  Config  : ICache=256B/2-way lat=20  DCache=256B/2-way lat=20\n=============================================================\n");
+    VL_WRITEF("=============================================================\n  PERFORMANCE BENCHMARK TESTBENCH\n  Program : program/hex/all.hex\n  Timeout : 500000 ns\n  Config  : ICache=256B/2-way lat=20  DCache=256B/2-way lat=20\n=============================================================\n");
     vlSelf->performanceTB__DOT__rst = 1U;
     co_await vlSelf->__VdlySched.delay(0x1eULL, nullptr, 
                                        "tb/performanceTB.sv", 

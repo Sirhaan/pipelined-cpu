@@ -9,7 +9,8 @@ module RF( // @suppress "Design unit name 'Reg_Files' does not match file name '
     input [4:0] rd,
     output reg [31:0] ReadData1,
     output reg [31:0] ReadData2,
-    input [31:0] WriteData
+    input [31:0] WriteData,
+    output logic [31:0] debug_reg28
 
 
 );

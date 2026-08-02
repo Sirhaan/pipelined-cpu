@@ -41,10 +41,10 @@ VL_ATTR_COLD void VperformanceTB___024root___eval_initial__TOP(VperformanceTB___
     vlSelf->performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__unnamedblk1__DOT__unnamedblk2__DOT__s = 8U;
     vlSelf->performanceTB__DOT__dut__DOT__ICACHE__DOT__ctrl__DOT__unnamedblk1__DOT__w = 2U;
     __Vtemp_2[0U] = 0x2e686578U;
-    __Vtemp_2[1U] = 0x782f7377U;
-    __Vtemp_2[2U] = 0x6d2f6865U;
-    __Vtemp_2[3U] = 0x6f677261U;
-    __Vtemp_2[4U] = 0x7072U;
+    __Vtemp_2[1U] = 0x2f616c6cU;
+    __Vtemp_2[2U] = 0x2f686578U;
+    __Vtemp_2[3U] = 0x6772616dU;
+    __Vtemp_2[4U] = 0x70726fU;
     VL_READMEM_N(true, 32, 1024, 0, VL_CVT_PACK_STR_NW(5, __Vtemp_2)
                  ,  &(vlSelf->performanceTB__DOT__dut__DOT__UnifiedMem__DOT__ram)
                  , 0, ~0ULL);

@@ -1,10 +1,10 @@
-`include "config.svh"
+import pkg::*;
 
 module  UMEM #(
-    parameter LATENCY = `MEM_LATENCY,
-        parameter ADDR_WIDTH = `ADDR_WIDTH,
-    parameter DATA_WIDTH = `DATA_WIDTH,
-    parameter MEM_DEPTH = `MEM_DEPTH
+    parameter LATENCY = pkg::MEM_LATENCY,
+        parameter ADDR_WIDTH = pkg::ADDR_WIDTH,
+    parameter DATA_WIDTH = pkg::DATA_WIDTH,
+    parameter MEM_DEPTH = pkg::MEM_DEPTH
 
 )(
     input  logic        clk, rst,
@@ -16,7 +16,7 @@ module  UMEM #(
     output logic [DATA_WIDTH-1:0] umem_rdata
 );
 initial begin
-    $readmemh(`PROG_FILE_PERF, ram);
+    $readmemh(pkg::PROG_FILE_PERF, ram);
 end
     // Keep your RAM and timer, remove ALL arbitration logic
     logic [DATA_WIDTH-1:0] ram [0:(1<<MEM_DEPTH)-1];

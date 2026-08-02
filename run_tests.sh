@@ -18,12 +18,12 @@ for TEST in $TESTS; do
     ./buildTest.sh $TEST > /dev/null 2>&1
     cd ..
 
-    # Update config.svh
+    # Update pkg.sv
     python3 -c "
 import re
-content = open('rtl/include/config.svh').read()
-content = re.sub(r'\`define PROG_FILE_PERF.*', '\`define PROG_FILE_PERF \"program/hex/$TEST.hex\"', content)
-open('rtl/include/config.svh', 'w').write(content)
+content = open('rtl/include/pkg.sv').read()
+content = re.sub(r'parameter string PROG_FILE_PERF = \".*\";', f'parameter string PROG_FILE_PERF = \"program/hex/{TEST}.hex\";', content)
+open('rtl/include/pkg.sv', 'w').write(content)
 "
 
     # Recompile and run

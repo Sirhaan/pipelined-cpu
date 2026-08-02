@@ -1,4 +1,4 @@
-`include "config.svh"
+import pkg::*;
 
 
 module functionalTB();
@@ -8,7 +8,7 @@ initial begin
 
 end
 always begin
-    #(`CLK_HALF) clk <= ~clk;
+    #(pkg::CLK_HALF) clk <= ~clk;
 end
 
 //DUT
@@ -99,11 +99,11 @@ end
       initial begin
         $display("=============================================================");
         $display("  FUNCTIONAL VALIDATION TESTBENCH");
-        $display("  Program: %s", `PROG_FILE_FUNC);
+        $display("  Program: %s", pkg::PROG_FILE_FUNC);
         $display("  Timeout: %0d ns", `SIM_TIMEOUT_FUNC);
         $display("=============================================================");
         rst = 1;
-        #(`RESET_TIME);
+        #(pkg::RESET_TIME);
         @(posedge clk);
         rst = 0;
         $display("T=%0t | Reset released, CPU running...", $time);

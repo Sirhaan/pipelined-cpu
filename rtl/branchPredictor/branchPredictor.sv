@@ -1,10 +1,10 @@
 
-`include "config.svh"
+import pkg::*;
 
 module BranchPredictor #(
-    parameter DATA_WIDTH = `DATA_WIDTH,
-    parameter BHT_ENTRIES = `BHT_ENTRIES,
-    parameter BTB_ENTRIES = `BTB_ENTRIES
+    parameter DATA_WIDTH = pkg::DATA_WIDTH,
+    parameter BHT_ENTRIES = pkg::BHT_ENTRIES,
+    parameter BTB_ENTRIES = pkg::BTB_ENTRIES
 )(
     input  logic                  clk, rst,
     // IF stage

@@ -1,9 +1,9 @@
-`include "rtl/include/config.svh"
+import pkg::*;
 
 module TPLRU 
 #(
-    parameter NUM_WAYS  = `DCACHE_WAYS,
-    parameter NUM_SETS  = `DCACHE_SIZE / `DCACHE_WAYS
+    parameter NUM_WAYS  = pkg::DCACHE_WAYS,
+    parameter NUM_SETS  = pkg::DCACHE_SIZE / pkg::DCACHE_WAYS
 )(
     input  logic                             clk,
     input  logic                             rst,

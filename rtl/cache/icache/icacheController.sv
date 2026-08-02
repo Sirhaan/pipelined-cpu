@@ -1,10 +1,10 @@
-`include "config.svh"
+import pkg::*;
 
 module icacheController #(
-    parameter ADDR_WIDTH = `ADDR_WIDTH,
-    parameter DATA_WIDTH = `DATA_WIDTH,
-    parameter CACHE_SIZE = `ICACHE_SIZE,
-    parameter NUM_WAYS   = `ICACHE_WAYS,
+    parameter ADDR_WIDTH = pkg::ADDR_WIDTH,
+    parameter DATA_WIDTH = pkg::DATA_WIDTH,
+    parameter CACHE_SIZE = pkg::ICACHE_SIZE,
+    parameter NUM_WAYS   = pkg::ICACHE_WAYS,
     parameter BLOCK_SIZE = `ICACHE_BLOCK_SIZE   // in bytes, e.g. 16
 )(
     input  logic                   clk, rst,

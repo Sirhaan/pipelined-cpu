@@ -1,6 +1,9 @@
 # Include directories
 +incdir+./rtl/include/
 
+# Package definitions
+./rtl/include/pkg.sv
+
 # Core
 ./rtl/core/ALU.sv
 ./rtl/core/Decoder.sv
@@ -27,6 +30,8 @@
 ./rtl/branchPredictor/SaturatingCounter.sv
 ./rtl/branchPredictor/BTB.sv
 ./rtl/branchPredictor/BHT.sv
+# Top-level wrapper
+./pipelinedCpu_top.sv
 # Testbench
 
         ./tb/performanceCounter.sv

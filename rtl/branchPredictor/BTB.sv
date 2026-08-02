@@ -1,10 +1,10 @@
-`include "config.svh"
+import pkg::*;
 
 
 
 module BTB #(
-    parameter ENTRIES = `BTB_ENTRIES,
-    parameter DATA_WIDTH = `DATA_WIDTH 
+    parameter ENTRIES = pkg::BTB_ENTRIES,
+    parameter DATA_WIDTH = pkg::DATA_WIDTH 
 ) (
     input logic clk, rst,
     input logic [DATA_WIDTH-1:0] pc_IF,

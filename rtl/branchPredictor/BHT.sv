@@ -1,8 +1,8 @@
-`include "config.svh"
+import pkg::*;
 
 module BHT # (
-    parameter ENTRIES = `BHT_ENTRIES,
-    parameter DATA_WIDTH = `DATA_WIDTH 
+    parameter ENTRIES = pkg::BHT_ENTRIES,
+    parameter DATA_WIDTH = pkg::DATA_WIDTH 
 ) (
     input logic clk, rst,
     input logic [DATA_WIDTH-1:0] pc_IF,

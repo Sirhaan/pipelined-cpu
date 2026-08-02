@@ -1,10 +1,10 @@
-`include "config.svh"
+import pkg::*;
 
 module dcacheController #(
-    parameter ADDR_WIDTH  = `ADDR_WIDTH,
-    parameter DATA_WIDTH  = `DATA_WIDTH,
-    parameter CACHE_SIZE  = `DCACHE_SIZE,
-    parameter NUM_WAYS    = `DCACHE_WAYS,
+    parameter ADDR_WIDTH  = pkg::ADDR_WIDTH,
+    parameter DATA_WIDTH  = pkg::DATA_WIDTH,
+    parameter CACHE_SIZE  = pkg::DCACHE_SIZE,
+    parameter NUM_WAYS    = pkg::DCACHE_WAYS,
     parameter BLOCK_SIZE  = `DCACHE_BLOCK_SIZE   // in bytes, e.g. 16
 )(
     input  logic                   clk, rst,

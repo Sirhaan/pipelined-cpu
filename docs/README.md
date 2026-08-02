@@ -229,7 +229,7 @@ pipelinedCpu/
 │   │   ├── MemoryArbitrator.sv       # I-cache / D-cache / external mem arbiter
 │   │   └── UMEM.sv                   # Unified memory
 │   └── include/
-│       └── config.svh                # Configuration parameters
+│       └── pkg.sv                    # Configuration parameters
 │
 ├── tb/                               # Testbenches
 │   ├── performanceTB.sv              # Performance benchmark testbench
@@ -269,11 +269,12 @@ cd .. && bash run_tests.sh my_test
 
 ### Increase Cache Size
 
-Edit `rtl/include/config.svh`:
+Edit `rtl/include/pkg.sv`:
 ```systemverilog
-`define ICACHE_SIZE 8192    // 8 KB instruction cache
-`define DCACHE_SIZE 8192    // 8 KB data cache
-`define CACHE_LINE_WIDTH 32
+parameter int ICACHE_SIZE = 8192;    // 8 KB instruction cache
+parameter int DCACHE_SIZE = 8192;    // 8 KB data cache
+parameter int ICACHE_BLOCK_SIZE = 32;
+parameter int DCACHE_BLOCK_SIZE = 32;
 ```
 
 Then rebuild:
