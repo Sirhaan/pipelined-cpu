@@ -20,11 +20,12 @@ fi
 set -e
 
 # ---- Configuration ----------------------------------------------------------
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 RISCV_PREFIX="riscv64-unknown-elf"
-RISCV_TESTS="./riscv-tests/isa/rv32ui"   # path to riscv-tests repo
-ENV_HEADER="./testBasics.h"                 # our custom environment header
-LINKER="./link.ld"
-OUTPUT_DIR="./hex"
+RISCV_TESTS="$SCRIPT_DIR/riscv-tests/isa/rv32ui"   # path to riscv-tests repo
+ENV_HEADER="$SCRIPT_DIR/testBasics.h"                 # our custom environment header
+LINKER="$SCRIPT_DIR/link.ld"
+OUTPUT_DIR="$SCRIPT_DIR/hex"
 # -----------------------------------------------------------------------------
 
 mkdir -p "$OUTPUT_DIR"
@@ -47,8 +48,9 @@ compile_test() {
         -mabi=ilp32 \
         -nostdlib \
         -nostartfiles \
-        -I. \
-        -I./riscv-tests/isa/macros/scalar \
+        -I"$SCRIPT_DIR" \
+        -I"$SCRIPT_DIR/riscv-tests/isa" \
+        -I"$SCRIPT_DIR/riscv-tests/isa/macros/scalar" \
         -T "$LINKER" \
         -DTEST_FUNC_NAME=${TEST} \
         -DTEST_FUNC_TXT='"'${TEST}'"' \
@@ -64,7 +66,7 @@ compile_test() {
         "$OUTPUT_DIR/${TEST}_raw.hex"
 
     # Convert to word-addressed for $readmemh
-    python3 convert_hex.py \
+    python3 "$SCRIPT_DIR/convert_hex.py" \
         "$OUTPUT_DIR/${TEST}_raw.hex" \
         "$OUTPUT_DIR/$TEST.hex"
 

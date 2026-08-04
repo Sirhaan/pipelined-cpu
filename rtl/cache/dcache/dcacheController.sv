@@ -5,7 +5,7 @@ module dcacheController #(
     parameter DATA_WIDTH  = pkg::DATA_WIDTH,
     parameter CACHE_SIZE  = pkg::DCACHE_SIZE,
     parameter NUM_WAYS    = pkg::DCACHE_WAYS,
-    parameter BLOCK_SIZE  = `DCACHE_BLOCK_SIZE   // in bytes, e.g. 16
+    parameter BLOCK_SIZE  = pkg::DCACHE_BLOCK_SIZE   // in bytes, e.g. 16
 )(
     input  logic                   clk, rst,
     input  logic [ADDR_WIDTH-1:0]  cpu_addr,

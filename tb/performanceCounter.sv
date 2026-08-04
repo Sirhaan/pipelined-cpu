@@ -136,9 +136,9 @@ module performanceCounter (
             $display("  Branches executed       : %0d", branch_instructions);
             $display("  Branch mispredicts      : %0d", branch_mispredictions);
             $display("  Mispredict rate         : %.1f%%", branch_mispredict_rate);
-            $display("  Flush penalty/mispredict: %0d cycles",  pkg::BRANCH_STAGE - 1);
+            $display("  Flush penalty/mispredict: %0d cycles",  int'(pkg::BRANCH_STAGE - 1));
             $display("  Total branch penalty    : %0d cycles",
-                     branch_mispredictions * (pkg::BRANCH_STAGE - 1));
+                     branch_mispredictions * int'(pkg::BRANCH_STAGE - 1));
             $display("=============================================================");
             $display("");
         end

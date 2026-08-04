@@ -75,8 +75,12 @@ module pipelinedCpu #(
     logic [2:0]            MEMMEM;
     logic [DATA_WIDTH-1:0] AluResMEM, writeDataMEM;
     logic [4:0]            writeRegMEM;
+    logic [DATA_WIDTH-1:0] pcMEM;
     logic [DATA_WIDTH-1:0] pcPlus4MEM;
     logic                  isJumpMEM;
+    logic [DATA_WIDTH-1:0] branchTargetMEM;
+    logic                  branch_takenMEM;
+    logic [$clog2(pkg::BHT_ENTRIES)-1:0] ghr_snapshotMEM;
     logic [DATA_WIDTH-1:0] dc_rdata;
     logic                  dc_ready;
     logic                  mem_read_MEM, mem_write_MEM;
@@ -124,11 +128,12 @@ module pipelinedCpu #(
 
 always_comb begin
     pcPlus4IF = pcCurrent + 32'd4;
-    if      (isJALREX)                      nextPc = jalrTarget;
-    else if (pcSrcEX && !predict_taken_EX)  nextPc = branchTargetEX;  // taken, not predicted
-    else if (mispredict && !branch_taken)   nextPc = pcPlus4EX;        // predicted taken, actually not
-    else if (predict_taken && btb_hit)      nextPc = predict_target;   // correct prediction
-    else                                    nextPc = pcPlus4IF;
+    if      (isJALREX)                              nextPc = jalrTarget;
+    else if (pcSrcEX && !predict_taken_EX)          nextPc = branchTargetEX;  // taken, not predicted
+    else if (mispredict && !branch_taken)           nextPc = pcPlus4EX;        // predicted taken, actually not
+    else if (mispredict && branch_taken)            nextPc = branchTargetEX;   // predicted taken, wrong target
+    else if (predict_taken && btb_hit)              nextPc = predict_target;   // correct prediction
+    else                                            nextPc = pcPlus4IF;
 end
 
     PC pc (
@@ -148,13 +153,13 @@ end
         .rst           (rst),
         .pc_IF         (pcCurrent),
         .update_en     (MEMEX[2]),
-        .update_pc     (pcEX),
-        .actual_taken  (branch_taken),
-        .actual_target (branchTargetEX),
+        .update_pc     (pcMEM),
+        .actual_taken  (branch_takenMEM),
+        .actual_target (branchTargetMEM),
         .predict_taken (predict_taken),
         .btb_hit       (btb_hit),
         .predict_target(predict_target),
-        .update_ghr    (ghr_snapshot_EX),
+        .update_ghr    (ghr_snapshotMEM),
         .ghr_snapshot  (ghr_snapshot)
     );
 
@@ -248,20 +253,27 @@ end
 
     // IF/ID pipeline register
     always_ff @(posedge clk) begin
-        if (rst || IFflushEX) begin
+        if (rst) begin
             instID            <= 32'b0;
             pcPlus4ID         <= 32'b0;
             pcID              <= 32'b0;
             predict_taken_ID  <= 1'b0;
             predict_target_ID <= 32'b0;
-            ghr_snapshot_ID <= 0;
+            ghr_snapshot_ID   <= 0;
+        end else if (IFflushEX) begin
+            instID            <= 32'b0;
+            pcPlus4ID         <= 32'b0;
+            pcID              <= 32'b0;
+            predict_taken_ID  <= 1'b0;
+            predict_target_ID <= 32'b0;
+            ghr_snapshot_ID   <= 0;
         end else if (IFIDwrite_final) begin
             instID            <= ic_inst;
             pcPlus4ID         <= pcPlus4IF;
             pcID              <= pcCurrent;
             predict_taken_ID  <= predict_taken;
             predict_target_ID <= predict_target;
-            ghr_snapshot_ID <= ghr_snapshot;
+            ghr_snapshot_ID   <= ghr_snapshot;
         end
     end
 
@@ -338,10 +350,10 @@ end
     );
 
     always_comb begin
-        branchTargetID = pcID + immID;
-        finalCRLTID    = hazardSel ? {WBID, MEMID, EXID} : 9'b0;
-        mem_read_MEM   = MEMMEM[1];
-        mem_write_MEM  = MEMMEM[0];
+        branchTargetID  = pcID + immID;
+        finalCRLTID     = hazardSel ? {WBID, MEMID, EXID} : 9'b0;
+        mem_read_MEM    = MEMMEM[1];
+        mem_write_MEM   = MEMMEM[0];
     end
 
     // =========================================================================
@@ -350,7 +362,24 @@ end
 
     // ID/EX pipeline register
     always_ff @(posedge clk) begin
-        if (rst || IDflushEX) begin
+        if (rst) begin
+            {WBEX, MEMEX, EXEX} <= 9'b0;
+            regData1EX          <= 32'b0;
+            regData2EX          <= 32'b0;
+            immEX               <= 32'b0;
+            Rs1EX               <= 5'b0;
+            Rs2EX               <= 5'b0;
+            RdEX                <= 5'b0;
+            FuncEX              <= 4'b0;
+            pcEX                <= 32'b0;
+            pcPlus4EX           <= 32'b0;
+            instEX              <= 32'b0;
+            branchTargetEX      <= 32'b0;
+            funct3EX            <= 3'b0;
+            predict_taken_EX    <= 1'b0;
+            predict_target_EX   <= 32'b0;
+            ghr_snapshot_EX     <= 0;
+        end else if (IDflushEX) begin
             {WBEX, MEMEX, EXEX} <= 9'b0;
             regData1EX          <= 32'b0;
             regData2EX          <= 32'b0;
@@ -491,8 +520,12 @@ assign IDflushEX = (pcSrcEX && !predict_taken_EX) || isJALREX || mispredict;
             AluResMEM       <= 32'b0;
             writeDataMEM    <= 32'b0;
             writeRegMEM     <= 5'b0;
+            pcMEM           <= 32'b0;
             pcPlus4MEM      <= 32'b0;
             isJumpMEM       <= 1'b0;
+            branchTargetMEM <= 32'b0;
+            branch_takenMEM <= 1'b0;
+            ghr_snapshotMEM <= 0;
             funct3MEM       <= 3'b0;
             byteOffMEM      <= 2'b0;
             cpu_benMEM      <= 4'b0;
@@ -503,8 +536,12 @@ assign IDflushEX = (pcSrcEX && !predict_taken_EX) || isJALREX || mispredict;
             AluResMEM       <= AluResultEX;
             writeDataMEM    <= WriteDataEX;
             writeRegMEM     <= WriteRegEX;
+            pcMEM           <= pcEX;
             pcPlus4MEM      <= pcPlus4EX;
             isJumpMEM       <= isJumpEX;
+            branchTargetMEM <= branchTargetEX;
+            branch_takenMEM <= branch_taken;
+            ghr_snapshotMEM <= ghr_snapshot_EX;
             funct3MEM       <= funct3EX;
             byteOffMEM      <= AluResultEX[1:0];
             cpu_benMEM      <= cpu_ben;

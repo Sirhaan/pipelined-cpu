@@ -5,7 +5,7 @@ module icacheController #(
     parameter DATA_WIDTH = pkg::DATA_WIDTH,
     parameter CACHE_SIZE = pkg::ICACHE_SIZE,
     parameter NUM_WAYS   = pkg::ICACHE_WAYS,
-    parameter BLOCK_SIZE = `ICACHE_BLOCK_SIZE   // in bytes, e.g. 16
+    parameter BLOCK_SIZE = pkg::ICACHE_BLOCK_SIZE   // in bytes, e.g. 16
 )(
     input  logic                   clk, rst,
     input  logic [ADDR_WIDTH-1:0]  cpu_addr,

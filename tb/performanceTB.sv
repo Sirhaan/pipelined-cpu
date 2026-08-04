@@ -12,9 +12,13 @@ always begin
     #(pkg::CLK_HALF) clk = ~clk;
 end
 
+logic [31:0] debug_pc, debug_reg28;
+
 pipelinedCpu dut (
     .clk(clk),
-    .rst(rst)
+    .rst(rst),
+    .debug_pc(debug_pc),
+    .debug_reg28(debug_reg28)
 );
 
 performanceCounter perfCounter (

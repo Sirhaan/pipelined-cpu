@@ -15,14 +15,15 @@ module  UMEM #(
     output logic        umem_ready,
     output logic [DATA_WIDTH-1:0] umem_rdata
 );
-initial begin
-    $readmemh(pkg::PROG_FILE_PERF, ram);
-end
+
     // Keep your RAM and timer, remove ALL arbitration logic
+ (* ram_style = "block" *)
     logic [DATA_WIDTH-1:0] ram [0:(1<<MEM_DEPTH)-1];
     logic [4:0]  timer;
     logic        busy;
-
+initial begin
+    $readmemh(pkg::PROG_FILE_PERF, ram);
+end
     always_ff @(posedge clk) begin
         if (rst) begin
             busy       <= 0;

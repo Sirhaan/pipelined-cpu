@@ -27,6 +27,7 @@ package pkg;
     parameter int CLK_HALF         = CLK_PERIOD / 2;
     parameter int RESET_TIME       = CLK_PERIOD * (RESET_CYCLES + 1);
     parameter int SIM_TIMEOUT_PERF = 500000;
+    parameter int SIM_TIMEOUT_FUNC = 500000;
 
     parameter logic [5:0] OPCODE_SPECIAL = 6'b000000;
     parameter logic [5:0] FUNCT_BREAK    = 6'b001101;
@@ -35,7 +36,7 @@ package pkg;
     parameter int BHT_ENTRIES = 64;
     parameter int BTB_ENTRIES = 64;
 
-    parameter string PROG_FILE_PERF = "program/hex/slt.hex";
+    parameter string PROG_FILE_PERF = "program/hex/and.hex";
 endpackage
 
 `define DEBUG_PIPELINE 1

@@ -14,17 +14,14 @@ for TEST in $TESTS; do
     echo "Running: $TEST"
 
     # Build hex
-    cd program/
-    ./buildTest.sh $TEST > /dev/null 2>&1
-    cd ..
+    ./program/buildTest.sh $TEST > /dev/null 2>&1
 
     # Update pkg.sv
-    python3 -c "
-import re
+    python3 -c "import re, sys
+TEST = sys.argv[1]
 content = open('rtl/include/pkg.sv').read()
 content = re.sub(r'parameter string PROG_FILE_PERF = \".*\";', f'parameter string PROG_FILE_PERF = \"program/hex/{TEST}.hex\";', content)
-open('rtl/include/pkg.sv', 'w').write(content)
-"
+open('rtl/include/pkg.sv', 'w').write(content)" "$TEST"
 
     # Recompile and run
     verilator --sv --binary --trace --timing \

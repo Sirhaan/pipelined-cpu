@@ -3,6 +3,7 @@ import pkg::*;
 
 module functionalTB();
 logic clk, rst;
+logic [31:0] debug_pc, debug_reg28;
 initial begin
     clk = 0;
 
@@ -14,7 +15,9 @@ end
 //DUT
 pipelinedCpu dut (
     .clk(clk),
-    .rst(rst)
+    .rst(rst),
+    .debug_pc(debug_pc),
+    .debug_reg28(debug_reg28)
 );
 logic perf_print;
 // performance counter
@@ -100,7 +103,7 @@ end
         $display("=============================================================");
         $display("  FUNCTIONAL VALIDATION TESTBENCH");
         $display("  Program: %s", pkg::PROG_FILE_FUNC);
-        $display("  Timeout: %0d ns", `SIM_TIMEOUT_FUNC);
+        $display("  Timeout: %0d ns", pkg::SIM_TIMEOUT_FUNC);
         $display("=============================================================");
         rst = 1;
         #(pkg::RESET_TIME);
@@ -110,7 +113,7 @@ end
     end
 //timeout
       initial begin
-        #(`SIM_TIMEOUT_FUNC);
+        #(pkg::SIM_TIMEOUT_FUNC);
         $display("\n[TIMEOUT] %0t ns elapsed — CPU did not halt!", $time);
         $display("[TIMEOUT] Last PC=%08h instID=%08h", dut.pcCurrent, dut.instID);
         perf_print = 1;
