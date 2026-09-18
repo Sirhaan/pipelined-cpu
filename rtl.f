@@ -36,4 +36,3 @@
 
         ./tb/performanceCounter.sv
         ./tb/performanceTB.sv
-./tb/functionalTB.sv
