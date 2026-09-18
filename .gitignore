@@ -1,0 +1,18 @@
+# Generated build artifacts
+obj_dir/
+*.o
+*.a
+*.d
+*.so
+*.out
+*.log
+*.vcd
+*.elf
+*.dis
+
+# Local/editor metadata
+.sigasi/
+.vscode/
+
+# JSON/config output files that are not source files
+*.json
