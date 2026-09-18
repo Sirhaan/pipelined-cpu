@@ -10,6 +10,40 @@ obj_dir/
 *.elf
 *.dis
 
+# Vivado generated files
+*.jou
+*.log
+*.str
+*.pb
+*.wdb
+*.svf
+*.bit
+*.rpx
+*.bin
+*.ltx
+*.cache/
+*.hw/
+*.runs/
+*.sim/
+*.gen/
+*.ip_user_files/
+*.ipbin/
+*.xpr
+*.xsa
+*.xdc.bak
+*.dcp
+*.checkpoint
+*.rpt
+*.qdb
+*.qsf
+*.qws
+*.qpf
+*.qrun
+*.qrv
+*.qed
+*.qpm
+*.qdoc
+
 # Local/editor metadata
 .sigasi/
 .vscode/
