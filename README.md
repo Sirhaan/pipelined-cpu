@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/badge/Simulator-Verilator-green?style=flat-square" alt="Verilator & XSim"/>
   <img src="https://img.shields.io/badge/Tests-13%2F13_PASS-brightgreen?style=flat-square" alt="Tests"/>
   <img src="https://img.shields.io/badge/Avg_CPI-1.14-yellow?style=flat-square" alt="CPI"/>
-  <img src="https://img.shields.io/badge/70MHZ-pink?style=flat-square" alt="Frequency">
+  <img src="https://img.shields.io/badge/Frequency-70MHZ-pink?style=flat-square" alt="Frequency">
   <img src="https://img.shields.io/badge/License-MIT-orange?style=flat-square" alt="MIT License"/>
 </p>
 
