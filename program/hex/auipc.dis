@@ -1,5 +1,5 @@
 
-./hex/auipc.elf:     file format elf32-littleriscv
+/home/sirhaan/projects/pipelinedCpu/program/hex/auipc.elf:     file format elf32-littleriscv
 
 
 Disassembly of section .text:

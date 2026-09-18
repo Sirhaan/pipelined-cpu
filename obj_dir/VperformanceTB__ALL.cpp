@@ -9,6 +9,8 @@
 #include "VperformanceTB___024root__Slow.cpp"
 #include "VperformanceTB___024root__DepSet_hde8d3fdf__0__Slow.cpp"
 #include "VperformanceTB___024root__DepSet_hfc8efcbb__0__Slow.cpp"
+#include "VperformanceTB___024unit__Slow.cpp"
+#include "VperformanceTB___024unit__DepSet_hb28ed511__0__Slow.cpp"
 #include "VperformanceTB__Syms.cpp"
 #include "VperformanceTB__Trace__0__Slow.cpp"
 #include "VperformanceTB__TraceDecls__0__Slow.cpp"

@@ -34,6 +34,8 @@ VM_CLASSES_SLOW += \
 	VperformanceTB___024root__Slow \
 	VperformanceTB___024root__DepSet_hde8d3fdf__0__Slow \
 	VperformanceTB___024root__DepSet_hfc8efcbb__0__Slow \
+	VperformanceTB___024unit__Slow \
+	VperformanceTB___024unit__DepSet_hb28ed511__0__Slow \
 
 # Generated support classes, fast-path, compile with highest optimization
 VM_SUPPORT_FAST += \

@@ -16,6 +16,7 @@
 
 // INCLUDE MODULE CLASSES
 #include "VperformanceTB___024root.h"
+#include "VperformanceTB___024unit.h"
 
 // SYMS CLASS (contains all model state)
 class alignas(VL_CACHE_LINE_BYTES)VperformanceTB__Syms final : public VerilatedSyms {

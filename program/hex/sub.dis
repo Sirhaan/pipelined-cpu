@@ -1,5 +1,5 @@
 
-./hex/sub.elf:     file format elf32-littleriscv
+/home/sirhaan/projects/pipelinedCpu/program/hex/sub.elf:     file format elf32-littleriscv
 
 
 Disassembly of section .text:

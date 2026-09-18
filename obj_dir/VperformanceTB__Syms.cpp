@@ -4,6 +4,7 @@
 #include "VperformanceTB__pch.h"
 #include "VperformanceTB.h"
 #include "VperformanceTB___024root.h"
+#include "VperformanceTB___024unit.h"
 
 // FUNCTIONS
 VperformanceTB__Syms::~VperformanceTB__Syms()

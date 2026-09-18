@@ -23,7 +23,7 @@ package pkg;
     parameter int BRANCH_STAGE = 3;
 
     // Simulation parameters
-    parameter int CLK_PERIOD       = 10;
+    parameter int CLK_PERIOD       = 14;
     parameter int CLK_HALF         = CLK_PERIOD / 2;
     parameter int RESET_TIME       = CLK_PERIOD * (RESET_CYCLES + 1);
     parameter int SIM_TIMEOUT_PERF = 500000;
@@ -36,7 +36,7 @@ package pkg;
     parameter int BHT_ENTRIES = 64;
     parameter int BTB_ENTRIES = 64;
 
-    parameter string PROG_FILE_PERF = "program/hex/and.hex";
+    parameter string PROG_FILE_PERF = "program/hex/auipc.hex";
 endpackage
 
 `define DEBUG_PIPELINE 1

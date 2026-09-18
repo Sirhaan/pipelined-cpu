@@ -8,10 +8,11 @@
   <img src="https://img.shields.io/badge/Language-SystemVerilog-blue?style=flat-square" alt="SystemVerilog"/>
   <img src="https://img.shields.io/badge/ISA-RISC--V_RV32I-red?style=flat-square" alt="RISC-V RV32I"/>
   <img src="https://img.shields.io/badge/Pipeline-5_Stage-orange?style=flat-square" alt="5-Stage Pipeline"/>
-  <img src="https://img.shields.io/badge/Simulator-Verilator-green?style=flat-square" alt="Verilator"/>
-  <img src="https://img.shields.io/badge/Tests-10%2F13_PASS-brightgreen?style=flat-square" alt="Tests"/>
-  <img src="https://img.shields.io/badge/Avg_CPI-23.5-yellow?style=flat-square" alt="CPI"/>
-  <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square" alt="MIT License"/>
+  <img src="https://img.shields.io/badge/Simulator-Verilator-green?style=flat-square" alt="Verilator & XSim"/>
+  <img src="https://img.shields.io/badge/Tests-13%2F13_PASS-brightgreen?style=flat-square" alt="Tests"/>
+  <img src="https://img.shields.io/badge/Avg_CPI-1.14-yellow?style=flat-square" alt="CPI"/>
+  <img src="https://img.shields.io/badge/70MHZ-pink?style=flat-square" alt="Frequency">
+  <img src="https://img.shields.io/badge/License-MIT-orange?style=flat-square" alt="MIT License"/>
 </p>
 
 ---
@@ -27,8 +28,9 @@ A **production-grade 5-stage pipelined CPU** built from scratch in SystemVerilog
 - **Hazard detection & data forwarding** for pipeline correctness
 - **Performance counters** tracking cycles, CPI, cache hits/misses, branch mispredicts
 - **Full RISC-V RV32I support** (30 core instructions: arithmetic, logic, memory, branches)
+- **Acheived 70Mhz on Arty-A7**(Implemented and ran design on arty A7 FPGA achieving 70Mhz frequency)
 
-Verified across 13 instruction tests with **784 cycle-accurate simulations**. Average **CPI of 23.5** with production-grade hazard handling.
+Verified across 13 instruction tests with **784 cycle-accurate simulations**. Average **CPI of 1.14** with production-grade hazard handling.
 
 <p align="center">
   <img width="900" height="400" alt="Pipeline Architecture" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" />
